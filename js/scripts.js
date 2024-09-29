@@ -8,44 +8,54 @@
 //transition for pages
     
 document.addEventListener('DOMContentLoaded', function() {
-    // Create the overlay element
-    const overlay = document.createElement('div');
-    overlay.id = 'page-transition-overlay';
-    
-    // Create a container for the GIF
-    const gifContainer = document.createElement('div');
-    gifContainer.id = 'transition-gif-container';
-    
-    // Create an img element for the GIF
-    const gifImage = document.createElement('img');
-    gifImage.src = '/assets/loading.gif'; // Update this path
-    gifImage.alt = 'Loading';
-    
-    // Append elements
-    gifContainer.appendChild(gifImage);
-    overlay.appendChild(gifContainer);
-    document.body.appendChild(overlay);
-  
-    // Function to handle page transitions
-    function handlePageTransition(event) {
-      const target = event.target.closest('a');
-      if (!target) return;
-  
-      const href = target.getAttribute('href');
-      if (!href || href.startsWith('#') || href.includes(':')) return; // Ignore non-links, hash links, and external links
-  
-      event.preventDefault();
-      overlay.classList.add('active');
-  
-      setTimeout(() => {
-        window.location.href = href;
-      }, 1000); // Adjust this time as needed
-    }
-  
-    // Add click event listener to all links
-    document.body.addEventListener('click', handlePageTransition);
-  });
+  // Load the Lottie library
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js';
+  document.head.appendChild(script);
 
+  script.onload = function() {
+      // Create the overlay element
+      const overlay = document.createElement('div');
+      overlay.id = 'page-transition-overlay';
+      
+      // Create a container for the Lottie animation
+      const lottieContainer = document.createElement('div');
+      lottieContainer.id = 'transition-lottie-container';
+      
+      // Append elements
+      overlay.appendChild(lottieContainer);
+      document.body.appendChild(overlay);
+
+      // Initialize Lottie animation
+      const animation = lottie.loadAnimation({
+          container: lottieContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: false,
+          path: './assets/loading.json' // Path to your Lottie JSON file
+      });
+
+      // Function to handle page transitions
+      function handlePageTransition(event) {
+          const target = event.target.closest('a');
+          if (!target) return;
+
+          const href = target.getAttribute('href');
+          if (!href || href.startsWith('#') || href.includes(':')) return; // Ignore non-links, hash links, and external links
+
+          event.preventDefault();
+          overlay.classList.add('active');
+          animation.play(); // Start the Lottie animation
+
+          setTimeout(() => {
+              window.location.href = href;
+          }, 1000); // Adjust this time as needed
+      }
+
+      // Add click event listener to all links
+      document.body.addEventListener('click', handlePageTransition);
+  };
+});
 
 // END Transition Pages
 
