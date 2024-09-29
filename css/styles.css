@@ -10846,16 +10846,16 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
-#page-transition-overlay {
+ #page-transition-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
-  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* semi-transparent white */
+  opacity: 0.5;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s;
+  transition: opacity 0.2s ease, visibility 0.2s;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -10863,17 +10863,17 @@ html {
 }
 
 #page-transition-overlay.active {
-  opacity: 1;
+  opacity: 0.6;
   visibility: visible;
 }
 
-#transition-gif-container {
-  width: 300px; /* Adjust based on your GIF size */
-  height: 300px; /* Adjust based on your GIF size */
+#transition-lottie-container {
+  width: 200px; /* Adjust based on your GIF size */
+  height: 200px; /* Adjust based on your GIF size */
   mix-blend-mode: multiply;
 }
 
-#transition-gif-container img {
+#transition-lottie-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -10881,5 +10881,5 @@ html {
 
 body {
   opacity: 1;
-  transition: opacity 0.5s ease;
-}
+  transition: opacity 0.2s ease;
+} 
