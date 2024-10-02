@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           setTimeout(() => {
               window.location.href = href;
-          }, 1000); // Adjust this time as needed
+          }, 100); // Adjust this time as needed
       }
 
       // Add click event listener to all links
@@ -65,6 +65,24 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading navbar:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
+      $("#footer").load("components/footer.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading footer:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
+      $("#calltoaction").load("components/sections/calltoaction.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
         }
       });
     });
