@@ -70,6 +70,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
+      $("#header").load("components/header.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading navbar:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
       $("#footer").load("components/footer.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
@@ -86,7 +95,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
-  
+    $(function () {
+      console.log("DOM ready");
+      $("#blogsection").load("components/sections/blogsection.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
+      $("#testimonial").load("components/sections/testimonial.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
+      $("#features").load("components/sections/features.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
+        }
+      });
+    });  
 
 
 
