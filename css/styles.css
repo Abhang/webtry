@@ -4176,6 +4176,7 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
+  overflow: hidden;
 }
 .card > hr {
   margin-right: 0;
@@ -4275,7 +4276,13 @@ textarea.form-control-lg {
 .card-img-bottom {
   width: 100%;
 }
-
+.card-img-top-2 {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  max-height: 350px;
+  object-fit: contain;
+}
 .card-img,
 .card-img-top {
   border-top-left-radius: var(--bs-card-inner-border-radius);
