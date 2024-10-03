@@ -70,6 +70,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
+      $("#blog").load("components/blog.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading blog:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
+      $("#navbar2").load("components/navbar2.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading navbar2:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
       $("#header").load("components/header.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
