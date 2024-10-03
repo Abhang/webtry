@@ -7,7 +7,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="description" content="Redirecting..." />
-    <meta http-equiv="refresh" content="5;url=https://abha.ng" />
     <title>Redirecting...</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -19,16 +18,22 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <script type="text/javascript">
-        var newURL = window.location.href.replace("www.abha.ng", "abha.ng");
+      // Check if 'www' is present in the current URL
+      if (window.location.hostname.startsWith("www")) {
+        // Replace 'www' with naked domain and redirect
+        var newURL = window.location.href.replace("www.", "");
         window.location.href = newURL;
+      }
     </script>
   </head>
   <body class="d-flex flex-column h-100">
+    <div id="navbar"></div>
+
     <main class="flex-shrink-0">
       <div class="container text-center mt-5">
-        <h1 class="display-4">Redirecting...</h1>
-        <p class="lead">You will be automatically redirected in a few seconds.</p>
-        <p>If the redirect doesn’t work, please <a href="https://abha.ng">click here</a>.</p>
+        <h1 class="display-4">Oops! Wrong Address!</h1>
+        <p class="lead">Why don't you go check out our main page?</p>
+        <p>Please <a href="https://abha.ng">click here!</a></p>
       </div>
     </main>
     <div id="footer"></div>
