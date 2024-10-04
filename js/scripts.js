@@ -70,6 +70,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
+      $("#navbar3").load("components/navbar3.html", function(response, status, xhr) {
+        console.log("Load attempt completed");
+        if (status == "error") {
+          console.log("Error loading navbar3:", xhr.status, xhr.statusText);
+        }
+      });
+    });
+    $(function () {
+      console.log("DOM ready");
       $("#blog").load("components/blog.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
