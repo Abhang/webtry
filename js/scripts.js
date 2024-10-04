@@ -6,7 +6,7 @@
     console.log("jQuery version:", $.fn.jquery);
 
 //transition for pages
-    
+ /*    
 document.addEventListener('DOMContentLoaded', function() {
   // Load the Lottie library
   const script = document.createElement('script');
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Add click event listener to all links
       document.body.addEventListener('click', handlePageTransition);
   };
-});
+}); */
 
 // END Transition Pages
 
