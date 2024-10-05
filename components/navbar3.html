@@ -2,7 +2,11 @@
 <nav class="am_custom_navbar am_navbar_blur">
   <div class="am_container am_px_5">
     <a class="am_navbar_brand" href="index.html">Abhang Mehendale</a>
-    <button class="am_navbar_toggler" type="button" aria-label="Toggle navigation">
+    <button
+      class="am_navbar_toggler"
+      type="button"
+      aria-label="Toggle navigation"
+    >
       <span class="am_navbar_toggler_icon"></span>
     </button>
     <div class="am_navbar_collapse">
@@ -26,167 +30,206 @@
 
 <!-- CSS for the navbar -->
 <style>
-.am_custom_navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
-  padding: 1rem 0;
-}
+  .am_custom_navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    padding: 1rem 0;
+  }
 
-.am_navbar_blur {
-  background-color: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+  .am_navbar_blur {
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 
-.am_container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1140px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .am_container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.am_navbar_brand {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  font-size: 1.25rem;
-  text-decoration: none;
-  white-space: nowrap;
-  color: white;
-  transition: color 0.3s ease;
-}
+  .am_navbar_brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white;
+    transition: color 0.3s ease;
+  }
 
-.am_navbar_toggler {
-  display: none;
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.am_navbar_toggler_icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.am_navbar_collapse {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-
-.am_navbar_nav {
-  display: flex;
-  flex-direction: row;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  margin-left: auto;
-}
-
-.am_nav_item {
-  margin-left: 1rem;
-}
-
-.am_nav_link {
-  display: block;
-  padding: 0.5rem 0;
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  transition: color 0.15s ease-in-out;
-}
-
-.am_nav_link:hover,
-.am_nav_link:focus {
-  color: rgba(255, 255, 255, 1);
-}
-
-@media (max-width: 991px) {
   .am_navbar_toggler {
-    display: block;
+    display: none;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  .am_navbar_toggler_icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 
   .am_navbar_collapse {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(128, 128, 128, 0.9);
-    padding: 1rem;
-  }
-
-  .am_navbar_collapse.show {
-    display: block;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
   }
 
   .am_navbar_nav {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-left: auto;
+
+      
   }
 
   .am_nav_item {
-    margin-left: 0;
-    margin-bottom: 0.5rem;
+    margin-left: 1rem;
   }
-}
 
-@media (prefers-color-scheme: light) {
-  .am_navbar_brand,
   .am_nav_link {
-    color: rgba(0, 0, 0, 0.9);
-  }
-  
-  .am_nav_link:hover,
-  .am_nav_link:focus {
-    color: rgba(0, 0, 0, 1);
-  }
-  
-  .am_navbar_toggler_icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .am_navbar_brand,
-  .am_nav_link {
+    display: block;
+    padding: 0.5rem 0;
     color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
   }
-  
+
   .am_nav_link:hover,
   .am_nav_link:focus {
     color: rgba(255, 255, 255, 1);
   }
-  
-  .am_navbar_toggler_icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+  @media (max-width: 991px) {
+    .am_navbar_toggler {
+      display: block;
+    }
+
+    .am_navbar_collapse {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: rgba(128, 128, 128, 0.9);
+      padding: 1rem;
+      backdrop-filter: blur(10px);
+
+    }
+
+    .am_navbar_collapse.show {
+      display: block;
+      backdrop-filter: blur(10px);
+    }
+
+    .am_navbar_nav {
+      flex-direction: column;
+    }
+
+    .am_nav_item {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
   }
-}
+
+  @media (prefers-color-scheme: light) {
+    .am_navbar_brand,
+    .am_nav_link {
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    .am_nav_link:hover,
+    .am_nav_link:focus {
+      color: rgba(0, 0, 0, 1);
+    }
+
+    .am_navbar_toggler_icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .am_navbar_brand,
+    .am_nav_link {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .am_nav_link:hover,
+    .am_nav_link:focus {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    .am_navbar_toggler_icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
 </style>
 
 <!-- JavaScript for toggling the mobile menu -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggler = document.querySelector('.am_navbar_toggler');
-  const collapse = document.querySelector('.am_navbar_collapse');
+  (function() {
+    function initNavbar() {
+      console.log('Initializing navbar...'); // Debug log
+      var toggler = document.querySelector('.am_navbar_toggler');
+      var collapse = document.querySelector('.am_navbar_collapse');
+      
+      if (!toggler || !collapse) {
+        console.error('Navbar elements not found!'); // Debug log
+        return;
+      }
+      
+      console.log('Navbar elements found, attaching event listeners...'); // Debug log
+      
+      function toggleMenu(event) {
+        event.stopPropagation(); // Prevent the click event from bubbling up
+        collapse.classList.toggle('show');
+      }
   
-  toggler.addEventListener('click', function() {
-    collapse.classList.toggle('show');
-  });
-});
-</script>
+      function closeMenu(event) {
+        if (!collapse.contains(event.target) && event.target !== toggler) {
+          collapse.classList.remove('show');
+        }
+      }
+      
+      toggler.addEventListener('click', toggleMenu);
+      document.addEventListener('click', closeMenu);
+      
+      // Prevent clicks inside the menu from closing it
+      collapse.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+      
+      console.log('Event listeners attached successfully.'); // Debug log
+    }
+  
+    // Run initNavbar() when the DOM is fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavbar);
+    } else {
+      initNavbar();
+    }
+  })();
+  </script>
