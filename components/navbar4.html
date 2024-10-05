@@ -2,25 +2,22 @@
 <nav class="am_custom_navbar am_navbar_blur">
   <div class="am_container am_px_5">
     <a class="am_navbar_brand" href="index.html">Abhang Mehendale</a>
-    <button class="am_navbar_toggler" type="button" aria-label="Toggle navigation">
+    <!-- <button class="am_navbar_toggler" type="button" data-bs-toggle="collapse" data-bs-target="#amNavbarNav" aria-controls="amNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="am_navbar_toggler_icon"></span>
-    </button>
-    <div class="am_navbar_collapse">
+    </button> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="am_navbar_nav">
         <li class="am_nav_item">
-          <a class="am_nav_link" href="/index.html">Home</a>
+          <a class="am_nav_link" href="#">Home</a>
         </li>
         <li class="am_nav_item">
-          <a class="am_nav_link" href="/about.html">About</a>
+          <a class="am_nav_link" href="#">About</a>
         </li>
         <li class="am_nav_item">
-          <a class="am_nav_link" href="/blog-home.html">Blog</a>
-        </li>
-        <li class="am_nav_item">
-          <a class="am_nav_link" href="/contact.html">Contact</a>
+          <a class="am_nav_link" href="#">Contact</a>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </nav>
 
@@ -36,42 +33,42 @@
 }
 
 .am_navbar_blur {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(128, 128, 128, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .am_container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
-  max-width: 1140px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+.am_px_5 {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
 }
 
 .am_navbar_brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
+  margin-right: 1rem;
   font-size: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
-  color: white;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .am_navbar_toggler {
-  display: none;
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.25rem;
-  cursor: pointer;
+  transition: box-shadow 0.15s ease-in-out;
 }
 
 .am_navbar_toggler_icon {
@@ -85,31 +82,24 @@
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-.am_navbar_collapse {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-
 .am_navbar_nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  margin-left: auto;
 }
 
 .am_nav_item {
-  margin-left: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .am_nav_link {
   display: block;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
 .am_nav_link:hover,
@@ -117,35 +107,18 @@
   color: rgba(255, 255, 255, 1);
 }
 
-@media (max-width: 991px) {
-  .am_navbar_toggler {
-    display: block;
-  }
-
-  .am_navbar_collapse {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(128, 128, 128, 0.9);
-    padding: 1rem;
-  }
-
-  .am_navbar_collapse.show {
-    display: block;
-  }
-
+@media (min-width: 992px) {
   .am_navbar_nav {
-    flex-direction: column;
+    flex-direction: row;
   }
-
+  
   .am_nav_item {
-    margin-left: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    margin-left: 1rem;
   }
 }
 
+/* Adjust text color for light backgrounds */
 @media (prefers-color-scheme: light) {
   .am_navbar_brand,
   .am_nav_link {
@@ -161,32 +134,4 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  .am_navbar_brand,
-  .am_nav_link {
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .am_nav_link:hover,
-  .am_nav_link:focus {
-    color: rgba(255, 255, 255, 1);
-  }
-  
-  .am_navbar_toggler_icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
-}
 </style>
-
-<!-- JavaScript for toggling the mobile menu -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggler = document.querySelector('.am_navbar_toggler');
-  const collapse = document.querySelector('.am_navbar_collapse');
-  
-  toggler.addEventListener('click', function() {
-    collapse.classList.toggle('show');
-  });
-});
-</script>
