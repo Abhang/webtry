@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $(function () {
       console.log("DOM ready");
-      $("#navbar").load("components/navbar.html", function(response, status, xhr) {
+      $("#navbar").load("/components/navbar.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading navbar:", xhr.status, xhr.statusText);
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#navbar3").load("components/navbar3.html", function(response, status, xhr) {
+      $("#navbar3").load("/components/navbar3.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading navbar3:", xhr.status, xhr.statusText);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#blog").load("components/blog.html", function(response, status, xhr) {
+      $("#blog").load("/components/blog.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading blog:", xhr.status, xhr.statusText);
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#navbar2").load("components/navbar2.html", function(response, status, xhr) {
+      $("#navbar2").load("/components/navbar2.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading navbar2:", xhr.status, xhr.statusText);
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#header").load("components/header.html", function(response, status, xhr) {
+      $("#header").load("/components/header.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading navbar:", xhr.status, xhr.statusText);
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#footer").load("components/footer.html", function(response, status, xhr) {
+      $("#footer").load("/components/footer.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading footer:", xhr.status, xhr.statusText);
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#calltoaction").load("components/sections/calltoaction.html", function(response, status, xhr) {
+      $("#calltoaction").load("/components/sections/calltoaction.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#blogsection").load("components/sections/blogsection.html", function(response, status, xhr) {
+      $("#blogsection").load("/components/sections/blogsection.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#testimonial").load("components/sections/testimonial.html", function(response, status, xhr) {
+      $("#testimonial").load("/components/sections/testimonial.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     $(function () {
       console.log("DOM ready");
-      $("#features").load("components/sections/features.html", function(response, status, xhr) {
+      $("#features").load("/components/sections/features.html", function(response, status, xhr) {
         console.log("Load attempt completed");
         if (status == "error") {
           console.log("Error loading call_to_action:", xhr.status, xhr.statusText);
