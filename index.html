@@ -6,7 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Abhang Mehendale is a seasoned Supply Chain Consultant and GenAI Expert, currently practicing GenAI in supply chain, developing GenAI products for Supply Chain" />
+    <meta
+      name="description"
+      content="Abhang Mehendale is a seasoned Supply Chain Consultant and GenAI Expert, currently practicing GenAI in supply chain, developing GenAI products for Supply Chain"
+    />
     <meta name="author" content="Abhang Mehendale" />
     <title>Abhang Mehendale - Supply Chain | GenAI</title>
     <!-- Favicon-->
@@ -26,23 +29,64 @@
 
       <!-- Header-->
       <div id="header"></div>
-      <!-- Features section-->
-
-
-
     </main>
-    <div id="features"></div>
-    <!-- Testimonial section-->
-    <div id="testimonial"></div>
-    <!-- Blog preview section-->
-    <div id="blogsection"></div>
 
-    <!-- Footer-->
-    <div id="footer"></div>
+    <!-- Lazy-loaded sections -->
+    <div
+      class="lazy-load"
+      data-src="/components/sections/features.html"
+      id="features"
+    ></div>
+    <div
+      class="lazy-load"
+      data-src="/components/sections/testimonial.html"
+      id="testimonial"
+    ></div>
+    <div
+      class="lazy-load"
+      data-src="/components/sections/blogsection.html"
+      id="blogsection"
+    ></div>
+    <div class="lazy-load" data-src="/components/footer.html" id="footer"></div>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>
+<!--     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const lazyLoadSections = document.querySelectorAll(".lazy-load");
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const element = entry.target;
+                const url = element.getAttribute("data-src");
+
+                fetch(url)
+                  .then((response) => response.text())
+                  .then((html) => {
+                    element.innerHTML = html;
+                    observer.unobserve(element);
+                  })
+                  .catch((error) =>
+                    console.error("Error loading content:", error)
+                  );
+              }
+            });
+          },
+          {
+            rootMargin: "0px 0px",
+          }
+        );
+
+        lazyLoadSections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script> -->
   </body>
 </html>
