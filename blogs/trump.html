@@ -19,22 +19,73 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
     <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      main {
-        flex: 1 0 auto;
-      }
-
-      #content {
-        min-height: calc(100vh - 56px - 60px);
-        /* Adjust these values based on your navbar and footer heights */
-        padding: 20px 0;
-      }
-    </style>
+        body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+      
+        main {
+          flex: 1 0 auto;
+        }
+      
+        #content {
+          min-height: calc(100vh - 56px - 60px);
+          /* Adjust these values based on your navbar and footer heights */
+          padding: 20px 0;
+        }
+      
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+          /* Reduce font size for headings */
+          h1 {
+            font-size: 28px !important;
+          }
+      
+          h2 {
+            font-size: 24px !important;
+          }
+      
+          /* Reduce font size for paragraphs */
+          p.fs-5 {
+            font-size: 16px !important;
+          }
+      
+          /* Adjust the hero text */
+          figure div p {
+            font-size: 24px !important;
+            top: 30% !important;
+          }
+      
+          /* Reduce padding and margins for better spacing */
+          .container.px-5.my-5 {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+          }
+      
+          .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+          }
+      
+          /* Adjust image size in the blog */
+          figure.mb-4 img {
+            width: 100% !important;
+            height: auto !important;
+          }
+      
+          /* Adjust the author section */
+          .col-lg-3 {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+      
+          .col-lg-9 {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+          }
+        }
+      </style>
   </head>
 
   <body class="d-flex flex-column h-100">
