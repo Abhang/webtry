@@ -54,7 +54,7 @@
     <script>
       // 1) Fetch blog-list-blog.json to get the array of blog file paths
       async function fetchBlogList() {
-        const response = await fetch("blogs/blog-list-blog.json");
+        const response = await fetch("json/blog-list-blog.json");
         // Adjust the path above if blog-list-blog.json is located elsewhere
         const data = await response.json(); // should be an array
         return data; // e.g., ["blogs/trump.html", "blogs/tesla.html"]

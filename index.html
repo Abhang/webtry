@@ -107,7 +107,7 @@
     async function loadSliderData() {
       try {
         // Fetch the JSON file
-        const response = await fetch("../components/sections/slider.json");
+        const response = await fetch("../json/slider.json");
         const data = await response.json();
 
         // Populate the News Carousel
@@ -166,7 +166,7 @@
   <script>
     // 1) Fetch blog-list.json to get the array of blog file paths
     async function fetchBlogList() {
-      const response = await fetch("blogs/blog-list.json");
+      const response = await fetch("json/blog-list.json");
       // Adjust the path above if blog-list.json is located elsewhere
       const data = await response.json(); // should be an array
       return data; // e.g., ["blogs/trump.html", "blogs/tesla.html"]
