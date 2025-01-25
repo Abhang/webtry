@@ -1,136 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta
-      name="description"
-      content="Abhang Mehendale is a seasoned Supply Chain Consultant and GenAI Expert, currently practicing GenAI in supply chain, developing GenAI products for Supply Chain"
-    />
-    <meta name="author" content="Abhang Mehendale" />
-    <title>Abhang Mehendale - Supply Chain | GenAI</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap icons-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
-  <body class="d-flex flex-column h-100">
-    <main class="flex-shrink-0">
-      <!-- Navigation-->
-      <div id="navbar3"></div>
 
-      <!-- Header-->
-      <div id="header"></div>
-    </main>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description"
+    content="Abhang Mehendale is a seasoned Supply Chain Consultant and GenAI Expert, currently practicing GenAI in supply chain, developing GenAI products for Supply Chain" />
+  <meta name="author" content="Abhang Mehendale" />
+  <title>Abhang Mehendale - Supply Chain | GenAI</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
 
-    <!-- Lazy-loaded sections -->
-    <div
-      class="lazy-load"
-      data-src="/components/sections/features.html"
-      id="features"
-    ></div>
-    <div
-      class="lazy-load"
-      data-src="/components/sections/testimonial.html"
-      id="testimonial"
-    ></div>
-    <!-- <div
+<body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+    <!-- Navigation-->
+    <div id="navbar3"></div>
+
+    <!-- Header-->
+    <div id="header"></div>
+  </main>
+
+  <!-- Lazy-loaded sections -->
+  <div class="lazy-load" data-src="/components/sections/features.html" id="features"></div>
+  <div class="lazy-load" data-src="/components/sections/testimonial.html" id="testimonial"></div>
+  <!-- <div
       class="lazy-load"
       data-src="/components/sections/blogsection.html"
       id="blogsection"
     ></div> -->
 
-
- 
-    <section>
-      <div class="container px-5 my-5">
-        <div class="row gx-5 justify-content-center">
-          <div class="col-lg-8 col-xl-6">
-            <div class="text-center">
-              <h2 class="fw-bolder">Essays, Opinions and Articles of Note</h2>
-              <p class="lead fw-normal text-muted mb-5">
-                Daily collection of views on interesting reads, geopolitics,
-                science and technology, business and more.
-              </p>
-            </div>
+  <section>
+    <div class="container px-5 my-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <div class="text-center">
+            <h2 class="fw-bolder">Essays, Opinions and Articles of Note</h2>
+            <p class="lead fw-normal text-muted mb-5">
+              Daily collection of views on interesting reads, geopolitics,
+              science and technology, business and more.
+            </p>
           </div>
         </div>
-        <div id="featured-blogs" class="row gx-5"></div>
       </div>
-    </section>
+      <div id="featured-blogs" class="row gx-5"></div>
+    </div>
+  </section>
 
-    <script>
-      // 1) Hand-pick which blog HTML files you want to feature:
-      const featuredBlogPaths = [
-        "../blogs/trump.html",      // example
-        "../blogs/trump.html",      // hypothetical example
-        "../blogs/trump.html",   // hypothetical example
-      ];
+  <script>
+    // 1) Fetch blog-list.json to get the array of blog file paths
+    async function fetchBlogList() {
+      const response = await fetch("blogs/blog-list.json");
+      // Adjust the path above if blog-list.json is located elsewhere
+      const data = await response.json(); // should be an array
+      return data; // e.g., ["blogs/trump.html", "blogs/tesla.html"]
+    }
 
-      // 2) Utility function: fetch a blog HTML file, parse out the <meta> data:
-      async function fetchBlogMetadata(blogPath) {
-        const response = await fetch(blogPath);
-        const blogHtml = await response.text();
+    // 2) Utility function: fetch a blog HTML file, parse out the <meta> data:
+    async function fetchBlogMetadata(blogPath) {
+      const response = await fetch(blogPath);
+      const blogHtml = await response.text();
 
-        // Use DOMParser to turn that HTML string into a DOM we can query
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(blogHtml, "text/html");
+      // Use DOMParser to turn the string into a DOM
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(blogHtml, "text/html");
 
-        // Now pick out your custom meta tags
-        const title = doc.querySelector('meta[name="blog-title"]')?.getAttribute("content") || "Untitled";
-        const description = doc.querySelector('meta[name="blog-description"]')?.getAttribute("content") || "";
-        const image = doc.querySelector('meta[name="blog-image"]')?.getAttribute("content") || "";
-        const date = doc.querySelector('meta[name="blog-date"]')?.getAttribute("content") || "";
-        const readTime = doc.querySelector('meta[name="blog-read-time"]')?.getAttribute("content") || "";
-        
-        // Return the data + the path, so we know where to link
-        return {
-          path: blogPath,
-          title,
-          description,
-          image,
-          date,
-          readTime
-        };
-      }
+      // Extract meta tags
+      const title =
+        doc
+          .querySelector('meta[name="blog-title"]')
+          ?.getAttribute("content") || "Untitled";
+      const description =
+        doc
+          .querySelector('meta[name="blog-description"]')
+          ?.getAttribute("content") || "";
+      const image =
+        doc
+          .querySelector('meta[name="blog-image"]')
+          ?.getAttribute("content") || "";
+      const date =
+        doc
+          .querySelector('meta[name="blog-date"]')
+          ?.getAttribute("content") || "";
+      const readTime =
+        doc
+          .querySelector('meta[name="blog-read-time"]')
+          ?.getAttribute("content") || "";
 
-      // 3) Generate the card HTML for each blog
-      function createBlogCard(blogData) {
-        // Adjust these classes/inline styles to match your own layout
-        // linking to blogData.path so user can click through
-        return `
+      // Return an object of blog data
+      return {
+        path: blogPath,
+        title,
+        description,
+        image,
+        date,
+        readTime,
+      };
+    }
+
+    // 3) Create a card for each blog’s metadata
+    function createBlogCard(blogData) {
+      return `
           <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
-              <img class="card-img-top"
-                   src="${blogData.image}"
-                   alt="..."
-                   style="width: 400px; height: 250px; object-fit: cover;" />
+              <img
+                class="card-img-top"
+                src="${blogData.image}"
+                alt="..."
+                style="width: 400px; height: 250px; object-fit: cover;"
+              />
               <div class="card-body p-4">
-                <div class="badge bg-primary bg-gradient rounded-pill mb-2">
-                  Featured
-                </div>
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Featured</div>
                 <a class="text-decoration-none link-dark stretched-link" href="${blogData.path}">
                   <h5 class="card-title mb-3">${blogData.title}</h5>
                 </a>
-                <p class="card-text mb-0">
-                  ${blogData.description}
-                </p>
+                <p class="card-text mb-0">${blogData.description}</p>
               </div>
               <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                 <div class="d-flex align-items-end justify-content-between">
                   <div class="d-flex align-items-center">
-                    <img class="rounded-circle me-3"
-                         src="/assets/images/abhang.jpg"
-                         alt="Author"
-                         style="width: 50px; height: 50px; object-fit: cover;" />
+                    <img
+                      class="rounded-circle me-3"
+                      src="/assets/images/abhang.jpg"
+                      alt="Author"
+                      style="width: 50px; height: 50px; object-fit: cover;"
+                    />
                     <div class="small">
                       <div class="fw-bold">Abhang Mehendale</div>
                       <div class="text-muted">
@@ -143,42 +141,43 @@
             </div>
           </div>
         `;
+    }
+
+    // 4) Main routine: fetch blog list, then fetch each blog’s metadata, build the cards
+    async function loadFeaturedBlogs() {
+      const container = document.getElementById("featured-blogs");
+      try {
+        // 4a) get array of blog paths from blog-list.json
+        const blogPaths = await fetchBlogList();
+
+        // 4b) fetch metadata for each path in parallel
+        const metadataList = await Promise.all(
+          blogPaths.map((path) => fetchBlogMetadata(path))
+        );
+
+        // 4c) generate and append each card
+        metadataList.forEach((blogData) => {
+          const cardHTML = createBlogCard(blogData);
+          container.insertAdjacentHTML("beforeend", cardHTML);
+        });
+      } catch (err) {
+        console.error("Error loading blog metadata:", err);
       }
+    }
 
-      // 4) Main routine: fetch each blog’s metadata, then build the cards
-      async function loadFeaturedBlogs() {
-        const container = document.getElementById("featured-blogs");
-        try {
-          // Use Promise.all to load them in parallel
-          const metadataList = await Promise.all(
-            featuredBlogPaths.map(path => fetchBlogMetadata(path))
-          );
+    // 5) Run the loader on page load
+    loadFeaturedBlogs();
+  </script>
 
-          // For each blog’s metadata, create the card markup and append it
-          metadataList.forEach(blogData => {
-            const cardHTML = createBlogCard(blogData);
-            container.insertAdjacentHTML("beforeend", cardHTML);
-          });
-        } catch (err) {
-          console.error("Error loading blog metadata:", err);
-        }
-      }
+  <div class="lazy-load" data-src="/components/footer.html" id="footer"></div>
 
-      // 5) Run the loader when the page loads
-      loadFeaturedBlogs();
-    </script>
- 
-
-
-    <div class="lazy-load" data-src="/components/footer.html" id="footer"></div>
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="/js/scripts.js"></script>
-<!--     <script>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+  <!--     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const lazyLoadSections = document.querySelectorAll(".lazy-load");
 
@@ -211,5 +210,6 @@
         });
       });
     </script> -->
-  </body>
+</body>
+
 </html>
