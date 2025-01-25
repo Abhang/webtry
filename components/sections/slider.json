@@ -1,0 +1,23 @@
+{
+    "carousel": [
+        {
+            "title": "🚀 GenAI in Supply Chain",
+            "content": "90% of supply chain leaders believe AI will be a game changer, yet only 12% have fully implemented it."
+        },
+        {
+            "title": "📉 Shipping Costs Declining",
+            "content": "Container freight rates have dropped by 30% YoY due to demand fluctuations."
+        },
+        {
+            "title": "🤖 AI vs. Human Decision-Making",
+            "content": "McKinsey reports AI-driven supply chain optimizations lead to 15% cost reductions."
+        }
+    ],
+    "ticker": [
+        "🚀 AI in Supply Chain is reducing costs by 20%",
+        "📉 Global freight rates drop by 15%",
+        "💡 Generative AI predicted to automate 40% of supply chain tasks",
+        "🛳️ New AI-powered logistics models show a 25% reduction in delays",
+        "📦 Warehouse automation is growing at 18% annually"
+    ]
+}

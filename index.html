@@ -27,12 +27,124 @@
 
   <!-- Lazy-loaded sections -->
   <div class="lazy-load" data-src="/components/sections/features.html" id="features"></div>
-  <div class="lazy-load" data-src="/components/sections/testimonial.html" id="testimonial"></div>
+
   <!-- <div
       class="lazy-load"
       data-src="/components/sections/blogsection.html"
       id="blogsection"
     ></div> -->
+  <section class="bg-light">
+    <div class="my-5">
+      <!-- Weekly Insights Section -->
+      <br class="container my-5" />
+      <h2 class="text-center fw-bold">This Week in Supply Chain & GenAI</h2>
+      <br />
+
+      <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carousel-content">
+          <!-- Carousel items will be inserted here dynamically -->
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Ticker Section -->
+  <section>
+    <div class="">
+      <section class="ticker-container">
+        <div class="ticker-wrap">
+          <div class="ticker" id="ticker-content">
+            <!-- Ticker items will be inserted here dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .ticker-container {
+          overflow: hidden;
+          background: black;
+          color: white;
+          padding: 10px 0;
+          font-weight: bold;
+          font-size: 18px;
+          white-space: nowrap;
+        }
+
+        .ticker-wrap {
+          display: flex;
+          width: 100%;
+        }
+
+        .ticker {
+          display: inline-block;
+          padding-left: 100%;
+          animation: scroll 35s linear infinite;
+        }
+
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(-100%);
+          }
+        }
+      </style>
+    </div>
+  </section>
+
+  <!-- Load JSON & Populate Sections -->
+  <script>
+    async function loadSliderData() {
+      try {
+        // Fetch the JSON file
+        const response = await fetch("../components/sections/slider.json");
+        const data = await response.json();
+
+        // Populate the News Carousel
+        const carouselContent = document.getElementById("carousel-content");
+        carouselContent.innerHTML = ""; // Clear previous content
+
+        data.carousel.forEach((item, index) => {
+          const activeClass = index === 0 ? " active" : ""; // First item should be active
+          const slide = `
+                      <div class="carousel-item${activeClass}">
+                          <div class="d-flex flex-column align-items-center text-center">
+                              <h3>${item.title}</h3>
+                              <p>${item.content}</p>
+                          </div>
+                      </div>`;
+          carouselContent.insertAdjacentHTML("beforeend", slide);
+        });
+
+        // Populate the News Ticker
+        const tickerContent = document.getElementById("ticker-content");
+        tickerContent.innerHTML = ""; // Clear previous content
+
+        data.ticker.forEach((news) => {
+          const newsItem = `<span>${news} | </span>`;
+          tickerContent.insertAdjacentHTML("beforeend", newsItem);
+        });
+      } catch (error) {
+        console.error("Error loading slider data:", error);
+      }
+    }
+
+    // Run function when page loads
+    document.addEventListener("DOMContentLoaded", loadSliderData);
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <section>
     <div class="container px-5 my-5">
