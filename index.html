@@ -1,227 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Abhang Mehendale is a seasoned Supply Chain Consultant and GenAI Expert, currently practicing GenAI in supply chain, developing GenAI products for Supply Chain"
+    />
+    <meta name="author" content="Abhang Mehendale" />
+    <title>Abhang Mehendale - Supply Chain | GenAI</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description"
-    content="Abhang Mehendale is a seasoned Supply Chain Consultant and GenAI Expert, currently practicing GenAI in supply chain, developing GenAI products for Supply Chain" />
-  <meta name="author" content="Abhang Mehendale" />
-  <title>Abhang Mehendale - Supply Chain | GenAI</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <!-- Bootstrap icons-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <!-- Navigation-->
+      <div id="navbar3"></div>
 
-<body class="d-flex flex-column h-100">
-  <main class="flex-shrink-0">
-    <!-- Navigation-->
-    <div id="navbar3"></div>
+      <!-- Header-->
+      <div id="header"></div>
+    </main>
 
-    <!-- Header-->
-    <div id="header"></div>
-  </main>
+    <!-- Lazy-loaded sections -->
+    <div
+      class="lazy-load"
+      data-src="/components/sections/features.html"
+      id="features"
+    ></div>
 
-  <!-- Lazy-loaded sections -->
-  <div class="lazy-load" data-src="/components/sections/features.html" id="features"></div>
-
-  <!-- <div
+    <!-- <div
       class="lazy-load"
       data-src="/components/sections/blogsection.html"
       id="blogsection"
     ></div> -->
-  <section class="bg-light">
-    <div class="my-5">
-      <!-- Weekly Insights Section -->
-      <br class="container my-5" />
-      <h2 class="text-center fw-bold">This Week in Supply Chain & GenAI</h2>
-      <br />
+    <section class="bg-light">
+      <div class="my-5">
+        <!-- Weekly Insights Section -->
+        <br class="container my-5" />
+        <h2 class="text-center fw-bold">This Week in Supply Chain & GenAI</h2>
+        <br />
 
-      <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" id="carousel-content">
-          <!-- Carousel items will be inserted here dynamically -->
-        </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- News Ticker Section -->
-  <section>
-    <div class="">
-      <section class="ticker-container">
-        <div class="ticker-wrap">
-          <div class="ticker" id="ticker-content">
-            <!-- Ticker items will be inserted here dynamically -->
+        <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carousel-content">
+            <!-- Carousel items will be inserted here dynamically -->
           </div>
+
+          <!-- Carousel Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#newsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#newsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <style>
-        .ticker-container {
-          overflow: hidden;
-          background: black;
-          color: white;
-          padding: 10px 0;
-          font-weight: bold;
-          font-size: 18px;
-          white-space: nowrap;
-        }
+    <!-- News Ticker Section -->
+    <section>
+      <div class="my-5">
+        <section class="ticker-container">
+          <div class="ticker-wrap">
+            <div class="ticker" id="ticker-content">
+              <!-- Ticker items will be inserted here dynamically -->
+            </div>
+          </div>
+        </section>
 
-        .ticker-wrap {
-          display: flex;
-          width: 100%;
-        }
-
-        .ticker {
-          display: inline-block;
-          padding-left: 100%;
-          animation: scroll 35s linear infinite;
-        }
-
-        @keyframes scroll {
-          from {
-            transform: translateX(0);
+        <style>
+          .ticker-container {
+            overflow: hidden;
+            background: black;
+            color: white;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 18px;
+            white-space: nowrap;
+            width: 100%;
           }
 
-          to {
-            transform: translateX(-100%);
+          .ticker-wrap {
+            display: flex;
+            width: 100%;
           }
-        }
-      </style>
-    </div>
-  </section>
 
-  <!-- Load JSON & Populate Sections -->
-  <script>
-    async function loadSliderData() {
-      try {
-        // Fetch the JSON file
-        const response = await fetch("../json/slider.json");
-        const data = await response.json();
+          .ticker {
+            display: flex;
+            gap: 40px;
+            animation: scroll 35s linear infinite;
+          }
 
-        // Populate the News Carousel
-        const carouselContent = document.getElementById("carousel-content");
-        carouselContent.innerHTML = ""; // Clear previous content
+          @keyframes scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+        </style>
+      </div>
+    </section>
 
-        data.carousel.forEach((item, index) => {
-          const activeClass = index === 0 ? " active" : ""; // First item should be active
-          const slide = `
+    <!-- Load JSON & Populate Sections -->
+    <script>
+      async function loadSliderData() {
+        try {
+          // Fetch the JSON file
+          const response = await fetch("../json/slider.json");
+          const data = await response.json();
+
+          // Populate the News Carousel
+          const carouselContent = document.getElementById("carousel-content");
+          carouselContent.innerHTML = ""; // Clear previous content
+
+          data.carousel.forEach((item, index) => {
+            const activeClass = index === 0 ? " active" : ""; // First item should be active
+            const slide = `
                       <div class="carousel-item${activeClass}">
                           <div class="d-flex flex-column align-items-center text-center">
                               <h3>${item.title}</h3>
                               <p>${item.content}</p>
                           </div>
                       </div>`;
-          carouselContent.insertAdjacentHTML("beforeend", slide);
-        });
+            carouselContent.insertAdjacentHTML("beforeend", slide);
+          });
 
-        // Populate the News Ticker
-        const tickerContent = document.getElementById("ticker-content");
-        tickerContent.innerHTML = ""; // Clear previous content
+          // Populate the News Ticker
+          const tickerContent = document.getElementById("ticker-content");
+          tickerContent.innerHTML = ""; // Clear previous content
 
-        data.ticker.forEach((news) => {
-          const newsItem = `<span>${news} | </span>`;
-          tickerContent.insertAdjacentHTML("beforeend", newsItem);
-        });
-      } catch (error) {
-        console.error("Error loading slider data:", error);
+          // Duplicate the ticker content to ensure seamless scrolling
+          const newsItems = data.ticker
+            .map((news) => `<span>${news} | </span>`)
+            .join("");
+          tickerContent.innerHTML = newsItems + newsItems; // Duplicate content for smooth scrolling
+        } catch (error) {
+          console.error("Error loading slider data:", error);
+        }
       }
-    }
 
-    // Run function when page loads
-    document.addEventListener("DOMContentLoaded", loadSliderData);
-  </script>
+      // Run function when page loads
+      document.addEventListener("DOMContentLoaded", loadSliderData);
+    </script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <section>
-    <div class="container px-5 my-5">
-      <div class="row gx-5 justify-content-center">
-        <div class="col-lg-8 col-xl-6">
-          <div class="text-center">
-            <h2 class="fw-bolder">Essays, Opinions and Articles of Note</h2>
-            <p class="lead fw-normal text-muted mb-5">
-              Daily collection of views on interesting reads, geopolitics,
-              science and technology, business and more.
-            </p>
+    <section>
+      <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+            <div class="text-center">
+              <h2 class="fw-bolder">Essays, Opinions and Articles of Note</h2>
+              <p class="lead fw-normal text-muted mb-5">
+                Daily collection of views on interesting reads, geopolitics,
+                science and technology, business and more.
+              </p>
+            </div>
           </div>
         </div>
+        <div id="featured-blogs" class="row gx-5"></div>
       </div>
-      <div id="featured-blogs" class="row gx-5"></div>
-    </div>
-  </section>
+    </section>
 
-  <script>
-    // 1) Fetch blog-list.json to get the array of blog file paths
-    async function fetchBlogList() {
-      const response = await fetch("json/blog-list.json");
-      // Adjust the path above if blog-list.json is located elsewhere
-      const data = await response.json(); // should be an array
-      return data; // e.g., ["blogs/trump.html", "blogs/tesla.html"]
-    }
+    <script>
+      // 1) Fetch blog-list.json to get the array of blog file paths
+      async function fetchBlogList() {
+        const response = await fetch("json/blog-list.json");
+        // Adjust the path above if blog-list.json is located elsewhere
+        const data = await response.json(); // should be an array
+        return data; // e.g., ["blogs/trump.html", "blogs/tesla.html"]
+      }
 
-    // 2) Utility function: fetch a blog HTML file, parse out the <meta> data:
-    async function fetchBlogMetadata(blogPath) {
-      const response = await fetch(blogPath);
-      const blogHtml = await response.text();
+      // 2) Utility function: fetch a blog HTML file, parse out the <meta> data:
+      async function fetchBlogMetadata(blogPath) {
+        const response = await fetch(blogPath);
+        const blogHtml = await response.text();
 
-      // Use DOMParser to turn the string into a DOM
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(blogHtml, "text/html");
+        // Use DOMParser to turn the string into a DOM
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(blogHtml, "text/html");
 
-      // Extract meta tags
-      const title =
-        doc
-          .querySelector('meta[name="blog-title"]')
-          ?.getAttribute("content") || "Untitled";
-      const description =
-        doc
-          .querySelector('meta[name="blog-description"]')
-          ?.getAttribute("content") || "";
-      const feature2 =
-        doc
-          .querySelector('meta[name="blog-feature2"]')
-          ?.getAttribute("content") || "";
-      const image =
-        doc
-          .querySelector('meta[name="blog-image"]')
-          ?.getAttribute("content") || "";
-      const date =
-        doc
-          .querySelector('meta[name="blog-date"]')
-          ?.getAttribute("content") || "";
-      const readTime =
-        doc
-          .querySelector('meta[name="blog-read-time"]')
-          ?.getAttribute("content") || "";
+        // Extract meta tags
+        const title =
+          doc
+            .querySelector('meta[name="blog-title"]')
+            ?.getAttribute("content") || "Untitled";
+        const description =
+          doc
+            .querySelector('meta[name="blog-description"]')
+            ?.getAttribute("content") || "";
+        const feature2 =
+          doc
+            .querySelector('meta[name="blog-feature2"]')
+            ?.getAttribute("content") || "";
+        const image =
+          doc
+            .querySelector('meta[name="blog-image"]')
+            ?.getAttribute("content") || "";
+        const date =
+          doc
+            .querySelector('meta[name="blog-date"]')
+            ?.getAttribute("content") || "";
+        const readTime =
+          doc
+            .querySelector('meta[name="blog-read-time"]')
+            ?.getAttribute("content") || "";
 
-      // Return an object of blog data
-      return {
-        path: blogPath,
-        title,
-        description,
-        feature2,
-        image,
-        date,
-        readTime,
-      };
-    }
+        // Return an object of blog data
+        return {
+          path: blogPath,
+          title,
+          description,
+          feature2,
+          image,
+          date,
+          readTime,
+        };
+      }
 
-    // 3) Create a card for each blog’s metadata
-    function createBlogCard(blogData) {
-      return `
+      // 3) Create a card for each blog’s metadata
+      function createBlogCard(blogData) {
+        return `
           <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
               <img
@@ -259,43 +281,43 @@
             </div>
           </div>
         `;
-    }
-
-    // 4) Main routine: fetch blog list, then fetch each blog’s metadata, build the cards
-    async function loadFeaturedBlogs() {
-      const container = document.getElementById("featured-blogs");
-      try {
-        // 4a) get array of blog paths from blog-list.json
-        const blogPaths = await fetchBlogList();
-
-        // 4b) fetch metadata for each path in parallel
-        const metadataList = await Promise.all(
-          blogPaths.map((path) => fetchBlogMetadata(path))
-        );
-
-        // 4c) generate and append each card
-        metadataList.forEach((blogData) => {
-          const cardHTML = createBlogCard(blogData);
-          container.insertAdjacentHTML("beforeend", cardHTML);
-        });
-      } catch (err) {
-        console.error("Error loading blog metadata:", err);
       }
-    }
 
-    // 5) Run the loader on page load
-    loadFeaturedBlogs();
-  </script>
+      // 4) Main routine: fetch blog list, then fetch each blog’s metadata, build the cards
+      async function loadFeaturedBlogs() {
+        const container = document.getElementById("featured-blogs");
+        try {
+          // 4a) get array of blog paths from blog-list.json
+          const blogPaths = await fetchBlogList();
 
-  <div class="lazy-load" data-src="/components/footer.html" id="footer"></div>
+          // 4b) fetch metadata for each path in parallel
+          const metadataList = await Promise.all(
+            blogPaths.map((path) => fetchBlogMetadata(path))
+          );
 
-  <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Core theme JS-->
-  <script src="/js/scripts.js"></script>
-  <!--     <script>
+          // 4c) generate and append each card
+          metadataList.forEach((blogData) => {
+            const cardHTML = createBlogCard(blogData);
+            container.insertAdjacentHTML("beforeend", cardHTML);
+          });
+        } catch (err) {
+          console.error("Error loading blog metadata:", err);
+        }
+      }
+
+      // 5) Run the loader on page load
+      loadFeaturedBlogs();
+    </script>
+
+    <div class="lazy-load" data-src="/components/footer.html" id="footer"></div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>
+    <!--     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const lazyLoadSections = document.querySelectorAll(".lazy-load");
 
@@ -328,6 +350,5 @@
         });
       });
     </script> -->
-</body>
-
+  </body>
 </html>
