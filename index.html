@@ -78,6 +78,10 @@
         doc
           .querySelector('meta[name="blog-description"]')
           ?.getAttribute("content") || "";
+      const feature2 =
+        doc
+          .querySelector('meta[name="blog-feature2"]')
+          ?.getAttribute("content") || "";
       const image =
         doc
           .querySelector('meta[name="blog-image"]')
@@ -96,6 +100,7 @@
         path: blogPath,
         title,
         description,
+        feature2,
         image,
         date,
         readTime,
@@ -115,7 +120,7 @@
                 style="width: 400px; height: 250px; object-fit: cover;"
               />
               <div class="card-body p-4">
-                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Featured</div>
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">${blogData.feature2}</div>
                 <a class="text-decoration-none link-dark stretched-link" href="${blogData.path}">
                   <h5 class="card-title mb-3">${blogData.title}</h5>
                 </a>
