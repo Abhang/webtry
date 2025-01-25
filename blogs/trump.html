@@ -1,122 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <meta name="blog-title" content="How Donald Trump’s Policies Will Reshape Global Supply Chains" />
-    <meta name="blog-description"
-        content="Donald Trump’s 'America First' policies are set to disrupt global supply chains. Here’s how businesses can adapt to the new normal." />
-    <meta name="blog-image"
-        content="https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg" />
+    <meta
+      name="blog-title"
+      content="How Donald Trump’s Policies Will Reshape Global Supply Chains"
+    />
+    <meta
+      name="blog-description"
+      content="Donald Trump’s 'America First' policies are set to disrupt global supply chains. Here’s how businesses can adapt to the new normal."
+    />
+    <meta
+      name="blog-image"
+      content="https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+    />
     <meta name="blog-date" content="January 24, 2025" />
     <meta name="blog-read-time" content="7 min read" />
     <title>Abhang Mehendale - Supply Chain | GenAI</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: "EB Garamond", serif;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      #content {
+        min-height: calc(100vh - 56px - 60px);
+        /* Adjust these values based on your navbar and footer heights */
+        padding: 20px 0;
+      }
+
+      /* Mobile-friendly adjustments */
+      @media (max-width: 768px) {
+        /* Reduce font size for headings */
+        h1 {
+          font-size: 28px !important;
+          font-family: 'EB Garamond', serif;
         }
 
-        main {
-            flex: 1 0 auto;
+        h2 {
+          font-size: 24px !important;
+          font-family: 'EB Garamond', serif;
         }
 
-        #content {
-            min-height: calc(100vh - 56px - 60px);
-            /* Adjust these values based on your navbar and footer heights */
-            padding: 20px 0;
+        /* Reduce font size for paragraphs */
+        p.fs-5 {
+          font-size: 16px !important;
+          font-family: 'EB Garamond', serif;
         }
 
-        /* Mobile-friendly adjustments */
-        @media (max-width: 768px) {
-
-            /* Reduce font size for headings */
-            h1 {
-                font-size: 28px !important;
-            }
-
-            h2 {
-                font-size: 24px !important;
-            }
-
-            /* Reduce font size for paragraphs */
-            p.fs-5 {
-                font-size: 16px !important;
-            }
-
-            /* Adjust font size for list items */
-            ul.fs-5 li {
-                font-size: 16px !important;
-                margin-bottom: 8px;
-                /* Add some spacing between list items */
-            }
-
-            /* Adjust the hero text */
-            figure div p {
-                font-size: 24px !important;
-                top: 30% !important;
-            }
-
-            /* Reduce padding and margins for better spacing */
-            .container.px-5.my-5 {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
-            }
-
-            .py-5 {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
-            }
-
-            /* Adjust image size in the blog */
-            figure.mb-4 img {
-                width: 100% !important;
-                height: auto !important;
-            }
-
-            /* Adjust the author section */
-            .col-lg-3 {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            .col-lg-9 {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
-            }
+        /* Adjust font size for list items */
+        ul.fs-5 li {
+          font-size: 16px !important;
+          margin-bottom: 8px;
+          font-family: 'EB Garamond', serif;
+          /* Add some spacing between list items */
         }
+
+        /* Adjust the hero text */
+        figure div p {
+          font-size: 24px !important;
+          top: 30% !important;
+        }
+
+        /* Reduce padding and margins for better spacing */
+        .container.px-5.my-5 {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+        }
+
+        .py-5 {
+          padding-top: 2rem !important;
+          padding-bottom: 2rem !important;
+        }
+
+        /* Adjust image size in the blog */
+        figure.mb-4 img {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* Adjust the author section */
+        .col-lg-3 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .col-lg-9 {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
-        <!-- Navigation-->
-        <div id="navbar3"></div>
-        <div class="mb-0" style="background-color: black">
-            <br />
-            <br /><br />
-        </div>
-        <figure class="mb-lg-0" style="position: relative; display: inline-block">
-            <img class="img-fluid rounded"
-                src="https://media.cnn.com/api/v1/images/stellar/prod/ap24223149466735.jpg?c=original" alt="..." style="
+      <!-- Navigation-->
+      <div id="navbar3"></div>
+      <div class="mb-0" style="background-color: black">
+        <br />
+        <br /><br />
+      </div>
+      <figure class="mb-lg-0" style="position: relative; display: inline-block">
+        <img
+          class="img-fluid rounded"
+          src="https://res.cloudinary.com/dzjcz0ckk/image/upload/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+          alt="..."
+          style="
             width: 100000px;
             height: 800px;
             object-fit: cover;
             align-content: stretch;
             filter: grayscale(100%) brightness(50%) contrast(120%);
-          " />
-            <div>
-                <p style="
+          "
+        />
+        <div>
+          <p
+            style="
               position: absolute;
               top: 35%;
               left: 50%;
@@ -125,205 +154,221 @@
               font-size: 36px;
               font-weight: bold;
               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            ">
-                    How Donald Trump’s Policies Will Reshape Global Supply Chains
-                </p>
-            </div>
-            <figcaption id="primary-image__figcap_1-0" class="text-center mt-2">
-                <span class="figure-article-caption-owner">
-                    <p>CNN Politics / CNN Images</p>
-                </span>
-            </figcaption>
-        </figure>
+            "
+          >
+            How Donald Trump’s Policies Will Reshape Global Supply Chains
+          </p>
+        </div>
+        <figcaption id="primary-image__figcap_1-0" class="text-center mt-2">
+          <span class="figure-article-caption-owner">
+            <p>CNN Politics / CNN Images</p>
+          </span>
+        </figcaption>
+      </figure>
 
-        <!-- Section Begins -->
+      <!-- Section Begins -->
 
-        <section class="py-5">
-            <div class="container px-5 my-5">
-                <div class="row gx-5">
-                    <div class="col-lg-3">
-                        <div class="d-flex align-items-center mt-lg-5 mb-4">
-                            <img class="img-fluid rounded-circle" src="../assets/images/abhang.jpg" alt="..." style="
+      <section class="py-5">
+        <div class="container px-5 my-5">
+          <div class="row gx-5">
+            <div class="col-lg-3">
+              <div class="d-flex align-items-center mt-lg-5 mb-4">
+                <img
+                  class="img-fluid rounded-circle"
+                  src="../assets/images/abhang.jpg"
+                  alt="..."
+                  style="
                     width: 50px;
                     height: 50px;
                     object-fit: cover;
                     align-content: center;
-                  " ; />
-                            <div class="ms-3">
-                                <div class="fw-bold">Abhang Mehendale</div>
-                                <div class="text-muted">Supply Chain</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        <!-- Post content-->
-                        <article>
-                            <!-- Post header-->
-                            <header class="mb-4">
-                                <!-- Post title-->
-                                <h1 class="fw-bolder mb-1">
-                                    How Donald Trump’s Policies Will Reshape Global Supply
-                                    Chains
-                                </h1>
-                                <!-- Post meta content-->
-                                <div class="text-muted fst-italic mb-2">January 24, 2025</div>
-                                <!-- Post categories-->
-                                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Trade</a>
-                                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Supply Chain</a>
-                            </header>
-                            <!-- Preview image figure-->
-
-                            <!-- Post content-->
-                            <section class="mb-5">
-                                <p class="fs-5 mb-4">
-                                    The inauguration of Donald Trump as the 47th President of
-                                    the United States has sent ripples across the global
-                                    economy, particularly in the realm of supply chains. With
-                                    his "America First" agenda, Trump’s policies are poised to
-                                    disrupt trade flows, increase costs, and force businesses to
-                                    rethink their sourcing strategies. Here’s a deep dive into
-                                    how these changes will impact global supply chains and what
-                                    businesses can do to adapt.
-                                </p>
-                                <h2 class="fw-bolder mb-4">
-                                    1. Tariffs: A Double-Edged Sword
-                                </h2>
-                                <p class="fs-5 mb-4">
-                                    Trump’s aggressive tariff policies are at the forefront of
-                                    his economic strategy. He has proposed a 25% tariff on
-                                    imports from Canada and Mexico and a 10% tariff on Chinese
-                                    goods, citing concerns over illegal immigration, drug
-                                    trafficking, and trade imbalances. While these tariffs aim
-                                    to bolster domestic industries, they come with significant
-                                    consequences:
-                                </p>
-                                <ul class="fs-5 mb-4">
-                                    <li>
-                                        <strong>Increased Costs for Businesses and Consumers</strong>: Tariffs are
-                                        essentially taxes on imports, and their
-                                        costs are often passed down the supply chain, ultimately
-                                        hitting consumers. For example, tariffs on Canadian
-                                        softwood lumber in 2018 added $9,000 to the cost of a new
-                                        single-family home.
-                                    </li>
-                                    <li>
-                                        <strong>Supply Chain Disruptions</strong>: Companies
-                                        reliant on global sourcing will face higher costs and
-                                        potential delays. The uncertainty surrounding which goods
-                                        will be taxed and when adds another layer of complexity.
-                                    </li>
-                                    <li>
-                                        <strong>Retaliatory Measures</strong>: Trading partners
-                                        like China and the EU may impose their own tariffs,
-                                        leading to a tit-for-tat escalation that could stifle
-                                        global trade.
-                                    </li>
-                                </ul>
-                                <h2 class="fw-bolder mb-4">
-                                    2. Reshoring and Diversification: A New Reality
-                                </h2>
-                                <p class="fs-5 mb-4">
-                                    Trump’s policies are pushing companies to reconsider their
-                                    reliance on foreign suppliers. His carrot-and-stick
-                                    approach—lower taxes for domestic production and higher
-                                    tariffs for imports—aims to incentivize reshoring. However,
-                                    this shift is easier said than done:
-                                </p>
-                                <ul class="fs-5 mb-4">
-                                    <li>
-                                        <strong>Challenges of Reshoring</strong>: High labor costs
-                                        and a lack of skilled workers in the U.S. make reshoring a
-                                        costly endeavor. Additionally, industries like electronics
-                                        and automotive rely heavily on specialized components from
-                                        Asia, which cannot be easily replicated domestically.
-                                    </li>
-                                    <li>
-                                        <strong>Diversification as a Strategy</strong>: Many
-                                        companies are exploring alternative sourcing options in
-                                        countries like India and Southeast Asia to mitigate risks.
-                                        However, this requires significant investment and time to
-                                        establish new supply chains.
-                                    </li>
-                                </ul>
-                                <h2 class="fw-bolder mb-4">
-                                    3. Labor Shortages and Immigration Policies
-                                </h2>
-                                <p class="fs-5 mb-4">
-                                    Trump’s crackdown on immigration could exacerbate labor
-                                    shortages, particularly in industries like agriculture and
-                                    construction, where foreign-born workers play a critical
-                                    role. For instance, 40% of farm workers are undocumented
-                                    migrants, and stricter immigration policies could lead to
-                                    higher food prices and supply chain bottlenecks. Similarly,
-                                    the construction industry, already facing a shortage of
-                                    500,000 workers, could see further delays and increased
-                                    costs.
-                                </p>
-                                <h2 class="fw-bolder mb-4">
-                                    4. Geopolitical Tensions and Trade Wars
-                                </h2>
-                                <p class="fs-5 mb-4">
-                                    The U.S.-China relationship remains a key concern for global
-                                    supply chains. Trump’s tariffs and China’s retaliatory
-                                    measures, such as export restrictions on critical
-                                    technologies and metals, could disrupt industries reliant on
-                                    these materials. Moreover, the uncertainty surrounding trade
-                                    policies makes long-term planning difficult for businesses.
-                                    As Joel Lange of Dow Jones Risk & Research notes, managing
-                                    supply chains under these conditions is like playing a game
-                                    of "Whac-a-Mole".
-                                </p>
-                                <h2 class="fw-bolder mb-4">
-                                    5. Opportunities Amidst the Chaos
-                                </h2>
-                                <p class="fs-5 mb-4">
-                                    While Trump’s policies present significant challenges, they
-                                    also create opportunities for innovation and resilience:
-                                </p>
-                                <ul class="fs-5 mb-4">
-                                    <li>
-                                        <strong>Automation and Technology</strong>: Companies may
-                                        invest in automation to offset labor shortages and reduce
-                                        reliance on human workers.
-                                    </li>
-                                    <li>
-                                        <strong>Localized Production</strong>: Businesses could
-                                        explore localized production to minimize the impact of
-                                        tariffs and trade disruptions.
-                                    </li>
-                                    <li>
-                                        <strong>Advocacy and Collaboration</strong>: Engaging with
-                                        industry groups and policymakers can help businesses
-                                        navigate the changing landscape and advocate for favorable
-                                        policies.
-                                    </li>
-                                </ul>
-                                <h2 class="fw-bolder mb-4">
-                                    Conclusion: Navigating the New Normal
-                                </h2>
-                                <p class="fs-5 mb-4">
-                                    Donald Trump’s presidency marks a new era of protectionism
-                                    and economic nationalism. While his policies aim to
-                                    strengthen domestic industries, they also pose significant
-                                    risks to global supply chains. Businesses must adopt a
-                                    proactive approach, balancing cost management with
-                                    resilience and innovation. By diversifying supply chains,
-                                    investing in technology, and staying informed about policy
-                                    changes, companies can turn these challenges into
-                                    opportunities for growth.
-                                </p>
-                                <p class="fs-5 mb-4">
-                                    The road ahead is uncertain, but one thing is clear: the
-                                    world of supply chains will never be the same.
-                                </p>
-                            </section>
-                        </article>
-                    </div>
+                  "
+                  ;
+                />
+                <div class="ms-3">
+                  <div class="fw-bold">Abhang Mehendale</div>
+                  <div class="text-muted">Supply Chain</div>
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="col-lg-9">
+              <!-- Post content-->
+              <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                  <!-- Post title-->
+                  <h1 class="fw-bolder mb-1">
+                    How Donald Trump’s Policies Will Reshape Global Supply
+                    Chains
+                  </h1>
+                  <!-- Post meta content-->
+                  <div class="text-muted fst-italic mb-2">January 24, 2025</div>
+                  <!-- Post categories-->
+                  <a
+                    class="badge bg-secondary text-decoration-none link-light"
+                    href="#!"
+                    >Trade</a
+                  >
+                  <a
+                    class="badge bg-secondary text-decoration-none link-light"
+                    href="#!"
+                    >Supply Chain</a
+                  >
+                </header>
+                <!-- Preview image figure-->
 
-        <!-- Section Ends -->
+                <!-- Post content-->
+                <section class="mb-5">
+                  <p class="fs-5 mb-4">
+                    The inauguration of Donald Trump as the 47th President of
+                    the United States has sent ripples across the global
+                    economy, particularly in the realm of supply chains. With
+                    his "America First" agenda, Trump’s policies are poised to
+                    disrupt trade flows, increase costs, and force businesses to
+                    rethink their sourcing strategies. Here’s a deep dive into
+                    how these changes will impact global supply chains and what
+                    businesses can do to adapt.
+                  </p>
+                  <h2 class="fw-bolder mb-4">
+                    1. Tariffs: A Double-Edged Sword
+                  </h2>
+                  <p class="fs-5 mb-4">
+                    Trump’s aggressive tariff policies are at the forefront of
+                    his economic strategy. He has proposed a 25% tariff on
+                    imports from Canada and Mexico and a 10% tariff on Chinese
+                    goods, citing concerns over illegal immigration, drug
+                    trafficking, and trade imbalances. While these tariffs aim
+                    to bolster domestic industries, they come with significant
+                    consequences:
+                  </p>
+                  <ul class="fs-5 mb-4">
+                    <li>
+                      <strong
+                        >Increased Costs for Businesses and Consumers</strong
+                      >: Tariffs are essentially taxes on imports, and their
+                      costs are often passed down the supply chain, ultimately
+                      hitting consumers. For example, tariffs on Canadian
+                      softwood lumber in 2018 added $9,000 to the cost of a new
+                      single-family home.
+                    </li>
+                    <li>
+                      <strong>Supply Chain Disruptions</strong>: Companies
+                      reliant on global sourcing will face higher costs and
+                      potential delays. The uncertainty surrounding which goods
+                      will be taxed and when adds another layer of complexity.
+                    </li>
+                    <li>
+                      <strong>Retaliatory Measures</strong>: Trading partners
+                      like China and the EU may impose their own tariffs,
+                      leading to a tit-for-tat escalation that could stifle
+                      global trade.
+                    </li>
+                  </ul>
+                  <h2 class="fw-bolder mb-4">
+                    2. Reshoring and Diversification: A New Reality
+                  </h2>
+                  <p class="fs-5 mb-4">
+                    Trump’s policies are pushing companies to reconsider their
+                    reliance on foreign suppliers. His carrot-and-stick
+                    approach—lower taxes for domestic production and higher
+                    tariffs for imports—aims to incentivize reshoring. However,
+                    this shift is easier said than done:
+                  </p>
+                  <ul class="fs-5 mb-4">
+                    <li>
+                      <strong>Challenges of Reshoring</strong>: High labor costs
+                      and a lack of skilled workers in the U.S. make reshoring a
+                      costly endeavor. Additionally, industries like electronics
+                      and automotive rely heavily on specialized components from
+                      Asia, which cannot be easily replicated domestically.
+                    </li>
+                    <li>
+                      <strong>Diversification as a Strategy</strong>: Many
+                      companies are exploring alternative sourcing options in
+                      countries like India and Southeast Asia to mitigate risks.
+                      However, this requires significant investment and time to
+                      establish new supply chains.
+                    </li>
+                  </ul>
+                  <h2 class="fw-bolder mb-4">
+                    3. Labor Shortages and Immigration Policies
+                  </h2>
+                  <p class="fs-5 mb-4">
+                    Trump’s crackdown on immigration could exacerbate labor
+                    shortages, particularly in industries like agriculture and
+                    construction, where foreign-born workers play a critical
+                    role. For instance, 40% of farm workers are undocumented
+                    migrants, and stricter immigration policies could lead to
+                    higher food prices and supply chain bottlenecks. Similarly,
+                    the construction industry, already facing a shortage of
+                    500,000 workers, could see further delays and increased
+                    costs.
+                  </p>
+                  <h2 class="fw-bolder mb-4">
+                    4. Geopolitical Tensions and Trade Wars
+                  </h2>
+                  <p class="fs-5 mb-4">
+                    The U.S.-China relationship remains a key concern for global
+                    supply chains. Trump’s tariffs and China’s retaliatory
+                    measures, such as export restrictions on critical
+                    technologies and metals, could disrupt industries reliant on
+                    these materials. Moreover, the uncertainty surrounding trade
+                    policies makes long-term planning difficult for businesses.
+                    As Joel Lange of Dow Jones Risk & Research notes, managing
+                    supply chains under these conditions is like playing a game
+                    of "Whac-a-Mole".
+                  </p>
+                  <h2 class="fw-bolder mb-4">
+                    5. Opportunities Amidst the Chaos
+                  </h2>
+                  <p class="fs-5 mb-4">
+                    While Trump’s policies present significant challenges, they
+                    also create opportunities for innovation and resilience:
+                  </p>
+                  <ul class="fs-5 mb-4">
+                    <li>
+                      <strong>Automation and Technology</strong>: Companies may
+                      invest in automation to offset labor shortages and reduce
+                      reliance on human workers.
+                    </li>
+                    <li>
+                      <strong>Localized Production</strong>: Businesses could
+                      explore localized production to minimize the impact of
+                      tariffs and trade disruptions.
+                    </li>
+                    <li>
+                      <strong>Advocacy and Collaboration</strong>: Engaging with
+                      industry groups and policymakers can help businesses
+                      navigate the changing landscape and advocate for favorable
+                      policies.
+                    </li>
+                  </ul>
+                  <h2 class="fw-bolder mb-4">
+                    Conclusion: Navigating the New Normal
+                  </h2>
+                  <p class="fs-5 mb-4">
+                    Donald Trump’s presidency marks a new era of protectionism
+                    and economic nationalism. While his policies aim to
+                    strengthen domestic industries, they also pose significant
+                    risks to global supply chains. Businesses must adopt a
+                    proactive approach, balancing cost management with
+                    resilience and innovation. By diversifying supply chains,
+                    investing in technology, and staying informed about policy
+                    changes, companies can turn these challenges into
+                    opportunities for growth.
+                  </p>
+                  <p class="fs-5 mb-4">
+                    The road ahead is uncertain, but one thing is clear: the
+                    world of supply chains will never be the same.
+                  </p>
+                </section>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Ends -->
     </main>
     <!-- Footer-->
     <div id="footer"></div>
@@ -333,10 +378,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/scripts.js"></script>
     <script>
-        // Load navbar and footer
-        $("#navbar3").load("../navbar.html");
-        $("#footer").load("../footer.html");
+      // Load navbar and footer
+      $("#navbar3").load("../navbar.html");
+      $("#footer").load("../footer.html");
     </script>
-</body>
-
+  </body>
 </html>
