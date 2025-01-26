@@ -1,0 +1,29 @@
+{
+    "experiences": [
+        {
+            "title": "♟️ Chess",
+            "description": "Strategic thinking, pattern recognition, and deep analysis. Chess has sharpened my decision-making skills.",
+            "image": "https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+        },
+        {
+            "title": "🚴 Cycling",
+            "description": "Endurance, mental resilience, and pushing limits. Long rides have taught me the power of persistence.",
+            "image": "https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+        },
+        {
+            "title": "📦 Supply Chain",
+            "description": "Optimizing logistics, managing costs, and streamlining operations. The backbone of global trade fascinates me.",
+            "image": "https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+        },
+        {
+            "title": "🤖 GenAI",
+            "description": "Exploring the transformative power of AI in decision-making, automation, and business strategy.",
+            "image": "https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+        },
+        {
+            "title": "🌍 Geopolitics",
+            "description": "Understanding power dynamics, trade relations, and political landscapes to predict global shifts.",
+            "image": "https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/f_auto,q_auto/v1737812650/ap24223149466735_ghjumn.jpg"
+        }
+    ]
+}
