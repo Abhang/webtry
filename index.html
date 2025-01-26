@@ -317,6 +317,72 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Core theme JS-->
     <script src="/js/scripts.js"></script>
+    <script>
+      async function loadSliderData() {
+        try {
+          // Fetch the JSON file
+          const response = await fetch("../json/slider.json");
+          const data = await response.json();
+
+          // Populate the News Carousel
+          const carouselContent = document.getElementById("carousel-content");
+          carouselContent.innerHTML = ""; // Clear previous content
+
+          data.carousel.forEach((item, index) => {
+            const activeClass = index === 0 ? " active" : ""; // First item should be active
+            const slide = `
+                <div class="carousel-item${activeClass}">
+                    <div class="d-flex flex-column align-items-center text-center p-4">
+                        <h3>${item.title}</h3>
+                        <p>${item.content}</p>
+                    </div>
+                </div>`;
+            carouselContent.insertAdjacentHTML("beforeend", slide);
+          });
+
+          // Set the fixed height based on the tallest slide
+          setFixedCarouselHeight();
+
+          // Populate the News Ticker
+          const tickerContent = document.getElementById("ticker-content");
+          tickerContent.innerHTML = ""; // Clear previous content
+
+          // Duplicate the ticker content to ensure seamless scrolling
+          const newsItems = data.ticker
+            .map((news) => `<span>${news} | </span>`)
+            .join("");
+          tickerContent.innerHTML = newsItems + newsItems; // Duplicate content for smooth scrolling
+        } catch (error) {
+          console.error("Error loading slider data:", error);
+        }
+      }
+
+      // Function to set a fixed height for the carousel based on the tallest slide
+      function setFixedCarouselHeight() {
+        const carouselItems = document.querySelectorAll(".carousel-item");
+        let maxHeight = 0;
+
+        carouselItems.forEach((item) => {
+          item.style.display = "block"; // Temporarily show all items to measure height
+          const height = item.offsetHeight;
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+          item.style.display = ""; // Reset display property
+        });
+
+        // Apply the tallest height to the entire carousel
+        document.getElementById(
+          "newsCarousel"
+        ).style.minHeight = `${maxHeight}px`;
+      }
+
+      // Run function when page loads
+      document.addEventListener("DOMContentLoaded", loadSliderData);
+
+      // Also adjust height when the window resizes (for responsiveness)
+      window.addEventListener("resize", setFixedCarouselHeight);
+    </script>
     <!--     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const lazyLoadSections = document.querySelectorAll(".lazy-load");
