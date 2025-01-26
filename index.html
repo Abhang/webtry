@@ -29,15 +29,159 @@
       <div id="navbar3"></div>
 
       <!-- Header-->
-      <div id="header"></div>
+      <section lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Supply Chain & GenAI</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+                .video-header {
+                    position: relative;
+                    height: 100vh;
+                    width: 100%;
+                    overflow: hidden;
+                }
+                #bg-video {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    min-width: 100%;
+                    min-height: 100%;
+                    width: auto;
+                    height: auto;
+                    transform: translateX(-50%) translateY(-50%);
+                    z-index: -1;
+                }
+                .header-content {
+                    position: relative;
+                    z-index: 2;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 1;
+                }
+            </style>
+        </head>
+        <body>
+            <header class="video-header">
+                <div class="overlay"></div>
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="bg-video">
+                    <source src="https://res.cloudinary.com/dzjcz0ckk/video/upload/w_1280,h_720,q_auto,vc_auto/v1737813289/hero2_dnyscf.mp4" type="video/mp4">
+                </video>
+                <div class="header-content">
+                    <div class="container px-5">
+                        <div class="row gx-5 align-items-center justify-content-center">
+                            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                                <div class="my-5 text-center text-xl-start">
+                                    <h1 class="display-5 fw-bolder text-white mb-2">
+                                        Supply Chain & GenAI
+                                    </h1>
+                                    <p class="lead fw-normal text-white mb-4">
+                                        Are you scared that AI revolution will affect your business negatively?
+                                    </p>
+                                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                                        <a class="btn btn-outline-light btn-lg px-4" href="https://meet.google.com/mpa-fajr-fyf" target="_blank">Meet Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+            <!-- Rest of your page content goes here -->
+        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </section>
     </main>
 
     <!-- Lazy-loaded sections -->
-    <div
-      class="lazy-load"
-      data-src="/components/sections/features.html"
-      id="features"
-    ></div>
+    <section class="py-5" id="features">
+      <div class="container px-5 my-5">
+        <div class="row gx-5">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h2 class="fw-bolder mb-0">
+              Empowering Businesses at the Intersection of Innovation
+            </h2>
+            <br />
+            <p class="fw mb-0">Reach out to me if you would like to know more.</p>
+            <br />
+            <a
+              class="btn btn-primary btn-lg px-4 me-sm-3"
+              href="https://meet.google.com/mpa-fajr-fyf"
+              target="_blank"
+              >Meet Now!</a
+            >
+          </div>
+    
+          <div class="col-lg-8">
+            <div class="row gx-5 row-cols-1 row-cols-md-2">
+              <div class="col mb-5 h-100">
+                <div
+                  class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+                >
+                  <i class="bi bi-truck"></i>
+                </div>
+                <h2 class="h5">Supply Chain</h2>
+                <p class="mb-0">
+                  Optimizing global networks from source to delivery. Let's
+                  streamline your operations.
+                </p>
+              </div>
+              <div class="col mb-5 h-100">
+                <div
+                  class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+                >
+                  <i class="bi bi-cpu"></i>
+                </div>
+                <h2 class="h5">Generative AI</h2>
+                <p class="mb-0">
+                  Harnessing AI to revolutionize business processes. Explore the
+                  future of automation with me.
+                </p>
+              </div>
+              <div class="col mb-5 mb-md-0 h-100">
+                <div
+                  class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+                >
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+                <h2 class="h5">Strategic Consulting</h2>
+                <p class="mb-0">
+                  Turning complex challenges into actionable strategies. Let's solve
+                  your business puzzles.
+                </p>
+              </div>
+              <div class="col h-100">
+                <div
+                  class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+                >
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h2 class="h5">Data Analytics & Optimization</h2>
+                <p class="mb-0">
+                  Transforming data into decisions. Unlock the power of your
+                  information.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
     <!-- <div
       class="lazy-load"
