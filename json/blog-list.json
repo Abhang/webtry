@@ -1,5 +1,5 @@
 [
-    "blogs/trump.html",
-    "blogs/syria.html",
-    "blogs/selfreflection.html"
+    "../blogs/trump.html",
+    "../blogs/syria.html",
+    "../blogs/selfreflection.html"
 ]
