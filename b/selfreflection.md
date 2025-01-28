@@ -1,8 +1,8 @@
 ---
 title: "Self Reflection and Growth"
 description: "Exploring the importance of self-reflection in personal and professional growth."
-image: "https://res.cloudinary.com/dzjcz0ckk/image/upload/w_400/v1737990223/IMG-20250126-WA0074_1_xvilcr.jpg"
-image_credit: "CNN Politics / CNN Images"
+image: "https://res.cloudinary.com/dzjcz0ckk/image/upload/v1737990223/IMG-20250126-WA0074_1_xvilcr.jpg"
+image_credit: "Serene Travel Logs | Harshita P."
 date: "January 26, 2025"
 read_time: "6 min read"
 category: "Personal Growth"
