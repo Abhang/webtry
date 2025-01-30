@@ -193,57 +193,75 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const lazyLoadSections = document.querySelectorAll('.lazy-load');
+  document.addEventListener("DOMContentLoaded", function () {
+    const lazyLoadSections = document.querySelectorAll(".lazy-load");
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const element = entry.target;
-          const url = element.getAttribute('data-src');
-          
-          fetch(url)
-            .then(response => response.text())
-            .then(html => {
-              element.innerHTML = html;
-              observer.unobserve(element);
-              lazyLoadImages(element);
-            })
-            .catch(error => console.error('Error loading content:', error));
-        }
-      });
-    }, {
-      rootMargin: '100px 0px'
-    });
+    const sectionObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target;
+            const url = element.getAttribute("data-src");
 
-    lazyLoadSections.forEach(section => {
+            fetch(url)
+              .then((response) => response.text())
+              .then((html) => {
+                element.innerHTML = html;
+                observer.unobserve(element);
+                lazyLoadImages(element);
+              })
+              .catch((error) => console.error("Error loading content:", error));
+          }
+        });
+      },
+      {
+        rootMargin: "100px 0px",
+      }
+    );
+
+    lazyLoadSections.forEach((section) => {
       sectionObserver.observe(section);
     });
 
     function lazyLoadImages(container) {
-      const images = container.querySelectorAll('img:not(.lazy-image)');
-      images.forEach(img => {
-        img.classList.add('lazy-image');
-        img.setAttribute('data-src', img.src);
-        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Transparent placeholder
+      const images = container.querySelectorAll("img:not(.lazy-image)");
+      images.forEach((img) => {
+        img.classList.add("lazy-image");
+        img.setAttribute("data-src", img.src);
+        img.src =
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"; // Transparent placeholder
       });
 
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.getAttribute('data-src');
-            img.onload = () => img.classList.add('loaded');
-            observer.unobserve(img);
-          }
-        });
-      }, {
-        rootMargin: '50px 0px'
-      });
+      const imageObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.getAttribute("data-src");
+              img.onload = () => img.classList.add("loaded");
+              observer.unobserve(img);
+            }
+          });
+        },
+        {
+          rootMargin: "50px 0px",
+        }
+      );
 
-      container.querySelectorAll('.lazy-image').forEach(img => {
+      container.querySelectorAll(".lazy-image").forEach((img) => {
         imageObserver.observe(img);
       });
+    }
+  });
+
+  // Wait for the page to load completely
+  window.addEventListener("load", function () {
+    var preloader = document.getElementById("preloader");
+    if (preloader) {
+      preloader.classList.add("fade-out");
+      setTimeout(() => {
+        preloader.style.display = "none"; // Fully remove it after fade out
+      }, 500); // Matches CSS transition duration
     }
   });
 })(jQuery);
