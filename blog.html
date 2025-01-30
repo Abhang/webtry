@@ -22,7 +22,20 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-7L6J5SDNEE"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
+    gtag("config", "G-7L6J5SDNEE");
+  </script>
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <!-- Navigation-->
@@ -181,7 +194,8 @@
             <div class="text-center">
               <h2 class="fw-bolder">More Blogs Coming Soon...</h2>
               <p class="lead fw-normal text-muted mb-5">
-                You want to write a blog here? Contact! <a href="mailto:contact@abha.ng">Email</a>
+                You want to write a blog here? Contact!
+                <a href="mailto:contact@abha.ng">Email</a>
               </p>
             </div>
           </div>

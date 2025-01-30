@@ -22,7 +22,20 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-7L6J5SDNEE"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
+    gtag("config", "G-7L6J5SDNEE");
+  </script>
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <!-- Navigation-->
@@ -31,80 +44,107 @@
       <!-- Header-->
       <section lang="en">
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Supply Chain & GenAI</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-            <style>
-                .video-header {
-                    position: relative;
-                    height: 100vh;
-                    width: 100%;
-                    overflow: hidden;
-                }
-                #bg-video {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    min-width: 100%;
-                    min-height: 100%;
-                    width: auto;
-                    height: auto;
-                    transform: translateX(-50%) translateY(-50%);
-                    z-index: -1;
-                }
-                .header-content {
-                    position: relative;
-                    z-index: 2;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .overlay {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    z-index: 1;
-                }
-            </style>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Supply Chain & GenAI</title>
+          <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+          />
+          <style>
+            .video-header {
+              position: relative;
+              height: 100vh;
+              width: 100%;
+              overflow: hidden;
+            }
+            #bg-video {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              min-width: 100%;
+              min-height: 100%;
+              width: auto;
+              height: auto;
+              transform: translateX(-50%) translateY(-50%);
+              z-index: -1;
+            }
+            .header-content {
+              position: relative;
+              z-index: 2;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              background-color: rgba(0, 0, 0, 0.5);
+              z-index: 1;
+            }
+          </style>
         </head>
         <body>
-            <header class="video-header">
-                <div class="overlay"></div>
-                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="bg-video">
-                    <source src="https://res.cloudinary.com/dzjcz0ckk/video/upload/w_1280,h_720,q_auto,vc_auto/v1737813289/hero2_dnyscf.mp4" type="video/mp4">
-                </video>
-                <div class="header-content">
-                    <div class="container px-5">
-                        <div class="row gx-5 align-items-center justify-content-center">
-                            <div class="col-lg-8 col-xl-7 col-xxl-6">
-                                <div class="my-5 text-center text-xl-start">
-                                    <h1 class="display-5 fw-bolder text-white mb-2">
-                                        Supply Chain & GenAI
-                                    </h1>
-                                    <p class="lead fw-normal text-white mb-4">
-                                        Are you scared that AI revolution will affect your business negatively?
-                                    </p>
-                                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                                        <a class="btn btn-outline-light btn-lg px-4" href="https://meet.google.com/mpa-fajr-fyf" target="_blank">Meet Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          <header class="video-header">
+            <div class="overlay"></div>
+            <video
+              playsinline="playsinline"
+              autoplay="autoplay"
+              muted="muted"
+              loop="loop"
+              id="bg-video"
+            >
+              <source
+                src="https://res.cloudinary.com/dzjcz0ckk/video/upload/w_1280,h_720,q_auto,vc_auto/v1737813289/hero2_dnyscf.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="header-content">
+              <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                  <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5 text-center text-xl-start">
+                      <h1 class="display-5 fw-bolder text-white mb-2">
+                        Supply Chain & GenAI
+                      </h1>
+                      <p class="lead fw-normal text-white mb-4">
+                        Are you scared that AI revolution will affect your
+                        business negatively?
+                      </p>
+                      <div
+                        class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start"
+                      >
+                        <a
+                          class="btn btn-primary btn-lg px-4 me-sm-3"
+                          href="#features"
+                          >Get Started</a
+                        >
+                        <a
+                          class="btn btn-outline-light btn-lg px-4"
+                          href="https://meet.google.com/mpa-fajr-fyf"
+                          target="_blank"
+                          >Meet Now</a
+                        >
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </header>
-        
-            <!-- Rest of your page content goes here -->
-        
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+              </div>
+            </div>
+          </header>
+
+          <!-- Rest of your page content goes here -->
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         </body>
-        </section>
+      </section>
     </main>
 
     <!-- Lazy-loaded sections -->
@@ -116,7 +156,9 @@
               Empowering Businesses at the Intersection of Innovation
             </h2>
             <br />
-            <p class="fw mb-0">Reach out to me if you would like to know more.</p>
+            <p class="fw mb-0">
+              Reach out to me if you would like to know more.
+            </p>
             <br />
             <a
               class="btn btn-primary btn-lg px-4 me-sm-3"
@@ -125,7 +167,7 @@
               >Meet Now!</a
             >
           </div>
-    
+
           <div class="col-lg-8">
             <div class="row gx-5 row-cols-1 row-cols-md-2">
               <div class="col mb-5 h-100">
@@ -160,8 +202,8 @@
                 </div>
                 <h2 class="h5">Strategic Consulting</h2>
                 <p class="mb-0">
-                  Turning complex challenges into actionable strategies. Let's solve
-                  your business puzzles.
+                  Turning complex challenges into actionable strategies. Let's
+                  solve your business puzzles.
                 </p>
               </div>
               <div class="col h-100">
@@ -181,7 +223,6 @@
         </div>
       </div>
     </section>
-    
 
     <!-- <div
       class="lazy-load"
@@ -321,6 +362,9 @@
               <p class="lead fw-normal text-muted mb-5">
                 Daily collection of views on interesting reads, geopolitics,
                 science and technology, business and more.
+              </p>
+              <p class="lead fw-bold text-muted mb-5">
+                Explore all the blogs <a href="../blog.html">here</a>
               </p>
             </div>
           </div>
