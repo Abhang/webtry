@@ -11,7 +11,6 @@ author: "Abhang Mehendale"
 ---
 
 # How Self-Reflection Can Help You Improve Overall Happiness in Life
-
 In the hustle and bustle of modern life, it’s easy to lose sight of what truly matters. We chase deadlines, juggle responsibilities, and strive for success, often at the expense of our inner peace. Yet, amidst the chaos, there’s a simple yet profound tool that can help us regain clarity and cultivate lasting happiness: **self-reflection**.
 
 Self-reflection is more than just thinking about your day or replaying events in your mind. It’s a deliberate practice of examining your thoughts, emotions, and actions to understand yourself better. By prioritizing self-reflection, you can align your goals with your values, make more intentional choices, and ultimately lead a more fulfilling life.
@@ -22,7 +21,7 @@ Self-reflection is more than just thinking about your day or replaying events in
 
 Self-reflection is like holding up a mirror to your soul. It allows you to see yourself clearly—your strengths, weaknesses, desires, and fears. This clarity is the first step toward personal growth. When you take the time to reflect, you create space to:
 
-## 1. Identify What Truly Matters:  
+## 1. Identify What Truly Matters:
    In the noise of daily life, it’s easy to get caught up in tasks that feel urgent but aren’t truly important. Self-reflection helps you distinguish between what’s essential and what’s merely a distraction. By understanding your core values, you can prioritize goals that align with your authentic self.
 
 ## 2. Set Realistic Goals:  
