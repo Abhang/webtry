@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Eternal Love 💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff85a2, #ff6b6b);
+            overflow: hidden;
+            font-family: 'Pacifico', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff4081;
+            font-size: 20px;
+            animation: float 6s infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        button {
+            background: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #secretMessage {
+            display: none;
+            margin-top: 2rem;
+            font-size: 1.8rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day, My Love! 💖</h1>
+        <p>My Dearest Chinnu,<br>
+        In your eyes, I've found my home.<br>
+        In your heart, I've found my peace.<br>
+        With every beat of my heart, I love you more.</p>
+        
+        <button onclick="revealMessage()">Click for a Surprise!</button>
+        <div id="secretMessage">
+            You're the missing piece to my puzzle,<br>
+            The rhythm to my heartbeat,<br>
+            And the love of my life. Forever yours. 💕
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 300);
+
+        function revealMessage() {
+            const message = document.getElementById('secretMessage');
+            message.style.display = 'block';
+            message.style.animation = 'fadeIn 1.5s';
+            
+            // Add more hearts when button is clicked
+            for(let i = 0; i < 10; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
