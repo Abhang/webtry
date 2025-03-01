@@ -1,23 +1,31 @@
 {
     "carousel": [
         {
-            "title": "🚀 GenAI in Supply Chain",
-            "content": "90% of supply chain leaders believe AI will be a game changer, yet only 12% have fully implemented it."
+            "title": "📈 AI Adoption in Supply Chains Surges",
+            "content": "72% of supply chain leaders have invested in AI technologies, enhancing efficiency and resilience."
         },
         {
-            "title": "📉 Shipping Costs Declining",
-            "content": "Container freight rates have dropped by 30% YoY due to demand fluctuations."
+            "title": "🌐 U.S.-Ukraine Minerals Deal Faces Uncertainty",
+            "content": "A recent meeting between President Trump and President Zelenskyy ended abruptly, casting doubt on the proposed critical minerals agreement."
         },
         {
-            "title": "🤖 AI vs. Human Decision-Making",
-            "content": "McKinsey reports AI-driven supply chain optimizations lead to 15% cost reductions."
+            "title": "🏭 Companies Diversify Supply Chains",
+            "content": "Businesses are restructuring supply networks, with 60% altering supply chains to navigate economic unpredictability."
+        },
+        {
+            "title": "🤖 Oracle Introduces AI Agents for Supply Chain Automation",
+            "content": "Oracle has launched AI-driven agents to automate routine supply chain tasks, aiming to boost efficiency and decision-making."
+        },
+        {
+            "title": "🌍 Arctic Geopolitics in Flux",
+            "content": "The ongoing Russo-Ukrainian conflict is impacting Arctic governance, with increased militarization and shifting alliances among Arctic nations."
         }
     ],
     "ticker": [
-        "🚀 AI in Supply Chain is reducing costs by 20%",
-        "📉 Global freight rates drop by 15%",
-        "💡 Generative AI predicted to automate 40% of supply chain tasks",
-        "🛳️ New AI-powered logistics models show a 25% reduction in delays",
-        "📦 Warehouse automation is growing at 18% annually"
+        "🛡️ U.S. and India Strengthen Defense Ties Amid Geopolitical Shifts",
+        "🛒 Retailers Accelerate AI Integration to Enhance Customer Experience",
+        "💡 China's DeepSeek Challenges Western AI Dominance",
+        "📉 Global Trade Patterns Shift Due to U.S.-China Tech Tensions",
+        "📊 Logility Launches Vision25 to Address AI-Era Supply Chain Challenges"
     ]
 }
