@@ -1,7 +1,7 @@
 ---
 title: "The Transatlantic Tango: Trump, Zelenskyy, and the Unraveling of Diplomatic Certainty"
 description: "The Trump-Zelenskyy clash and its ripple effects on US-Europe relations. Can diplomatic alliances withstand transactional politics in an age of uncertainty?"
-image: "https://res.cloudinary.com/dzjcz0ckk/image/upload/f_auto,q_auto/v1740810914/DZXJU5FWR5DVFLU2GKNOZG43MA_ishmyo.jpg"
+image: "https://res.cloudinary.com/dzjcz0ckk/image/upload/f_auto,q_auto/v1740929593/69membc_trump-zelensky_625x300_01_March_25_yujelk.jpg"
 image_credit: "Getty Images"
 date: "March 1, 2025"
 read_time: "12 min read"
