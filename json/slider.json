@@ -1,31 +1,31 @@
 {
-    "carousel": [
-        {
-            "title": "📈 AI Adoption in Supply Chains Surges",
-            "content": "72% of supply chain leaders have invested in AI technologies, enhancing efficiency and resilience."
-        },
-        {
-            "title": "🌐 U.S.-Ukraine Minerals Deal Faces Uncertainty",
-            "content": "A recent meeting between President Trump and President Zelenskyy ended abruptly, casting doubt on the proposed critical minerals agreement."
-        },
-        {
-            "title": "🏭 Companies Diversify Supply Chains",
-            "content": "Businesses are restructuring supply networks, with 60% altering supply chains to navigate economic unpredictability."
-        },
-        {
-            "title": "🤖 Oracle Introduces AI Agents for Supply Chain Automation",
-            "content": "Oracle has launched AI-driven agents to automate routine supply chain tasks, aiming to boost efficiency and decision-making."
-        },
-        {
-            "title": "🌍 Arctic Geopolitics in Flux",
-            "content": "The ongoing Russo-Ukrainian conflict is impacting Arctic governance, with increased militarization and shifting alliances among Arctic nations."
-        }
-    ],
-    "ticker": [
-        "🛡️ U.S. and India Strengthen Defense Ties Amid Geopolitical Shifts",
-        "🛒 Retailers Accelerate AI Integration to Enhance Customer Experience",
-        "💡 China's DeepSeek Challenges Western AI Dominance",
-        "📉 Global Trade Patterns Shift Due to U.S.-China Tech Tensions",
-        "📊 Logility Launches Vision25 to Address AI-Era Supply Chain Challenges"
-    ]
+  "carousel": [
+    {
+      "title": "📈 AI Enhances Supply Chain Risk Management",
+      "content": "Companies are leveraging AI to predict and mitigate supply chain disruptions, improving resilience and efficiency."
+    },
+    {
+      "title": "🌐 US-Ukraine Critical Minerals Deal Faces Challenges",
+      "content": "Negotiations between the US and Ukraine over a critical minerals agreement have encountered obstacles, with discussions ongoing."
+    },
+    {
+      "title": "🏭 AI Revolutionizes Supply Chain Operations",
+      "content": "The integration of AI is transforming supply chain processes, leading to increased automation and optimization."
+    },
+    {
+      "title": "🤖 AI Tools Secure Open-Source Models in Supply Chains",
+      "content": "New AI-driven tools are enhancing the security of open-source AI and machine learning models within software supply chains."
+    },
+    {
+      "title": "🌍 Arctic Geopolitics Shift Amid Resource Competition",
+      "content": "The race for Arctic resources is intensifying, leading to geopolitical shifts and new strategic alliances among nations."
+    }
+  ],
+  "ticker": [
+    "🚚 Advance Auto Parts Overhauls Supply Chain Amid Sales Slump",
+    "🏭 Sony and Suntory Stockpile in U.S. Ahead of Potential Tariffs",
+    "🔋 EU Allocates €1.8 Billion for Battery Raw Materials Supply Chain",
+    "🤖 Apptronik's Apollo Robots Tested for Self-Building Capabilities",
+    "🛡️ Silk Typhoon Targets IT Supply Chains in Espionage Campaigns"
+  ]
 }
