@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Optional: hide scrollbars on the main page if the iframe takes full height */
+        }
+        iframe {
+            display: block; /* Removes potential bottom space */
+            width: 100%;
+            height: 100vh; /* Makes iframe take full viewport height */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe src="./ticket.pdf" title="PDF Document">
+        Your browser does not support iframes or embedding PDFs. 
+        You can <a href="./ticket.pdf">download the PDF here</a>.
+    </iframe>
+
+</body>
+</html>
