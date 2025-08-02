@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SyncTube Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -16,9 +17,7 @@
             background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
             color: #fff;
             min-height: 100vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            overflow-x: hidden;
         }
         
         header {
@@ -26,6 +25,7 @@
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
             z-index: 10;
         }
         
@@ -47,19 +47,19 @@
         
         .container {
             display: flex;
-            flex: 1;
-            padding: 2rem;
+            flex-wrap: wrap;
             gap: 2rem;
+            padding: 2rem;
             max-width: 1800px;
             margin: 0 auto;
-            width: 100%;
         }
         
         .proxy-form {
             background: rgba(0, 0, 0, 0.6);
             border-radius: 15px;
             padding: 2rem;
-            width: 320px;
+            width: 100%;
+            max-width: 400px;
             flex-shrink: 0;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
@@ -84,7 +84,7 @@
             font-weight: 500;
         }
         
-        input {
+        input, select {
             width: 100%;
             padding: 12px 15px;
             border-radius: 8px;
@@ -95,7 +95,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        input:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: #ff7e5f;
             background: rgba(255, 255, 255, 0.15);
@@ -140,13 +140,14 @@
         
         .viewer-container {
             flex: 1;
+            min-width: 300px;
+            min-height: 600px;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
             background: rgba(0, 0, 0, 0.7);
-            min-height: 600px;
         }
         
         .viewer-header {
@@ -237,12 +238,31 @@
             display: none;
         }
         
+        .proxy-status {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .proxy-status.active {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid rgba(40, 167, 69, 0.5);
+        }
+        
+        .proxy-status.inactive {
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid rgba(220, 53, 69, 0.5);
+        }
+        
         footer {
             text-align: center;
             padding: 1.5rem;
             background: rgba(0, 0, 0, 0.7);
             font-size: 0.9rem;
-            margin-top: auto;
+            margin-top: 2rem;
         }
         
         @media (max-width: 1100px) {
@@ -252,8 +272,7 @@
             }
             
             .proxy-form {
-                width: 100%;
-                max-width: 600px;
+                max-width: 100%;
             }
             
             .viewer-container {
@@ -273,6 +292,16 @@
             .proxy-form {
                 padding: 1.5rem;
             }
+            
+            .viewer-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .controls {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -291,21 +320,26 @@
             </div>
             
             <div class="form-group">
-                <label for="proxy-mode">Security Mode</label>
+                <label for="proxy-mode">Proxy Server</label>
                 <select id="proxy-mode" class="proxy-select">
-                    <option value="advanced">Advanced Proxy (Recommended)</option>
-                    <option value="standard">Standard Proxy</option>
+                    <option value="corsproxy">CorsProxy.org (Recommended)</option>
+                    <option value="allorigins">AllOrigins.win</option>
+                    <option value="thingproxy">ThingProxy.freeboard.io</option>
                 </select>
             </div>
             
             <button id="load-room">Load SyncTube Room</button>
             
+            <div class="proxy-status active" id="proxy-status">
+                <i class="fas fa-check-circle"></i> Proxy server is active and ready
+            </div>
+            
             <div class="info-box">
                 <h3>How this solution works:</h3>
-                <p>Our advanced proxy technology masks the iframe detection by:</p>
+                <p>Our proxy technology bypasses frame blocking by:</p>
                 <ul style="padding-left: 20px; margin-top: 10px;">
                     <li>Removing X-Frame-Options headers</li>
-                    <li>Rewriting frame-busting JavaScript</li>
+                    <li>Bypassing frame detection scripts</li>
                     <li>Preserving all functionality</li>
                     <li>Maintaining privacy and security</li>
                 </ul>
@@ -354,6 +388,20 @@
             const fullscreenBtn = document.getElementById('fullscreen-btn');
             const currentRoomSpan = document.getElementById('current-room');
             const proxyModeSelect = document.getElementById('proxy-mode');
+            const proxyStatus = document.getElementById('proxy-status');
+            
+            // Proxy server status messages
+            const proxyMessages = {
+                corsproxy: "Using CorsProxy.org - Most reliable option",
+                allorigins: "Using AllOrigins.win - Good alternative",
+                thingproxy: "Using ThingProxy - Fallback option"
+            };
+            
+            // Function to update proxy status
+            function updateProxyStatus() {
+                const proxyMode = proxyModeSelect.value;
+                proxyStatus.innerHTML = `<i class="fas fa-check-circle"></i> ${proxyMessages[proxyMode]}`;
+            }
             
             // Function to load the room
             function loadRoom() {
@@ -367,12 +415,16 @@
                 const proxyMode = proxyModeSelect.value;
                 let proxyUrl;
                 
-                if (proxyMode === 'advanced') {
-                    // Advanced proxy endpoint
-                    proxyUrl = `https://cors-anywhere.herokuapp.com/https://sync-tube.de/room/${roomId}`;
-                } else {
-                    // Standard proxy endpoint
-                    proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://sync-tube.de/room/${roomId}`)}`;
+                // Encode the target URL
+                const targetUrl = encodeURIComponent(`https://sync-tube.de/room/${roomId}`);
+                
+                // Select proxy based on user choice
+                if (proxyMode === 'corsproxy') {
+                    proxyUrl = `https://corsproxy.io/?${targetUrl}`;
+                } else if (proxyMode === 'allorigins') {
+                    proxyUrl = `https://api.allorigins.win/raw?url=${targetUrl}`;
+                } else if (proxyMode === 'thingproxy') {
+                    proxyUrl = `https://thingproxy.freeboard.io/fetch/${targetUrl}`;
                 }
                 
                 iframe.src = proxyUrl;
@@ -384,10 +436,12 @@
             }
             
             // Initial load
+            updateProxyStatus();
             loadRoom();
             
             // Event listeners
             loadButton.addEventListener('click', loadRoom);
+            proxyModeSelect.addEventListener('change', updateProxyStatus);
             
             roomIdInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') loadRoom();
@@ -417,10 +471,15 @@
             iframe.addEventListener('load', function() {
                 loader.classList.add('hidden');
             });
+            
+            // Error handling
+            iframe.addEventListener('error', function() {
+                loader.querySelector('.status-text').innerHTML = 
+                    'Failed to load room. Try switching proxy servers.<br><button id="retry-btn" style="margin-top: 15px; padding: 8px 15px; background: #ff7e5f; border: none; border-radius: 5px; cursor: pointer;">Retry</button>';
+                
+                document.getElementById('retry-btn').addEventListener('click', loadRoom);
+            });
         });
     </script>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>
 </html>
