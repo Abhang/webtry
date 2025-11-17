@@ -58,23 +58,47 @@
     align-items: center;
   }
 
+  /* --- BRAND NAME STYLING --- */
   .am_navbar_brand {
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
     font-size: 1.25rem;
     text-decoration: none;
     white-space: nowrap;
-    color: white;
+    color: white; /* Always white */
     transition: color 0.3s ease;
+    position: relative;
   }
 
+  .am_navbar_brand:hover,
+  .am_navbar_brand:focus {
+    color: white; 
+  }
+
+  .am_navbar_brand::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .am_navbar_brand:hover::after {
+    width: 80%;
+  }
+
+  /* --- TOGGLER STYLING --- */
   .am_navbar_toggler {
     display: none;
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0.25rem;
     cursor: pointer;
   }
@@ -87,6 +111,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
+    /* Always White Icon */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 
@@ -103,12 +128,8 @@
     margin-bottom: 0;
     list-style: none;
     margin-left: auto;
-    align-items: center; /* NEW: Vertically center nav items */
-    gap: 20px; /* NEW: Re-adds your gap rule from inline style */
-  }
-
-  .am_nav_item {
-    /* MODIFIED: Removed margin-left, gap on <ul> is better */
+    align-items: center; 
+    gap: 20px; 
   }
 
   .am_nav_link {
@@ -116,8 +137,8 @@
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: color 0.15s ease-in-out;
-    padding: 10px 15px; /* MODIFIED: Using your inline style padding */
-    position: relative; /* NEW: Required for the underline animation */
+    padding: 10px 15px; 
+    position: relative; 
   }
 
   .am_nav_link:hover,
@@ -125,39 +146,35 @@
     color: rgba(255, 255, 255, 1);
   }
 
-  /* NEW: Underline hover animation 
-  */
+  /* Link Underline Animation */
   .am_nav_link::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Position underline at the bottom */
-    left: 50%; /* Start from the center */
-    transform: translateX(-50%); /* Complete centering */
-    width: 0%; /* Start with no width */
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 0%; 
     height: 2px;
     background-color: white;
-    transition: width 0.3s ease-in-out; /* Animate the width */
+    transition: width 0.3s ease-in-out; 
   }
 
   .am_nav_link:hover::after,
   .am_nav_link:focus::after {
-    width: 80%; /* Grow to 80% on hover (looks cleaner than 100%) */
+    width: 80%; 
   }
   
-  /* NEW: Styles for the LinkedIn icon link 
-  */
+  /* LinkedIn Icon Styling (Desktop) */
   #am_nav_link_linkedin {
-    display: inline-flex; /* Aligns text and icon */
-    align-items: center; /* Vertically centers them */
+    display: inline-flex; 
+    align-items: center; 
   }
 
   #am_nav_link_linkedin .bi-linkedin {
-    margin-left: 0.5rem; /* Space between text and icon */
+    margin-left: 0.5rem; 
   }
-  
-  /* --- End of New CSS Rules --- */
 
-
+  /* --- MOBILE MENU STYLES --- */
   @media (max-width: 991px) {
     .am_navbar_toggler {
       display: block;
@@ -169,70 +186,49 @@
       top: 100%;
       left: 0;
       right: 0;
-      /* MODIFIED: Darker, more blurred background for mobile menu */
-      background-color: rgba(0, 0, 0, 0.6);
+      /* Reduced opacity slightly to 0.8 so it looks translucent even on white backgrounds */
+      background-color: rgba(0, 0, 0, 0.8); 
       padding: 1rem;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      /* Ensure it fills screen height if needed */
+      height: auto;
+      max-height: 80vh;
+      overflow-y: auto;
     }
 
     .am_navbar_collapse.show {
       display: block;
-      backdrop-filter: blur(10px);
     }
 
     .am_navbar_nav {
       flex-direction: column;
-      gap: 0; /* Remove gap for column layout */
+      gap: 10px; 
     }
 
     .am_nav_item {
       margin-left: 0;
-      margin-bottom: 0.5rem;
+      width: 100%;
     }
     
-    /* NEW: Ensure mobile links take full width */
     .am_nav_link {
       width: 100%;
       text-align: center;
+      padding: 15px 0; 
+      font-size: 1.1rem;
     }
 
-    /* NEW: Center mobile link underline */
     .am_nav_link:hover::after,
     .am_nav_link:focus::after {
-      width: 50%;
-    }
-  }
-
-  /* Your existing color-scheme media queries are unchanged */
-  @media (prefers-color-scheme: light) {
-    .am_navbar_brand,
-    .am_nav_link {
-      color: rgba(255, 255, 255, 0.9);
+      width: 20%; 
     }
 
-    .am_nav_link:hover,
-    .am_nav_link:focus {
-      color: rgba(255, 255, 255, 1);
-    }
-
-    .am_navbar_toggler_icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .am_navbar_brand,
-    .am_nav_link {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .am_nav_link:hover,
-    .am_nav_link:focus {
-      color: rgba(255, 255, 255, 1);
-    }
-
-    .am_navbar_toggler_icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    /* --- FIX: Center LinkedIn in Mobile --- */
+    #am_nav_link_linkedin {
+      display: flex; /* Change from inline-flex to flex */
+      justify-content: center; /* Force center alignment */
+      width: 100%; /* Full width */
     }
   }
 </style>
@@ -244,7 +240,6 @@
       var collapse = document.querySelector('.am_navbar_collapse');
       
       if (!toggler || !collapse) {
-        console.error('Navbar elements not found!');
         return;
       }
       
