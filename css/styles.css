@@ -11061,6 +11061,7 @@ DARK MODE STYLES
 @media (prefers-color-scheme: dark) {
   .body-bg-light {
     background-color: #111827; /* Dark blue-gray */
+    color: #f9fafb;
   }
 
   .work-portfolio-page .am-portfolio-card {
