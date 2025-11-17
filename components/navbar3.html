@@ -186,12 +186,16 @@
       top: 100%;
       left: 0;
       right: 0;
-      /* Reduced opacity slightly to 0.8 so it looks translucent even on white backgrounds */
-      background-color: rgba(0, 0, 0, 0.8); 
+      
+      /* PREMIUM GLASS EFFECT */
+      background-color: rgba(0, 0, 0, 0.85); /* Lower opacity to see through */
+      backdrop-filter: blur(25px);           /* Stronger blur for 'frosted' look */
+      -webkit-backdrop-filter: blur(25px);   /* Safari support */
+      
       padding: 1rem;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4); /* Deep shadow for depth */
+      
       /* Ensure it fills screen height if needed */
       height: auto;
       max-height: 80vh;
@@ -226,9 +230,9 @@
 
     /* --- FIX: Center LinkedIn in Mobile --- */
     #am_nav_link_linkedin {
-      display: flex; /* Change from inline-flex to flex */
-      justify-content: center; /* Force center alignment */
-      width: 100%; /* Full width */
+      display: flex; 
+      justify-content: center; 
+      width: 100%; 
     }
   }
 </style>
