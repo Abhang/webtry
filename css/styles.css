@@ -11376,3 +11376,25 @@ BLOG CARD STYLES
     color: #000;
   }
 }
+
+
+/* =========================
+   GLOBAL DARK MODE TEXT FIX 
+   ========================= */
+   @media (prefers-color-scheme: dark) {
+  
+    /* Makes 'text-muted' readable on dark backgrounds */
+    .text-muted {
+      color: #9ca3af !important; /* Light Gray */
+    }
+  
+    /* Ensures lists in privacy/terms are also readable */
+    ul li {
+      color: #d1d5db;
+    }
+  
+    /* Force all Headings and 'text-body' to be White in Dark Mode */
+    h1, h2, h3, h4, h5, h6, .text-body {
+      color: #f8f9fa !important;
+    }
+  }
