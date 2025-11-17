@@ -85,6 +85,42 @@
         }
       }
     </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Abhang Mehendale",
+        "url": "https://abha.ng/",
+        "image": "https://abha.ng/assets/images/abhang.jpg",
+        "jobTitle": "GenAI Product Strategy & Delivery Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "McKinsey & Company"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "National Institute of Technology, Tiruchirappalli"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Massachusetts Institute of Technology (MicroMasters)"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/abhangm",
+          "https://github.com/abhangm"
+        ],
+        "knowsAbout": [
+          "Supply Chain Management",
+          "Generative AI",
+          "Product Strategy",
+          "Network Optimization",
+          "Mixed Integer Linear Programming"
+        ],
+        "description": "Abhang Mehendale is a GenAI Product Strategy Lead and Supply Chain Expert, specializing in building resilient, AI-driven enterprise systems."
+      }
+    </script>
   </head>
 
   <script
@@ -486,6 +522,267 @@
       }
 
       loadFeaturedBlogs();
+    </script>
+
+    <!-- AI CHATBOT CODE STARTS HERE
+ -->
+
+    <div id="am-chat-widget">
+      <button id="am-chat-toggle" class="shadow-lg">
+        <i class="bi bi-stars"></i> Ask AI
+      </button>
+
+      <div id="am-chat-window" class="shadow-lg">
+        <div class="am-chat-header">
+          <span>Abhang's AI Twin</span>
+          <button id="am-chat-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div id="am-chat-messages">
+          <div class="message bot">
+            Hi! I'm an AI trained on Abhang's career. Ask me about his GenAI
+            projects, Supply Chain savings, or leadership style.
+          </div>
+        </div>
+        <div class="am-chat-input-area">
+          <input type="text" id="am-chat-input" placeholder="Ask anything..." />
+          <button id="am-chat-send"><i class="bi bi-send-fill"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* Widget Styles */
+      #am-chat-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10000;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      /* Toggle Button */
+      #am-chat-toggle {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 12px 24px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s;
+      }
+      #am-chat-toggle:hover {
+        transform: scale(1.05);
+      }
+
+      /* Chat Window */
+      #am-chat-window {
+        display: none; /* Hidden by default */
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 16px;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      /* Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+        #am-chat-window {
+          background: #1f2937;
+          border: 1px solid #374151;
+        }
+        .am-chat-header {
+          background: #111827 !important;
+          border-bottom: 1px solid #374151 !important;
+          color: white;
+        }
+        #am-chat-input {
+          background: #374151 !important;
+          color: white !important;
+          border: 1px solid #4b5563 !important;
+        }
+        .message.bot {
+          background: #374151 !important;
+          color: #f3f4f6 !important;
+        }
+      }
+
+      .am-chat-header {
+        background: #f8f9fa;
+        padding: 15px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      #am-chat-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: inherit;
+      }
+
+      #am-chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .message {
+        max-width: 80%;
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .message.bot {
+        background: #f3f4f6;
+        align-self: flex-start;
+        border-bottom-left-radius: 2px;
+        color: #1f2937;
+      }
+
+      .message.user {
+        background: #2563eb;
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 2px;
+      }
+
+      .am-chat-input-area {
+        padding: 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        gap: 10px;
+      }
+
+      #am-chat-input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+
+      #am-chat-send {
+        background: #2563eb;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Mobile Fix */
+      @media (max-width: 480px) {
+        #am-chat-window {
+          width: 90vw;
+          right: 0;
+          bottom: 70px;
+        }
+      }
+    </style>
+
+    <script>
+      // LOGIC
+      const toggleBtn = document.getElementById("am-chat-toggle");
+      const chatWindow = document.getElementById("am-chat-window");
+      const closeBtn = document.getElementById("am-chat-close");
+      const sendBtn = document.getElementById("am-chat-send");
+      const inputField = document.getElementById("am-chat-input");
+      const messagesContainer = document.getElementById("am-chat-messages");
+
+      // Toggle Window
+      toggleBtn.addEventListener("click", () => {
+        const isHidden =
+          chatWindow.style.display === "none" ||
+          chatWindow.style.display === "";
+        chatWindow.style.display = isHidden ? "flex" : "none";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        chatWindow.style.display = "none";
+      });
+
+      // Send Message
+      async function sendMessage() {
+        const text = inputField.value.trim();
+        if (!text) return;
+
+        // 1. Add User Message
+        addMessage(text, "user");
+        inputField.value = "";
+
+        // 2. Add Loading Bubble (Bot)
+        const loadingId = addMessage("Thinking...", "bot");
+
+        try {
+          // 3. Call API
+          const response = await fetch(
+            "https://abhang-brain-2ihomt20m-asms-projects-0c0f954c.vercel.app/api/chat",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: text }),
+            }
+          );
+
+          const data = await response.json();
+
+          // Check for backend errors
+          if (!response.ok) throw new Error(data.error || "API Error");
+
+          // 4. Update Loading Bubble with Answer
+          const loadingBubble = document.getElementById(loadingId);
+          if (loadingBubble) {
+            loadingBubble.innerText = data.reply;
+          }
+        } catch (error) {
+          console.error("Chat Error:", error);
+          const loadingBubble = document.getElementById(loadingId);
+          // Update the bot bubble, not the user bubble
+          if (loadingBubble)
+            loadingBubble.innerText =
+              "Sorry, I'm having trouble connecting to Abhang's brain right now.";
+        }
+      }
+
+      function addMessage(text, sender) {
+        const div = document.createElement("div");
+        div.classList.add("message", sender);
+        div.innerText = text;
+
+        // FIX: Add random number to prevent ID collision
+        const id = "msg-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+        div.id = id;
+
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        return id;
+      }
+
+      sendBtn.addEventListener("click", sendMessage);
+      inputField.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+      });
     </script>
   </body>
 </html>
