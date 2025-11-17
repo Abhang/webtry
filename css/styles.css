@@ -10919,3 +10919,459 @@ body {
   visibility: hidden;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
+
+/*
+========================================
+WORK / PORTFOLIO – UNIFIED STYLES (v3)
+========================================
+*/
+
+/* Applies the light gray background only to pages that need it */
+.body-bg-light {
+  background-color: #f8f9fa;
+}
+
+/* Header for the portfolio page */
+.portfolio-header {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://res.cloudinary.com/dzjcz0ckk/video/upload/so_2p/v1737813289/hero2_dnyscf.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 3rem; /* Spacing below hero */
+}
+
+/*
+=========================
+LIGHT MODE STYLES
+=========================
+*/
+.work-portfolio-page .am-portfolio-card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background-color: #ffffff;
+  color: #111827;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  transform: translateY(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.work-portfolio-page .am-portfolio-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(37, 99, 235, 0.7); /* primary blue */
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+}
+
+/* Left summary column */
+.work-portfolio-page .am-portfolio-summary {
+  background: linear-gradient(180deg, #f9fafb, #eef2ff);
+  border-right: 1px solid rgba(229, 231, 235, 0.9);
+  color: #111827;
+}
+
+.work-portfolio-page .am-portfolio-summary h2 {
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.work-portfolio-page .am-portfolio-summary p {
+  margin-bottom: 0.35rem;
+  color: #4b5563;
+}
+
+.work-portfolio-page .am-portfolio-summary p.fw-bold {
+  color: #111827;
+}
+
+/* Tags / badges */
+.work-portfolio-page .am-portfolio-summary .badge {
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.63rem;
+  padding: 0.32rem 0.8rem;
+  background: #eff6ff !important; /* Override .bg-primary */
+  color: #1d4ed8 !important; /* Override .text-white */
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  border-radius: 999px;
+}
+
+/* Right column headings / body */
+.work-portfolio-page .am-portfolio-results h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.work-portfolio-page .am-portfolio-results p {
+  font-size: 0.97rem;
+  color: #111827;
+  line-height: 1.7;
+}
+
+/* Quantified result list */
+.work-portfolio-page .am-portfolio-results .list-group {
+  margin-top: 0.6rem;
+}
+
+.work-portfolio-page .am-portfolio-results .list-group-item {
+  border: 0;
+  background: transparent;
+  color: #111827; /* Set text color */
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.work-portfolio-page .am-portfolio-results .list-group-item + .list-group-item {
+  border-top: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+.work-portfolio-page .am-portfolio-results .list-group-item i {
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  color: #22c55e;
+}
+
+.work-portfolio-page .am-portfolio-results .list-group-item span.fw-bold {
+  color: #1d4ed8;
+}
+
+/* Spacing between cards */
+.work-portfolio-page .am-portfolio-card + .am-portfolio-card {
+  margin-top: 2.75rem;
+}
+
+/*
+=========================
+DARK MODE STYLES
+=========================
+*/
+@media (prefers-color-scheme: dark) {
+  .body-bg-light {
+    background-color: #111827; /* Dark blue-gray */
+  }
+
+  .work-portfolio-page .am-portfolio-card {
+    background-color: #1f2937; /* Lighter dark-blue-gray */
+    border-color: #374151;
+    color: #d1d5db;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .work-portfolio-page .am-portfolio-card:hover {
+    border-color: #3b82f6; /* Brighter blue */
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Left summary column */
+  .work-portfolio-page .am-portfolio-summary {
+    background: linear-gradient(180deg, #1f2937, #111827);
+    border-right-color: #374151;
+    color: #f9fafb;
+  }
+
+  .work-portfolio-page .am-portfolio-summary p {
+    color: #9ca3af;
+  }
+
+  .work-portfolio-page .am-portfolio-summary p.fw-bold {
+    color: #f9fafb;
+  }
+
+  /* Tags / badges */
+  .work-portfolio-page .am-portfolio-summary .badge {
+    background: #1e3a8a !important; /* Darker blue */
+    color: #dbeafe !important; /* Lighter blue text */
+    border-color: #2563eb;
+  }
+
+  /* Right column headings / body */
+  .work-portfolio-page .am-portfolio-results h3 {
+    color: #9ca3af;
+  }
+
+  .work-portfolio-page .am-portfolio-results p {
+    color: #d1d5db;
+  }
+  
+  /* Quantified result list */
+  .work-portfolio-page .am-portfolio-results .list-group-item {
+    color: #d1d5db; /* Set text color */
+  }
+
+  .work-portfolio-page .am-portfolio-results .list-group-item + .list-group-item {
+    border-top-color: #374151;
+  }
+
+  .work-portfolio-page .am-portfolio-results .list-group-item span.fw-bold {
+    color: #60a5fa; /* Lighter blue for dark mode */
+  }
+}
+
+/*
+=========================
+RESPONSIVE STYLES
+=========================
+*/
+@media (max-width: 991.98px) {
+  /* Mobile: border between sections switches to horizontal */
+  .work-portfolio-page .am-portfolio-summary {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .work-portfolio-page .am-portfolio-summary {
+      border-bottom-color: #374151;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  /* Desktop: remove bottom border if it exists */
+  .work-portfolio-page .am-portfolio-summary.border-bottom {
+     border-bottom: none !important; 
+  }
+}
+
+/*
+========================================
+INSIGHTS (BLOG) PAGE STYLES
+========================================
+*/
+
+/* Header for the insights page */
+.insights-header {
+  /* Added the image back with a dark overlay */
+  background: linear-gradient(
+      rgba(15, 23, 42, 0.5), 
+      rgba(15, 23, 42, 0.5)
+    ),
+    url("https://res.cloudinary.com/dzjcz0ckk/video/upload/so_2p/v1737813289/hero2_dnyscf.jpg");
+  
+  /* Key Changes:
+     - background-size: cover ensures full coverage.
+     - background-position: bottom center; helps align it perfectly.
+  */
+  background-position: center; /* Align from the bottom to cover */
+  background-size: cover;            /* Ensure it covers completely */
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0);
+}
+/* Publications Card Container */
+.am-pub-card {
+  background-color: #ffffff; /* Default Light Mode */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Publications List Items */
+.pub-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0,0,0,0.1); /* Light mode divider */
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+}
+
+.pub-item i {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.pub-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529; /* Dark text for light mode */
+  margin-bottom: 0.25rem;
+}
+
+.pub-source {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* =========================
+   DARK MODE OVERRIDES 
+   ========================= */
+@media (prefers-color-scheme: dark) {
+  
+  /* 1. Fix "Publications & Media" Section Text */
+  h2.fw-bolder {
+    color: #f8f9fa; /* White headings */
+  }
+  
+  p.text-muted, 
+  .lead.text-muted {
+    color: #adb5bd !important; /* Light gray text */
+  }
+
+  /* 2. Fix the Publications Card Background */
+  .am-pub-card {
+    background-color: #1f2937; 
+    border: 1px solid #374151;
+  }
+
+  /* 3. Fix List Dividers */
+  .pub-item {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* 4. Fix Publication Text Colors */
+  .pub-item .pub-title {
+    color: #f8f9fa;
+  }
+  
+  .pub-item .pub-source {
+    color: #9ca3af; /* Slightly darker gray for metadata */
+  }
+}
+
+
+
+/* =========================
+BLOG CARD STYLES 
+=========================
+*/
+
+/* Base Styles (Light Mode) */
+.am-blog-card {
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.am-blog-card:hover {
+  transform: translateY(-5px);
+  /* Stronger shadow on hover */
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  
+  /* Turn the card dark */
+  .am-blog-card {
+    background-color: #1f2937; /* Matches your other dark cards */
+    border: 1px solid #374151 !important; /* Subtle border for definition */
+  }
+
+  /* Fix the Headline Text */
+  .am-blog-card .card-title {
+    color: #f8f9fa; /* White text */
+  }
+
+  /* Fix the Body Text */
+  .am-blog-card .card-text {
+    color: #d1d5db; /* Light gray text */
+  }
+
+  /* Fix the Date/Author Text */
+  .am-blog-card .text-muted {
+    color: #9ca3af !important; /* Mid-gray text */
+  }
+  
+  /* Fix the Link Color (Make it legible on dark) */
+  .am-blog-card a.link-dark {
+    color: #f8f9fa !important;
+  }
+}
+
+
+/* =========================
+   SECTION SEPARATION
+   ========================= */
+
+/* Light Mode: Pure white background to contrast with gray body */
+.section-alt {
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.05); /* Ultra-subtle divider */
+}
+
+/* Dark Mode: Darker background to ground the content */
+@media (prefers-color-scheme: dark) {
+  .section-alt {
+    /* Slightly darker/richer than the main body #111827 */
+    background-color: #0b0f19; 
+    border-top: 1px solid rgba(255,255,255,0.05); /* Subtle light divider */
+  }
+}
+
+
+/* =========================
+   ABOUT PAGE STYLES
+   ========================= */
+
+/* Header (Similar to Insights, but can be unique if desired) */
+.about-header {
+  background: linear-gradient(
+      rgba(15, 23, 42, 0.7), 
+      rgba(15, 23, 42, 0.7)
+    ),
+    url("https://res.cloudinary.com/dzjcz0ckk/video/upload/so_2p/v1737813289/hero2_dnyscf.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* About Cards (Interests) */
+.am-about-card {
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.am-about-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Dark Mode for About Page */
+@media (prefers-color-scheme: dark) {
+  .am-about-card {
+    background-color: #1f2937;
+    border: 1px solid #374151 !important;
+    color: #f8f9fa;
+  }
+
+  /* Make the icon container darker/subtle in dark mode if desired, 
+     or keep it bright to pop. Currently keeping it bright. */
+  
+  .am-about-card .h5 {
+    color: #f8f9fa;
+  }
+
+  .am-about-card .text-muted {
+    color: #d1d5db !important;
+  }
+  
+  /* Fix the bottom CTA button outline in dark mode */
+  .btn-outline-dark {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+  .btn-outline-dark:hover {
+    background-color: #f8f9fa;
+    color: #000;
+  }
+}

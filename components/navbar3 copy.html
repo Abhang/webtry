@@ -1,3 +1,4 @@
+<!-- HTML for the navbar -->
 <nav class="am_custom_navbar am_navbar_blur">
   <div class="am_container am_px_5">
     <a class="am_navbar_brand" href="/index.html">Abhang Mehendale</a>
@@ -9,27 +10,20 @@
       <span class="am_navbar_toggler_icon"></span>
     </button>
     <div class="am_navbar_collapse">
-      <ul class="am_navbar_nav">
+      <ul class="am_navbar_nav" align="center" style="display: flex; justify-content: center; gap: 20px;">
         <li class="am_nav_item">
-          <a class="am_nav_link" href="/portfolio.html">Work</a>
+          <a class="am_nav_link" href="https://meet.google.com/mpa-fajr-fyf" target="_blank" style="padding: 10px 15px;">Meet</a>
         </li>
         <li class="am_nav_item">
-          <a class="am_nav_link" href="/blog.html">Insights</a>
-        </li>
-        <li class="am_nav_item">
-          <a class="am_nav_link" href="/about.html">About</a>
-        </li>
-        <li class="am_nav_item">
-          <a class="am_nav_link" id="am_nav_link_linkedin" href="https://www.linkedin.com/in/abhangm" target="_blank">
-            LinkedIn
-            <i class="bi bi-linkedin"></i>
-          </a>
+          <a class="am_nav_link" href="../blog.html"  style="padding: 10px 15px;">Blog</a>
         </li>
       </ul>
     </div>
+    
   </div>
 </nav>
 
+<!-- CSS for the navbar -->
 <style>
   .am_custom_navbar {
     position: fixed;
@@ -103,60 +97,26 @@
     margin-bottom: 0;
     list-style: none;
     margin-left: auto;
-    align-items: center; /* NEW: Vertically center nav items */
-    gap: 20px; /* NEW: Re-adds your gap rule from inline style */
+
+      
   }
 
   .am_nav_item {
-    /* MODIFIED: Removed margin-left, gap on <ul> is better */
+    margin-left: 1rem;
   }
 
   .am_nav_link {
     display: block;
+    padding: 0.5rem 0;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: color 0.15s ease-in-out;
-    padding: 10px 15px; /* MODIFIED: Using your inline style padding */
-    position: relative; /* NEW: Required for the underline animation */
   }
 
   .am_nav_link:hover,
   .am_nav_link:focus {
     color: rgba(255, 255, 255, 1);
   }
-
-  /* NEW: Underline hover animation 
-  */
-  .am_nav_link::after {
-    content: '';
-    position: absolute;
-    bottom: 0; /* Position underline at the bottom */
-    left: 50%; /* Start from the center */
-    transform: translateX(-50%); /* Complete centering */
-    width: 0%; /* Start with no width */
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease-in-out; /* Animate the width */
-  }
-
-  .am_nav_link:hover::after,
-  .am_nav_link:focus::after {
-    width: 80%; /* Grow to 80% on hover (looks cleaner than 100%) */
-  }
-  
-  /* NEW: Styles for the LinkedIn icon link 
-  */
-  #am_nav_link_linkedin {
-    display: inline-flex; /* Aligns text and icon */
-    align-items: center; /* Vertically centers them */
-  }
-
-  #am_nav_link_linkedin .bi-linkedin {
-    margin-left: 0.5rem; /* Space between text and icon */
-  }
-  
-  /* --- End of New CSS Rules --- */
-
 
   @media (max-width: 991px) {
     .am_navbar_toggler {
@@ -169,10 +129,10 @@
       top: 100%;
       left: 0;
       right: 0;
-      /* MODIFIED: Darker, more blurred background for mobile menu */
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(128, 128, 128, 0.9);
       padding: 1rem;
       backdrop-filter: blur(10px);
+
     }
 
     .am_navbar_collapse.show {
@@ -182,28 +142,14 @@
 
     .am_navbar_nav {
       flex-direction: column;
-      gap: 0; /* Remove gap for column layout */
     }
 
     .am_nav_item {
       margin-left: 0;
       margin-bottom: 0.5rem;
     }
-    
-    /* NEW: Ensure mobile links take full width */
-    .am_nav_link {
-      width: 100%;
-      text-align: center;
-    }
-
-    /* NEW: Center mobile link underline */
-    .am_nav_link:hover::after,
-    .am_nav_link:focus::after {
-      width: 50%;
-    }
   }
 
-  /* Your existing color-scheme media queries are unchanged */
   @media (prefers-color-scheme: light) {
     .am_navbar_brand,
     .am_nav_link {
@@ -216,7 +162,7 @@
     }
 
     .am_navbar_toggler_icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
   }
 
@@ -237,19 +183,23 @@
   }
 </style>
 
+<!-- JavaScript for toggling the mobile menu -->
 <script>
   (function() {
     function initNavbar() {
+      console.log('Initializing navbar...'); // Debug log
       var toggler = document.querySelector('.am_navbar_toggler');
       var collapse = document.querySelector('.am_navbar_collapse');
       
       if (!toggler || !collapse) {
-        console.error('Navbar elements not found!');
+        console.error('Navbar elements not found!'); // Debug log
         return;
       }
       
+      console.log('Navbar elements found, attaching event listeners...'); // Debug log
+      
       function toggleMenu(event) {
-        event.stopPropagation(); 
+        event.stopPropagation(); // Prevent the click event from bubbling up
         collapse.classList.toggle('show');
       }
   
@@ -262,15 +212,19 @@
       toggler.addEventListener('click', toggleMenu);
       document.addEventListener('click', closeMenu);
       
+      // Prevent clicks inside the menu from closing it
       collapse.addEventListener('click', function(event) {
         event.stopPropagation();
       });
+      
+      console.log('Event listeners attached successfully.'); // Debug log
     }
   
+    // Run initNavbar() when the DOM is fully loaded
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initNavbar);
     } else {
       initNavbar();
     }
   })();
-</script>
+  </script>
