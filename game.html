@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Supply Chain Simulator - Abhang Mehendale</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css?v=1.2" rel="stylesheet" />
+    <style>
+      .game-container {
+        max-width: 900px;
+        margin: 0 auto;
+        min-height: 60vh;
+      }
+      .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .choice-btn {
+        transition: all 0.2s;
+        border-left: 5px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+      .choice-btn:hover {
+        transform: translateX(5px);
+        border-left: 5px solid #0d6efd;
+        background-color: rgba(13, 110, 253, 0.05);
+      }
+      
+      /* Report Card Styles */
+      .report-item {
+        border-left: 3px solid #dee2e6;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .report-item.correct { border-left-color: #198754; }
+      .report-item.incorrect { border-left-color: #ffc107; }
+
+      /* Dark mode specifics */
+      @media (prefers-color-scheme: dark) {
+        .game-card {
+          background-color: #1f2937;
+          border: 1px solid #374151;
+          color: white;
+        }
+        .choice-btn { color: #e5e7eb; }
+        .choice-btn:hover { color: white; }
+      }
+      @media (prefers-color-scheme: light) {
+        .game-card {
+          background-color: white;
+          border: 1px solid #dee2e6;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column h-100 body-bg-light">
+    <main class="flex-shrink-0 flex-grow-1">
+      <div id="navbar3"></div>
+
+      <section class="py-5" style="padding-top: 8rem !important;">
+        <div class="container px-5">
+          <div class="game-container">
+            
+            <div class="row g-3 mb-4" id="game-hud" style="display:none;">
+              <div class="col-4">
+                <div class="stat-card bg-primary text-white shadow-sm">
+                  <div class="small text-uppercase opacity-75" style="font-size: 0.7rem; letter-spacing: 1px;">Budget</div>
+                  <div class="fs-4 fw-bold" id="score-budget">$80M</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-card bg-success text-white shadow-sm">
+                  <div class="small text-uppercase opacity-75" style="font-size: 0.7rem; letter-spacing: 1px;">Resilience</div>
+                  <div class="fs-4 fw-bold" id="score-resilience">100%</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-card bg-dark text-white shadow-sm">
+                  <div class="small text-uppercase opacity-75" style="font-size: 0.7rem; letter-spacing: 1px;">Quarter</div>
+                  <div class="fs-4 fw-bold" id="score-turn">Q1</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card game-card p-4 p-md-5 rounded-4 shadow-lg">
+              <div class="card-body">
+                <div id="game-content">
+                  <span class="badge bg-danger mb-3 px-3 py-2" id="event-tag" style="display:none; letter-spacing: 1px;">CRITICAL EVENT</span>
+                  <h2 class="fw-bolder mb-4 display-6" id="scene-title">Global Supply Chain Simulator</h2>
+                  <p class="lead mb-5 text-muted" id="scene-text">
+                    You are the Global Supply Chain Lead for a Fortune 500 Giant. The market is volatile, and your budget is tight ($80M).
+                    <br><br>
+                    <strong>Your Mission:</strong> Navigate 3 quarters of high-stakes crises. One wrong move creates a stockout or bankrupts the division.
+                  </p>
+
+                  <div id="choices-area" class="d-grid gap-3">
+                    <button onclick="startGame()" class="btn btn-primary btn-lg py-3 fw-bold rounded-pill">
+                      Start Simulation <i class="bi bi-play-fill ms-2"></i>
+                    </button>
+                  </div>
+                  
+                  <div id="feedback-area" class="mt-4 p-3 bg-opacity-10 bg-info border border-info rounded" style="display:none;">
+                    <p class="mb-0 fst-italic" id="feedback-text"></p>
+                  </div>
+                </div>
+
+                <div id="analysis-screen" style="display:none;">
+                  <h2 class="fw-bolder mb-4 text-center" id="end-title"></h2>
+                  <p class="text-center lead mb-5" id="end-desc"></p>
+                  
+                  <div class="card bg-opacity-10 bg-dark border-0 p-4 mb-5 rounded-3">
+                    <h4 class="fw-bold mb-4"><i class="bi bi-clipboard-data me-2"></i> The Strategist's Report</h4>
+                    <div id="analysis-content"></div>
+                  </div>
+
+                  <div class="d-grid gap-3 d-sm-flex justify-content-center">
+                    <a href="/contact.html" class="btn btn-success btn-lg px-5 rounded-pill fw-bold">Hire The Strategist</a>
+                    <button onclick="startGame()" class="btn btn-outline-secondary btn-lg px-5 rounded-pill">Play Again</button>
+                  </div>
+                  <p class="text-center text-muted mt-3 small">
+                    *These scenarios are based on real multi-million dollar projects led by Abhang Mehendale.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="lazy-load" data-src="/components/footer.html" id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/scripts.js"></script>
+
+    <script>
+      // Game State
+      let state = {
+        budget: 80, // Tighter budget for challenge
+        resilience: 100, 
+        turn: 0,
+        history: [] // Track user choices for the report
+      };
+
+      // Scenario Data
+      const scenarios = [
+        {
+          id: 1,
+          tag: "Q1: GEOPOLITICAL SHOCK",
+          title: "War Breaks Out in Ukraine",
+          text: "Critical sunflower oil reserves are trapped. 40% of your European supply line is offline. Production will halt in 2 weeks. Spot market prices have tripled.",
+          optimalIndex: 0,
+          analysis: "<strong>Abhang's Strategy:</strong> Pivoted to a multi-oil blend strategy. While expensive in R&D, it avoided the volatility of spot markets and ensured long-term continuity without stockouts.",
+          choices: [
+            {
+              text: "Execute 'Multi-Oil Blend' Strategy (R&D Cost: $15M)",
+              cost: 15,
+              resilienceImpact: -5, // Slight dip due to complexity
+              feedback: "Complex execution, but supply is flowing. You avoided the price gouging of the spot market."
+            },
+            {
+              text: "Panic Buy on Spot Market (Cost: $45M)",
+              cost: 45,
+              resilienceImpact: 0,
+              feedback: "You secured the oil, but you burned half your annual budget in Q1. Shareholders are furious."
+            },
+            {
+              text: "Wait for Diplomatic Resolution",
+              cost: 0,
+              resilienceImpact: -40,
+              feedback: "The war didn't end. Stockouts across Europe. Brand reputation is tanking."
+            }
+          ]
+        },
+        {
+          id: 2,
+          tag: "Q2: CAPEX CRUNCH",
+          title: "New Store Expansion Costs Soaring",
+          text: "The CEO wants 500 new stores. Construction material costs are up 40% globally. The finance team says the ROI is now negative.",
+          optimalIndex: 0,
+          analysis: "<strong>Abhang's Strategy:</strong> Applied Value Engineering & Automation. By automating site analysis and redesigning cost structures, he reduced new store costs by 27% without sacrificing quality.",
+          choices: [
+            {
+              text: "Apply Value Engineering & Automation (Save $20M)",
+              cost: -20, // Negative cost = Savings
+              resilienceImpact: 5,
+              feedback: "Brilliant. You automated site analysis and redesigned specs. Costs dropped 27%."
+            },
+            {
+              text: "Cut Supplier Quality Standards",
+              cost: -30,
+              resilienceImpact: -25,
+              feedback: "Immediate savings, but equipment failure rates spiked within 3 months. Operational nightmare."
+            },
+            {
+              text: "Pause Expansion Plans",
+              cost: 0,
+              resilienceImpact: -10,
+              feedback: "Competitors grabbed the prime locations. Market share lost."
+            }
+          ]
+        },
+        {
+          id: 3,
+          tag: "Q3: LOGISTICS BLACK SWAN",
+          title: "Port Strike in Los Angeles",
+          text: "Your Potato products (Fries) are stuck at sea. The US market—your biggest revenue source—has 3 days of stock left.",
+          optimalIndex: 0,
+          analysis: "<strong>Abhang's Strategy:</strong> Activated 'Just-in-Case' Backup Nodes. While others scrambled for air freight, Abhang's pre-planned rail contingencies kept product moving at 1/10th the cost.",
+          choices: [
+            {
+              text: "Activate 'Just-in-Case' Rail Backup (Cost: $15M)",
+              cost: 15,
+              resilienceImpact: 10,
+              feedback: "This is why you built the backup network. Supply rerouted via Canada. Crisis averted."
+            },
+            {
+              text: "Emergency Air Freight (Cost: $55M)",
+              cost: 55,
+              resilienceImpact: 0,
+              feedback: "It worked, but you wiped out the entire quarter's profit margin. Logistics costs are up 500%."
+            },
+            {
+              text: "Ration Fries to Customers",
+              cost: 0,
+              resilienceImpact: -60,
+              feedback: "Customers are rioting on social media. 'No Fries' is trending on Twitter."
+            }
+          ]
+        }
+      ];
+
+      function updateHUD() {
+        document.getElementById('score-budget').innerText = '$' + state.budget + 'M';
+        document.getElementById('score-resilience').innerText = state.resilience + '%';
+        document.getElementById('score-turn').innerText = 'Q' + (state.turn + 1);
+        
+        // Color coding
+        document.getElementById('score-budget').className = state.budget < 20 ? 'fs-4 fw-bold text-danger' : 'fs-4 fw-bold';
+        document.getElementById('score-resilience').className = state.resilience < 50 ? 'fs-4 fw-bold text-danger' : 'fs-4 fw-bold';
+      }
+
+      function startGame() {
+        document.getElementById('game-hud').style.display = 'flex';
+        document.getElementById('game-content').style.display = 'block';
+        document.getElementById('analysis-screen').style.display = 'none';
+        
+        state = { budget: 80, resilience: 100, turn: 0, history: [] };
+        updateHUD();
+        loadTurn(0);
+      }
+
+      function loadTurn(index) {
+        // Check Game Over conditions mid-game
+        if (state.budget <= 0 || state.resilience <= 0) {
+          endGame(false, "Resource Depletion");
+          return;
+        }
+        
+        // Check Win condition
+        if (index >= scenarios.length) {
+          endGame(true, "Completion");
+          return;
+        }
+
+        const scenario = scenarios[index];
+        state.turn = index;
+        updateHUD();
+        
+        // UI Updates
+        document.getElementById('event-tag').style.display = 'inline-block';
+        document.getElementById('event-tag').innerText = scenario.tag;
+        document.getElementById('scene-title').innerText = scenario.title;
+        document.getElementById('scene-text').innerText = scenario.text;
+        document.getElementById('feedback-area').style.display = 'none';
+
+        // Generate Buttons
+        const choicesHtml = scenario.choices.map((choice, i) => {
+          return `<button class="btn btn-outline-dark text-start p-3 choice-btn w-100 mb-3" onclick="makeChoice(${index}, ${i})">
+            <div class="fw-bold">${choice.text}</div>
+          </button>`;
+        }).join('');
+        
+        document.getElementById('choices-area').innerHTML = choicesHtml;
+      }
+
+      function makeChoice(scenarioIndex, choiceIndex) {
+        const scenario = scenarios[scenarioIndex];
+        const choice = scenario.choices[choiceIndex];
+        
+        // Update State
+        state.budget -= choice.cost;
+        state.resilience += choice.resilienceImpact;
+        
+        // Log History
+        state.history.push({
+          scenario: scenario.title,
+          playerChoice: choice.text,
+          optimalChoice: scenario.choices[scenario.optimalIndex].text,
+          isOptimal: choiceIndex === scenario.optimalIndex,
+          analysis: scenario.analysis
+        });
+
+        // Cap resilience at 100
+        if(state.resilience > 100) state.resilience = 100;
+
+        updateHUD();
+
+        // Show Feedback
+        const feedbackArea = document.getElementById('feedback-area');
+        const feedbackText = document.getElementById('feedback-text');
+        feedbackArea.style.display = 'block';
+        
+        // Color feedback based on impact
+        if (choice.resilienceImpact < -10 || choice.cost > 40) {
+            feedbackArea.className = "mt-4 p-3 bg-opacity-10 bg-danger border border-danger rounded";
+            feedbackText.innerHTML = `<strong class="text-danger">Warning:</strong> ${choice.feedback}`;
+        } else {
+            feedbackArea.className = "mt-4 p-3 bg-opacity-10 bg-success border border-success rounded";
+            feedbackText.innerHTML = `<strong class="text-success">Result:</strong> ${choice.feedback}`;
+        }
+
+        // Change buttons to "Next Quarter"
+        document.getElementById('choices-area').innerHTML = `
+          <button class="btn btn-primary btn-lg w-100 shadow-sm" onclick="loadTurn(${scenarioIndex + 1})">
+            Proceed to Next Quarter <i class="bi bi-arrow-right"></i>
+          </button>
+        `;
+      }
+
+      function endGame(win, reason) {
+        document.getElementById('game-hud').style.display = 'none';
+        document.getElementById('game-content').style.display = 'none';
+        document.getElementById('analysis-screen').style.display = 'block';
+        
+        const title = document.getElementById('end-title');
+        const desc = document.getElementById('end-desc');
+        
+        if (win) {
+          title.innerHTML = "<span class='text-success'>Simulation Complete: Success</span>";
+          desc.innerHTML = `
+            You successfully navigated the global crisis year.<br>
+            <strong>Final Budget:</strong> $${state.budget}M <br>
+            <strong>Resilience Score:</strong> ${state.resilience}%
+          `;
+        } else {
+          title.innerHTML = "<span class='text-danger'>Simulation Failed</span>";
+          desc.innerText = "The supply chain collapsed due to lack of funds or resilience. Supply chain is a high-stakes game.";
+        }
+
+        // Generate Analysis Report
+        const analysisContainer = document.getElementById('analysis-content');
+        let html = "";
+        
+        state.history.forEach((item, index) => {
+          const statusClass = item.isOptimal ? "correct" : "incorrect";
+          const icon = item.isOptimal ? '<i class="bi bi-check-circle-fill text-success"></i>' : '<i class="bi bi-exclamation-circle-fill text-warning"></i>';
+          
+          html += `
+            <div class="report-item ${statusClass}">
+              <h5 class="fw-bold mb-2">Q${index+1}: ${item.scenario}</h5>
+              <p class="mb-1"><strong>Your Move:</strong> ${item.playerChoice} ${icon}</p>
+              <p class="text-muted small mt-2 border-top pt-2">${item.analysis}</p>
+            </div>
+          `;
+        });
+        
+        analysisContainer.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>
