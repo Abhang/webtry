@@ -251,13 +251,52 @@
       }
 
       /* Mobile Tweaks */
+      /* --- AEON-STYLE MOBILE OPTIMIZATION --- */
       @media (max-width: 768px) {
-        .blog-hero-wrapper {
-          height: 40vh;
-          min-height: 300px;
+        /* 1. Maximize Width (Edge-to-Edge feel) */
+        .article-container {
+          padding: 2.5rem 1.1rem !important; /* Very tight side margins (approx 18px) */
+          max-width: 100% !important;
         }
+
+        /* 2. The "Aeon" Typography Settings */
         .article-paragraph {
-          font-size: 1.15rem;
+          font-size: 1.35rem !important; /* Larger text (approx 21px) is easier to read on phone */
+          line-height: 1.85 !important; /* Luxurious spacing between lines */
+          margin-bottom: 2rem !important; /* More breathing room between paragraphs */
+          text-align: left; /* Keeps spacing consistent */
+          letter-spacing: -0.01em; /* Slight tightening makes Serif fonts look sharper */
+        }
+
+        /* 3. High Contrast for Dark Mode Mobile (Simulating Aeon) */
+        @media (prefers-color-scheme: dark) {
+          .article-paragraph {
+            color: #eaeaea !important; /* Brighter, crisper text for small screens */
+          }
+        }
+
+        /* 4. Fix Title & Header Sizing */
+        /* 4. Fix Title & Header Sizing */
+        .blog-hero-wrapper {
+          /* Make the image taller so text sits low and doesn't hit the navbar */
+          height: 60vh !important;
+          min-height: 450px !important; /* increased from 300px */
+
+          /* Push the whole section down a bit more to clear the mobile navbar */
+          margin-top: 85px !important;
+        }
+
+        .blog-title-display {
+          font-size: 2.4rem !important; /* Compact title so it doesn't take up whole screen */
+          line-height: 1.15;
+        }
+
+        /* 5. Better Blockquotes */
+        .article-blockquote {
+          font-size: 1.25rem !important;
+          padding-left: 1rem !important;
+          margin: 2rem 0 !important;
+          border-left-width: 3px !important;
         }
       }
     </style>
