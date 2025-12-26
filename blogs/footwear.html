@@ -252,51 +252,67 @@
 
       /* Mobile Tweaks */
       /* --- AEON-STYLE MOBILE OPTIMIZATION --- */
+      /* --- AEON-STYLE MOBILE OPTIMIZATION (AMOLED EDITION) --- */
       @media (max-width: 768px) {
-        /* 1. Maximize Width (Edge-to-Edge feel) */
+        /* 1. Maximize Width */
         .article-container {
-          padding: 2.5rem 1.1rem !important; /* Very tight side margins (approx 18px) */
+          padding: 2.5rem 1.25rem !important; /* Standardized side margins */
           max-width: 100% !important;
         }
 
-        /* 2. The "Aeon" Typography Settings */
+        /* 2. Tighter Line Spacing & Sizing */
         .article-paragraph {
-          font-size: 1.35rem !important; /* Larger text (approx 21px) is easier to read on phone */
-          line-height: 1.85 !important; /* Luxurious spacing between lines */
-          margin-bottom: 2rem !important; /* More breathing room between paragraphs */
-          text-align: left; /* Keeps spacing consistent */
-          letter-spacing: -0.01em; /* Slight tightening makes Serif fonts look sharper */
+          font-size: 1.2rem !important; /* Slightly more compact than before */
+          line-height: 1.5 !important; /* REDUCED from 1.85 to 1.5 (Tighter/Snappier) */
+          margin-bottom: 1.5rem !important;
+          text-align: left;
+          letter-spacing: -0.01em;
         }
 
-        /* 3. High Contrast for Dark Mode Mobile (Simulating Aeon) */
-        @media (prefers-color-scheme: dark) {
-          .article-paragraph {
-            color: #eaeaea !important; /* Brighter, crisper text for small screens */
-          }
-        }
-
-        /* 4. Fix Title & Header Sizing */
-        /* 4. Fix Title & Header Sizing */
+        /* 3. HERO FIX: Taller image so text doesn't hit navbar */
         .blog-hero-wrapper {
-          /* Make the image taller so text sits low and doesn't hit the navbar */
           height: 60vh !important;
-          min-height: 450px !important; /* increased from 300px */
-
-          /* Push the whole section down a bit more to clear the mobile navbar */
+          min-height: 450px !important;
           margin-top: 85px !important;
         }
 
+        /* 4. Compact Titles */
         .blog-title-display {
-          font-size: 2.4rem !important; /* Compact title so it doesn't take up whole screen */
-          line-height: 1.15;
+          font-size: 2.2rem !important;
+          line-height: 1.1;
         }
 
-        /* 5. Better Blockquotes */
-        .article-blockquote {
-          font-size: 1.25rem !important;
-          padding-left: 1rem !important;
-          margin: 2rem 0 !important;
-          border-left-width: 3px !important;
+        /* --- THE AMOELD DARK MODE MAGIC --- */
+        @media (prefers-color-scheme: dark) {
+          /* Force TRUE BLACK background for OLED screens */
+          body,
+          html {
+            background-color: #000000 !important;
+          }
+
+          /* High Contrast Text "Nice and White" */
+          .article-paragraph,
+          p,
+          li {
+            color: #eeeeee !important; /* Near white for readability */
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          .article-h1,
+          .article-h2,
+          .article-h3 {
+            color: #ffffff !important; /* Pure white headings */
+          }
+
+          /* Make blockquotes pop against the black */
+          .article-blockquote {
+            color: #dddddd !important;
+            border-left-color: #ffffff !important;
+          }
         }
       }
     </style>
