@@ -24,6 +24,9 @@ The Suez Canal became a militarized frontier, its cities evacuated, its waters a
 
 Nasser died in 1970, his dream of Arab unity shattered, his military humiliated. His successor, Anwar Sadat, inherited a nation trapped between impossible choices: accept the loss of Sinai or fight a war Egypt seemed certain to lose again.
 
+![Territories Israel occupied in 1967 (shaded green)](https://res.cloudinary.com/dzjcz0ckk/image/upload/v1766761074/The-territories-that-Israel-occupied-in-1967-shaded-in-Green-Al-Jazeera_i7yxig.png)
+
+
 ## The Audacious Calculation
 
 Sadat understood what many military planners did not: Egypt didn't need to win a war in any conventional sense. It needed to win back enough dignity to negotiate from strength rather than weakness. The Sinai had to be contested, bloodied, made expensive enough that Israel would prefer negotiation to permanent occupation.
