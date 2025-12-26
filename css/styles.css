@@ -11398,3 +11398,11 @@ BLOG CARD STYLES
       color: #f8f9fa !important;
     }
   }
+
+
+  /* Add this to css/styles.css */
+
+#latest-analysis {
+  /* This creates a "buffer" zone above the element when scrolling to it */
+  scroll-margin-top: 120px; 
+}

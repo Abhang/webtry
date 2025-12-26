@@ -17,29 +17,33 @@ BLOGS_DIR = "./blogs"
 MD_DIR = "./b"
 JSON_FILE_PATH = "./json/blog-list-blog.json"
 TEMPLATE_PATH = "./template-blog.html"
-DATE_FORMAT = "%B %d, %Y"  # Example: "February 1, 2025"
+DATE_FORMAT = "%B %d, %Y"
 
 class AddClassesTreeprocessor(Treeprocessor):
     def run(self, root):
         for elem in root.iter():
+            # We use semantic classes now, not rigid Bootstrap sizes
             if elem.tag == "h1":
-                elem.set("class", "fw-bolder mb-1")
+                elem.set("class", "article-h1 fw-bold mt-5 mb-3")
             elif elem.tag == "h2":
-                elem.set("class", "fw-bolder mb-4")
+                elem.set("class", "article-h2 fw-bold mt-5 mb-3")
+            elif elem.tag == "h3":
+                elem.set("class", "article-h3 fw-bold mt-4 mb-2")
             elif elem.tag == "p":
-                elem.set("class", "fs-5 mb-4")
+                # Removed 'fs-5' to let CSS control font size
+                elem.set("class", "article-paragraph mb-4")
             elif elem.tag in ["ul", "ol"]:
-                elem.set("class", "fs-5 mb-4")
+                elem.set("class", "article-list mb-4")
             elif elem.tag == "li":
-                elem.set("style", "margin-bottom: 1rem;")
+                elem.set("class", "article-list-item")
             elif elem.tag == "blockquote":
-                elem.set("class", "blockquote fs-5 p-3 border-start border-primary")
+                elem.set("class", "article-blockquote p-4 my-4 fst-italic border-start border-3 border-dark bg-light")
             elif elem.tag == "pre":
-                elem.set("class", "code-block p-3 bg-light border rounded")
+                elem.set("class", "article-code-block p-3 bg-light border rounded my-4")
             elif elem.tag == "table":
-                elem.set("class", "table table-striped table-bordered")
-            elif elem.tag == "th" or elem.tag == "td":
-                elem.set("class", "p-2 border")
+                elem.set("class", "table table-hover table-bordered my-4")
+            elif elem.tag == "img":
+                elem.set("class", "img-fluid rounded shadow-sm my-4")
         return root
 
 class CustomExtension(Extension):
@@ -58,7 +62,6 @@ EXTENSIONS = [
 ]
 
 def extract_metadata(md_file_path):
-    """Extract metadata and content from the markdown file."""
     with open(md_file_path, "r", encoding="utf-8") as f:
         content = f.read()
     parts = content.split("---", 2)
@@ -68,7 +71,6 @@ def extract_metadata(md_file_path):
     return metadata, parts[2]
 
 def convert_md_to_html(md_file_path, template_path, output_path):
-    """Convert a markdown blog post to HTML using a template."""
     metadata, md_content = extract_metadata(md_file_path)
     if not metadata:
         print(f"Skipping {md_file_path} due to missing metadata")
@@ -99,7 +101,6 @@ def convert_md_to_html(md_file_path, template_path, output_path):
         f.write(template)
 
 def process_all_posts(md_dir, template_path, output_dir):
-    """Process all markdown files, generate HTML, and update JSON list."""
     for filename in os.listdir(md_dir):
         if filename.endswith(".md"):
             md_path = os.path.join(md_dir, filename)
@@ -108,7 +109,6 @@ def process_all_posts(md_dir, template_path, output_dir):
     update_blog_list_json(md_dir, output_dir)
 
 def update_blog_list_json(md_dir, blogs_dir):
-    """Update blog-list JSON with sorted entries."""
     blog_files = os.listdir(blogs_dir)
     dated_blogs = []
     undated_blogs = []

@@ -6,241 +6,346 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <meta name="blog-title" content="The Road to Damascus" />
-    <meta name="blog-description" property="og:description" content="Hope, amnesty, and the difficult road ahead for people of Syria. Will they be able to find peace amongst the struggles of world powers?" />
+    <meta
+      name="blog-description"
+      property="og:description"
+      content="Hope, amnesty, and the difficult road ahead for people of Syria. Will they be able to find peace amongst the struggles of world powers?"
+    />
     <meta name="blog-feature2" content="Geopolitics" />
     <meta name="blog-image" property="og:image" content="https://res.cloudinary.com/dzjcz0ckk/image/upload/f_auto,q_auto/v1738352505/0210_20CSYRIA_20celebration_cobqjx.jpg" />
     <meta name="blog-date" content="February 1, 2025" />
-    <meta name="blog-read-time" content="12 min read" />
-    <!-- Rest of your head content -->
-    <title name="blog-title"> The Road to Damascus | Abhang Mehendale </title>
-    <!-- Favicon-->
+
+    <title>The Road to Damascus | Abhang Mehendale</title>
+
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-    <!-- Bootstrap icons-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
     <style>
+      /* --- Editorial Design System with Dark Mode Support --- */
+      :root {
+        /* Typography */
+        --font-serif: "EB Garamond", serif;
+        --font-display: "Crimson Pro", serif;
+        --font-sans: "Inter", sans-serif;
+        --reading-width: 740px;
+
+        /* Light Theme (Default - Paper & Ink) */
+        --blog-bg: #fdfdfd; /* Soft off-white paper */
+        --blog-text: #2c2c2c; /* Soft black ink */
+        --blog-heading: #111111; /* Deep black headings */
+        --blog-accent: #0d6efd;
+        --blog-muted: #666666;
+        --blog-border: #eeeeee;
+        --blog-code-bg: #f8f9fa;
+        --hero-overlay: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+      }
+
+      /* Dark Theme (Aeon Style - Charcoal & Cream) */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --blog-bg: #1a1a1a; /* Deep elegant charcoal */
+          --blog-text: #d4d4d4; /* Creamy off-white for easier reading */
+          --blog-heading: #ffffff; /* Pure white for contrast headers */
+          --blog-accent: #4dabf7; /* Lighter blue for dark mode */
+          --blog-muted: #a3a3a3;
+          --blog-border: #333333;
+          --blog-code-bg: #262626;
+          /* Darker overlay for dark mode so text pops */
+          --hero-overlay: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.8) 100%
+          );
+        }
+        /* Fixes Bootstrap icons and navbar in dark mode */
+        body,
+        .text-dark,
+        .link-dark {
+          color: var(--blog-text) !important;
+        }
+      }
+
       body {
+        font-family: var(--font-serif);
+        color: var(--blog-text);
+        background-color: var(
+          --blog-bg
+        ) !important; /* Override global Bootstrap */
+        line-height: 1.6;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Hero Section - Fixed Cropping Issues */
+      /* Find this class and update it */
+      .blog-hero-wrapper {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        min-height: 400px;
+        max-height: 600px;
+        overflow: hidden;
+
+        /* --- THE FIX START --- */
+        /* This pushes the image down so the navbar doesn't cover it */
+        margin-top: 70px;
+        /* --- THE FIX END --- */
+      }
+
+      /* Find this class and update it */
+      .blog-hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        /* --- THE FIX START --- */
+        /* This anchors the image to the TOP so heads aren't cut off */
+        object-position: center;
+        /* --- THE FIX END --- */
+      }
+
+      .blog-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--hero-overlay);
+        z-index: 1;
+      }
+
+      .blog-hero-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3rem 1.5rem;
+        z-index: 2;
+        text-align: center;
+        color: white; /* Always white text on hero image */
+      }
+
+      .blog-title-display {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 600;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        color: white !important; /* Force white even in light mode */
+      }
+
+      .blog-meta-display {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      /* Article Content Layout */
+      .article-container {
+        max-width: var(--reading-width);
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      /* Author Sidebar */
+      .author-block {
         display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        font-family: "EB Garamond", serif;
-        font-size: 18px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--blog-border);
+        font-family: var(--font-sans);
+      }
+
+      /* Typography for the Content */
+      .article-paragraph {
+        font-size: 1.25rem; /* The 'New Yorker' size (~20px) */
+        line-height: 1.8; /* Luxuriously loose leading */
+        margin-bottom: 1.8rem;
+        color: var(--blog-text);
+      }
+
+      /* Drop Cap */
+      .article-paragraph:first-of-type::first-letter {
+        float: left;
+        font-family: var(--font-display);
+        font-size: 4.5rem;
+        line-height: 0.85;
+        padding-right: 0.5rem;
+        padding-top: 4px;
+        color: var(--blog-heading);
+      }
+
+      /* Headings - Using !important to override the global CSS conflict */
+      .article-h1,
+      .article-h2,
+      .article-h3,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-display);
+        color: var(--blog-heading) !important;
+        margin-top: 3rem;
+      }
+
+      .article-list li {
+        font-size: 1.15rem;
         line-height: 1.7;
-        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+        color: var(--blog-text);
       }
 
-      main {
-        flex: 1 0 auto;
+      .article-blockquote {
+        font-size: 1.35rem;
+        font-style: italic;
+        color: var(--blog-heading); /* Slightly darker for emphasis */
+        border-left: 4px solid var(--blog-accent);
+        background: transparent !important;
+        padding-left: 1.5rem;
+        margin: 2.5rem 0;
       }
 
-      #content {
-        min-height: calc(100vh - 56px - 60px);
-        /* Adjust these values based on your navbar and footer heights */
-        padding: 20px 0;
+      .article-code-block {
+        background-color: var(--blog-code-bg) !important;
+        border-color: var(--blog-border) !important;
+        color: var(--blog-text);
       }
 
-      /* Mobile-friendly adjustments */
+      .figure-caption {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        color: var(--blog-muted);
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      /* Fix table colors in dark mode */
+      .table {
+        color: var(--blog-text);
+        border-color: var(--blog-border);
+      }
+      .table-hover tbody tr:hover {
+        color: var(--blog-heading);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Mobile Tweaks */
       @media (max-width: 768px) {
-        /* Reduce font size for headings */
-        h1 {
-          font-size: 28px !important;
-          font-family: "EB Garamond", serif;
-          padding-left: 5px;
-          padding-right: 5px;
-          text-align: left;
+        .blog-hero-wrapper {
+          height: 40vh;
+          min-height: 300px;
         }
-
-        h2 {
-          font-size: 24px !important;
-          font-family: "EB Garamond", serif;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-
-        /* Reduce font size for paragraphs */
-        p.fs-5 {
-          font-size: 20px !important;
-          font-family: "EB Garamond", serif;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-
-        /* Adjust font size for list items */
-        ul.fs-5 li {
-          font-size: 20px !important;
-          margin-bottom: 8px;
-          font-family: "EB Garamond", serif;
-          padding-left: 10px;
-          padding-right: 10px;
-          /* Add some spacing between list items */
-        }
-
-        /* Adjust the hero text */
-        figure div p {
-          font-size: 34px !important;
-          top: 30% !important;
-        }
-
-        /* Reduce padding and margins for better spacing */
-        .container.px-5.my-5 {
-          padding-left: 15px !important;
-          padding-right: 15px !important;
-        }
-
-        .py-5 {
-          padding-top: 2rem !important;
-          padding-bottom: 2rem !important;
-        }
-
-        /* Adjust image size in the blog */
-        figure.mb-4 img {
-          width: 100% !important;
-          height: auto !important;
-        }
-
-        /* Adjust the author section */
-        .col-lg-3 {
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        .col-lg-9 {
-          padding-left: 10px !important;
-          padding-right: 10px !important;
-        }
-
-        .datentag {
-          padding-left: 15px !important;
-          padding-right: 15px !important;
+        .article-paragraph {
+          font-size: 1.15rem;
         }
       }
     </style>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-7L6J5SDNEE"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "G-7L6J5SDNEE");
-  </script>
   <body class="d-flex flex-column h-100">
     <div id="preloader">
       <svg width="80" height="80" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" stroke="black" stroke-width="5" fill="none" stroke-dasharray="200" stroke-dashoffset="0">
-              <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" repeatCount="indefinite" />
-          </circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="black"
+          stroke-width="5"
+          fill="none"
+          stroke-dasharray="200"
+          stroke-dashoffset="0"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="200"
+            to="0"
+            dur="1.5s"
+            repeatCount="indefinite"
+          />
+        </circle>
       </svg>
-  </div>
-    <!-- Your existing header/navigation -->
-    <main class="flex-shrink-0">
-      <!-- Navigation-->
-      <div id="navbar3"></div>
-      <div class="mb-0" style="background-color: black">
-        <br />
-        <br /><br />
-      </div>
-      <!-- Hero section -->
-      <figure
-        id="blog-hero"
-        class="mb-lg-0"
-        style="position: relative; display: inline-block"
-      >
-        <img
-          class="img-fluid rounded"
-          src="https://res.cloudinary.com/dzjcz0ckk/image/upload/f_auto,q_auto/v1738352505/0210_20CSYRIA_20celebration_cobqjx.jpg"
-          alt="..."
-          style="
-            width: 100000px;
-            height: 800px;
-            object-fit: cover;
-            align-content: stretch;
-            filter: grayscale(100%) brightness(50%) contrast(120%);
-          "
-        />
-        <div>
-          <p
-            id="blog-hero-text"
-            style="
-              position: absolute;
-              top: 35%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              color: white;
-              font-size: 36px;
-              font-weight: bold;
-              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            "
-          >
-            The Road to Damascus
-          </p>
-        </div>
-        <figcaption id="primary-image__figcap_1-0" class="text-center mt-2">
-          <span class="figure-article-caption-owner">
-            <p>Damascus City</p>
-          </span>
-        </figcaption>
-      </figure>
+    </div>
 
-      <!-- Blog content -->
-      <section class="py-5">
-        <div class="container px-5 my-5">
-          <div class="row gx-5">
-            <div class="col-lg-3">
-              <div class="d-flex align-items-center mt-lg-5 mb-4">
-                <img
-                  class="img-fluid rounded-circle"
-                  src="../assets/images/abhang.jpg"
-                  alt="..."
-                  style="
-                    width: 50px;
-                    height: 50px;
-                    object-fit: cover;
-                    align-content: center;
-                  "
-                  ;
-                />
-                <div class="ms-3">
-                  <div class="fw-bold">Abhang Mehendale</div>
-                  <div class="text-muted">Thinker</div>
+    <main class="flex-shrink-0">
+      <div id="navbar3"></div>
+
+      <header class="blog-hero-wrapper">
+        <div class="blog-hero-overlay"></div>
+        <img
+          class="blog-hero-img"
+          src="https://res.cloudinary.com/dzjcz0ckk/image/upload/f_auto,q_auto/v1738352505/0210_20CSYRIA_20celebration_cobqjx.jpg"
+          alt="The Road to Damascus"
+        />
+
+        <div class="blog-hero-content">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="blog-meta-display mb-2">
+                  Geopolitics &middot; 12 min read
                 </div>
+                <h1 class="blog-title-display">The Road to Damascus</h1>
+                <div class="blog-meta-display mt-3">February 1, 2025</div>
               </div>
             </div>
-            <div class="col-lg-9">
-              <article>
-                <header class="mb-4 datentag">
-                  <h1 class="fw-bolder mb-1">The Road to Damascus</h1>
-                  <div class="text-muted fst-italic mb-2">February 1, 2025</div>
-                  <!-- Categories -->
-                </header>
-                <section class="mb-5"><p class="fs-5 mb-4">With the new leadership in Syria, what happens to the middle east? 
+          </div>
+        </div>
+      </header>
+
+      <div class="container mt-2">
+        <figcaption class="figure-caption text-center">
+          Damascus City
+        </figcaption>
+      </div>
+
+      <article class="article-container">
+        <div class="author-block">
+          <img
+            class="rounded-circle me-3 shadow-sm"
+            src="../assets/images/abhang.jpg"
+            alt="Abhang Mehendale"
+            style="width: 56px; height: 56px; object-fit: cover"
+          />
+          <div>
+            <div
+              class="fw-bold text-uppercase small"
+              style="letter-spacing: 1px; color: var(--blog-heading)"
+            >
+              Abhang Mehendale
+            </div>
+            <div class="small" style="color: var(--blog-muted)">
+              Thinker & Writer
+            </div>
+          </div>
+        </div>
+
+        <section><p class="article-paragraph mb-4">With the new leadership in Syria, what happens to the middle east? 
 It is quite a turnaround, in a very quick fashion, Al-Assad was gone, and there was a new guy at the throne, Abu Mohammed Al-Jawlani. A terrorist as per the UN, the US and others, now heads a state. </p>
-<p class="fs-5 mb-4">But people of Syria see a new hope, a redemption, a sunrise. Al-Jawlani is the new hope. <strong><em>What is the future going to be?</em></strong></p>
-<p class="fs-5 mb-4">As per what the UN Security Council reads (as on the time of this writing) -</p>
-<blockquote class="blockquote fs-5 p-3 border-start border-primary">
-<p class="fs-5 mb-4">Abu Mohammed al-Jawlani is the leader of Al-Nusrah Front for the
+<p class="article-paragraph mb-4">But people of Syria see a new hope, a redemption, a sunrise. Al-Jawlani is the new hope. <strong><em>What is the future going to be?</em></strong></p>
+<p class="article-paragraph mb-4">As per what the UN Security Council reads (as on the time of this writing) -</p>
+<blockquote class="article-blockquote p-4 my-4 fst-italic border-start border-3 border-dark bg-light">
+<p class="article-paragraph mb-4">Abu Mohammed al-Jawlani is the leader of Al-Nusrah Front for the
 People of the Levant (QDe.137) a.k.a Jabhat al-Nusrah, a Syria-based
 terrorist group previously listed between 30 May 2013 and 13 May 2014
 as an alias of Al-Qaida in Iraq (QDe.115). In 2011 Abu Bakr
@@ -249,10 +354,10 @@ al-Baghdadi, listed as Ibrahim Awwad Ibrahim Ali al-Badri al-Samarrai
 Al-Qaida in Iraq in Syria by developing a local presence and fighting.
 Al-Qaida in Iraq supplied Jabhat al-Nusrah with manpower, money,
 weapons and advice.</p>
-<p class="fs-5 mb-4">The formation of Jabhat al-Nusrah, featuring Abu Mohammed al-Jawlani,
+<p class="article-paragraph mb-4">The formation of Jabhat al-Nusrah, featuring Abu Mohammed al-Jawlani,
 was announced on 23 January 2012. Abu Mohammed stated that the group
 consisted of fighters from the Near East.</p>
-<p class="fs-5 mb-4">In a statement issued in late May 2012 by Jabhat al-Nusrah's media
+<p class="article-paragraph mb-4">In a statement issued in late May 2012 by Jabhat al-Nusrah's media
 outlet Al-Manara Al-Baydh'a Media Foundation (the White Minaret), Abu
 Mohammed al-Jawlani was referred to as "the supervisor general for
 Jabhat al-Nusrah". He called on his followers in Jabhat al-Nusrah to
@@ -260,7 +365,7 @@ carry out attacks in revenge for a reported massacre in Houla, Syria,
 and urged the populations of the Levant to unite under his movement.
 Many of the attacks carried out by Jabhat al-Nusrah under the command
 of Abu Mohammed al-Jawlani have caused the deaths of civilians.</p>
-<p class="fs-5 mb-4">In a statement released on 10 April 2013, Abu Mohammed al-Jawlani
+<p class="article-paragraph mb-4">In a statement released on 10 April 2013, Abu Mohammed al-Jawlani
 confirmed that Abu Bakr al-Baghdadi gave Jabhat al-Nusrah considerable
 support, and that Abu Bakr had deputised Abu Mohammed to run the
 Al-Qaida fight in Syria. Abu Mohammed declared that it was his
@@ -270,57 +375,65 @@ of Al-Qaida in Iraq. Abu Mohammed pledged his and his organisation's
 allegiance to Aiman Muhammed Rabi al-Zawahiri (QDi.006), the head of
 the international Al-Qaida umbrella movement and deferred to his
 guidance.</p>
-<p class="fs-5 mb-4">Abu Mohammed al-Jawlani's media statements have been published by the
+<p class="article-paragraph mb-4">Abu Mohammed al-Jawlani's media statements have been published by the
 same internet sites that host authentic Al-Qaida media. In June 2013,
 the leader of Al-Qaida, Ayman al-Zawahiri, confirmed in a letter to
 Abu Bakr and Abu Mohammed that Abu Mohammed al-Jawlani is in charge of
 Jabhat al-Nusrah.</p>
-<p class="fs-5 mb-4">Jabhat al-Nusrah operates in Syria where it has carried out a number
+<p class="article-paragraph mb-4">Jabhat al-Nusrah operates in Syria where it has carried out a number
 of terrorist attacks.</p>
 </blockquote>
-<p class="fs-5 mb-4">In the ancient stories, Saul of Tarsus was struck blind on the road to Damascus, only to have his sight restored and emerge transformed as Paul the Apostle. Today, Syria itself seems to be undergoing its own conversion narrative, though whether this represents salvation or merely another chapter in its prolonged suffering remains profoundly unclear. The sudden departure of Bashar al-Assad after decades of brutal rule has left a vacuum now filled by a man with a past that would typically disqualify him from international legitimacy. Yet the complexities of geopolitics rarely conform to our moral expectations.</p>
-<p class="fs-5 mb-4">The streets of Damascus today present a study in contradictions. In neighborhoods where artillery shells once rained down, there are signs of life returning. Markets show increasing activity after years of scarcity. Amid the rubble of war, there are initial steps toward reconstruction. To casual observers, this might appear as the first tentative movements toward normalcy. But beneath this fragile veneer lies a deeper question: can a nation find redemption through leadership that much of the world has condemned?</p>
-<p class="fs-5 mb-4">Al-Jawlani's ascension represents not just a leadership change but a fundamental reordering of power dynamics that have defined the Middle East for generations. His past affiliations with Al-Qaeda and his designation as a terrorist by global powers would typically render him beyond the pale of international diplomacy. Yet history teaches us that yesterday's terrorists occasionally become tomorrow's statesmen. The question hanging over Damascus is whether Al-Jawlani represents such a transformation or merely a rebranding of extremism.</p>
-<p class="fs-5 mb-4">What makes this transition all the more remarkable is the complex reaction it has generated among the Syrian population. After enduring chemical weapons attacks, barrel bombs, forced disappearances, and the methodical destruction of their country, many Syrians find themselves in the peculiar position of considering whether a designated terrorist might deliver the peace that legitimate institutions could not. This reflects not an endorsement of extremism but rather how thoroughly conventional politics failed them.</p>
-<p class="fs-5 mb-4">The regional implications stretch far beyond Syria's borders. Israel watches with alarm as a known jihadist assumes control of a neighboring state. Turkey's calculations regarding Kurdish autonomy must now account for a new variable. Iran, having invested heavily in the Assad regime, must recalibrate its influence. And Russia, which deployed significant military resources to preserve Assad's rule, now faces questions about the return on its geopolitical investment.</p>
-<p class="fs-5 mb-4">For the United States and its European allies, the situation creates a diplomatic paradox. Having spent years designating Jawlani's organization as terrorists, they now face the reality of his political ascension. The language of counterterrorism that once seemed so morally clear now encounters the messier realities of Middle Eastern politics. Can a designated terrorist be engaged as a head of state? Does refusing such engagement merely cede influence to rival powers?</p>
-<p class="fs-5 mb-4">These questions reflect a larger pattern in the region's modern history, where ideological labels often obscure more than they reveal. Today's extremist may be tomorrow's pragmatist when confronted with the actual responsibilities of governance. The transition from revolutionary to administrator has humbled ideologues throughout history. Whether Al-Jawlani follows this pattern or maintains his radical vision remains an open question.</p>
-<p class="fs-5 mb-4">What complicates matters further is the governance record Al-Jawlani has established in territories under his control. In Idlib province, where his forces have maintained dominance for years, there have been reports of functioning administrative structures alongside concerning human rights conditions. The establishment of Sharia courts brought a form of justice to areas where the rule of law had collapsed, yet with it came restrictions on personal freedoms that raise significant concerns about the future direction of Syrian society.</p>
-<p class="fs-5 mb-4">The humanitarian dimensions cannot be overlooked. Syria hosts millions of internally displaced people, with millions more refugees scattered across neighboring countries and Europe. Any sustainable peace must address their fate. Will Al-Jawlani's government facilitate their return? Can a leader with extremist roots provide the security guarantees necessary for minority communities to feel safe? The United Nations, already stretched thin by global crises, now faces the delicate task of engaging with a government led by someone on its own terrorist list.</p>
-<p class="fs-5 mb-4">Perhaps the most significant factor is Syria's physical and economic devastation. Over a decade of war has reduced much of the country to rubble. Reconstruction estimates range from $250-400 billion, a sum far beyond what Syria's war-ravaged economy can generate. Traditional donors would typically step forward, but how many Western governments will fund reconstruction under leadership they've formally designated as terrorist? This creates an opening for powers less concerned with such designations—China, Russia, perhaps Gulf states seeking regional influence.</p>
-<p class="fs-5 mb-4">Economic realities may ultimately force pragmatism on all sides. Al-Jawlani, regardless of his ideological background, inherits a nation that cannot be rebuilt without international assistance. Western powers, despite their moral reservations, may find that isolation merely pushes Syria further into the orbit of geopolitical rivals. The resulting détente might not reflect anyone's ideal outcome, but could represent the least bad option in a situation with no good choices.</p>
-<p class="fs-5 mb-4">For ordinary Syrians, these geopolitical calculations translate into painfully concrete realities: whether schools will reopen, hospitals will function, electricity will flow, and the ever-present fear of violence will finally recede. Their relationship with the new leadership is complex—not an endorsement of Al-Jawlani's past, but a desperate hope that stability might finally return after years of devastating conflict.</p>
-<p class="fs-5 mb-4">The moral complexity of Syria's situation challenges our tendency toward simple narratives. Western discourse often reduces complex conflicts to battles between good and evil, democracy and tyranny, moderates and extremists. Syria's reality defies such simplification. A designated terrorist now governs from Damascus, yet his predecessors, formally recognized by the international community, perpetrated humanitarian atrocities on an industrial scale. Which reality better serves the Syrian people?</p>
-<p class="fs-5 mb-4">There is precedent for such transitions. The African National Congress was once designated a terrorist organization by the United States and Britain, yet Nelson Mandela emerged from prison to universal acclaim. Yasser Arafat addressed the United Nations General Assembly after years as a guerrilla leader. The Irish Republican Army's political wing eventually participated in a peace process after decades of violence. History suggests that yesterday's extremists can become tomorrow's statesmen when circumstances demand pragmatism.</p>
-<p class="fs-5 mb-4">Whether Al-Jawlani follows this trajectory depends on factors both within and beyond his control. The most immediate challenge will be securing his government against remnants of the Assad regime and rival jihadist factions. Beyond security concerns lie governance challenges that have humbled far more experienced administrators: restoring basic services, managing a devastated economy, and reestablishing Syria's place in the regional order.</p>
-<p class="fs-5 mb-4">For neighboring countries, the calculations are equally complex. Jordan has absorbed hundreds of thousands of Syrian refugees and fears both continued instability and radical influence. Lebanon, already on the brink of state failure, cannot absorb further regional shocks. Iraq, still struggling with its own recovery, shares a border with unpredictable new leadership. And Israel must reconsider its northern defense posture in light of leadership historically hostile to its existence.</p>
-<p class="fs-5 mb-4">Perhaps the most significant factor will be Al-Jawlani's relationship with Russia and Iran, the two powers most invested in Syria's previous government. Early signals suggest pragmatic accommodation rather than ideological confrontation. This speaks to Al-Jawlani's possible evolution from religious extremist to political realist, understanding that governance requires compromise that armed opposition does not.</p>
-<p class="fs-5 mb-4">For the Syrian people, the immediate future holds both promise and peril. The cessation of large-scale combat operations offers respite from the most acute forms of suffering. But sustainable peace requires more than the absence of war—it demands rebuilding of physical infrastructure, social institutions, and the trust shattered by years of conflict. It requires accountability for atrocities committed by all sides, a process that new leadership may be reluctant to pursue given its own complicated past.</p>
-<p class="fs-5 mb-4">The road to Damascus has always held symbolic meaning for transformative change. In religious tradition, it represented the place where a persecutor became a believer. In modern Syria, it may represent the difficult journey from extremism to governance, from international pariah to reluctant partner in regional stability. Whether this transformation proves genuine or illusory will determine not just Syria's future but the broader trajectory of a region desperately seeking stability after decades of turmoil.</p>
-<p class="fs-5 mb-4">What remains clear is that Syria's future cannot be reduced to simple moral judgments or policy prescriptions. The complexity of human events rarely aligns with our desire for clarity. The Syrian people, having endured horrors beyond imagination, now face yet another uncertain chapter in their nation's history. Their response to this new leadership will be shaped not by ideology but by whether it can deliver the stability and security they have been denied for so long.</p>
-<p class="fs-5 mb-4">As the sun sets over Damascus tonight, its ancient streets bear witness to yet another chapter in its five-thousand-year history. Empires have risen and fallen around these stones. Conquerors have come and gone. Through it all, the Syrian people have endured. Their capacity for resilience may yet prove more consequential than the ideological background of any single leader. For in the final accounting, Damascus belongs not to Assad or Al-Jawlani, but to the people who have sacrificed everything in hopes of one day rebuilding their shattered nation.</p></section>
-              </article>
-            </div>
-          </div>
+<p class="article-paragraph mb-4">In the ancient stories, Saul of Tarsus was struck blind on the road to Damascus, only to have his sight restored and emerge transformed as Paul the Apostle. Today, Syria itself seems to be undergoing its own conversion narrative, though whether this represents salvation or merely another chapter in its prolonged suffering remains profoundly unclear. The sudden departure of Bashar al-Assad after decades of brutal rule has left a vacuum now filled by a man with a past that would typically disqualify him from international legitimacy. Yet the complexities of geopolitics rarely conform to our moral expectations.</p>
+<p class="article-paragraph mb-4">The streets of Damascus today present a study in contradictions. In neighborhoods where artillery shells once rained down, there are signs of life returning. Markets show increasing activity after years of scarcity. Amid the rubble of war, there are initial steps toward reconstruction. To casual observers, this might appear as the first tentative movements toward normalcy. But beneath this fragile veneer lies a deeper question: can a nation find redemption through leadership that much of the world has condemned?</p>
+<p class="article-paragraph mb-4">Al-Jawlani's ascension represents not just a leadership change but a fundamental reordering of power dynamics that have defined the Middle East for generations. His past affiliations with Al-Qaeda and his designation as a terrorist by global powers would typically render him beyond the pale of international diplomacy. Yet history teaches us that yesterday's terrorists occasionally become tomorrow's statesmen. The question hanging over Damascus is whether Al-Jawlani represents such a transformation or merely a rebranding of extremism.</p>
+<p class="article-paragraph mb-4">What makes this transition all the more remarkable is the complex reaction it has generated among the Syrian population. After enduring chemical weapons attacks, barrel bombs, forced disappearances, and the methodical destruction of their country, many Syrians find themselves in the peculiar position of considering whether a designated terrorist might deliver the peace that legitimate institutions could not. This reflects not an endorsement of extremism but rather how thoroughly conventional politics failed them.</p>
+<p class="article-paragraph mb-4">The regional implications stretch far beyond Syria's borders. Israel watches with alarm as a known jihadist assumes control of a neighboring state. Turkey's calculations regarding Kurdish autonomy must now account for a new variable. Iran, having invested heavily in the Assad regime, must recalibrate its influence. And Russia, which deployed significant military resources to preserve Assad's rule, now faces questions about the return on its geopolitical investment.</p>
+<p class="article-paragraph mb-4">For the United States and its European allies, the situation creates a diplomatic paradox. Having spent years designating Jawlani's organization as terrorists, they now face the reality of his political ascension. The language of counterterrorism that once seemed so morally clear now encounters the messier realities of Middle Eastern politics. Can a designated terrorist be engaged as a head of state? Does refusing such engagement merely cede influence to rival powers?</p>
+<p class="article-paragraph mb-4">These questions reflect a larger pattern in the region's modern history, where ideological labels often obscure more than they reveal. Today's extremist may be tomorrow's pragmatist when confronted with the actual responsibilities of governance. The transition from revolutionary to administrator has humbled ideologues throughout history. Whether Al-Jawlani follows this pattern or maintains his radical vision remains an open question.</p>
+<p class="article-paragraph mb-4">What complicates matters further is the governance record Al-Jawlani has established in territories under his control. In Idlib province, where his forces have maintained dominance for years, there have been reports of functioning administrative structures alongside concerning human rights conditions. The establishment of Sharia courts brought a form of justice to areas where the rule of law had collapsed, yet with it came restrictions on personal freedoms that raise significant concerns about the future direction of Syrian society.</p>
+<p class="article-paragraph mb-4">The humanitarian dimensions cannot be overlooked. Syria hosts millions of internally displaced people, with millions more refugees scattered across neighboring countries and Europe. Any sustainable peace must address their fate. Will Al-Jawlani's government facilitate their return? Can a leader with extremist roots provide the security guarantees necessary for minority communities to feel safe? The United Nations, already stretched thin by global crises, now faces the delicate task of engaging with a government led by someone on its own terrorist list.</p>
+<p class="article-paragraph mb-4">Perhaps the most significant factor is Syria's physical and economic devastation. Over a decade of war has reduced much of the country to rubble. Reconstruction estimates range from $250-400 billion, a sum far beyond what Syria's war-ravaged economy can generate. Traditional donors would typically step forward, but how many Western governments will fund reconstruction under leadership they've formally designated as terrorist? This creates an opening for powers less concerned with such designations—China, Russia, perhaps Gulf states seeking regional influence.</p>
+<p class="article-paragraph mb-4">Economic realities may ultimately force pragmatism on all sides. Al-Jawlani, regardless of his ideological background, inherits a nation that cannot be rebuilt without international assistance. Western powers, despite their moral reservations, may find that isolation merely pushes Syria further into the orbit of geopolitical rivals. The resulting détente might not reflect anyone's ideal outcome, but could represent the least bad option in a situation with no good choices.</p>
+<p class="article-paragraph mb-4">For ordinary Syrians, these geopolitical calculations translate into painfully concrete realities: whether schools will reopen, hospitals will function, electricity will flow, and the ever-present fear of violence will finally recede. Their relationship with the new leadership is complex—not an endorsement of Al-Jawlani's past, but a desperate hope that stability might finally return after years of devastating conflict.</p>
+<p class="article-paragraph mb-4">The moral complexity of Syria's situation challenges our tendency toward simple narratives. Western discourse often reduces complex conflicts to battles between good and evil, democracy and tyranny, moderates and extremists. Syria's reality defies such simplification. A designated terrorist now governs from Damascus, yet his predecessors, formally recognized by the international community, perpetrated humanitarian atrocities on an industrial scale. Which reality better serves the Syrian people?</p>
+<p class="article-paragraph mb-4">There is precedent for such transitions. The African National Congress was once designated a terrorist organization by the United States and Britain, yet Nelson Mandela emerged from prison to universal acclaim. Yasser Arafat addressed the United Nations General Assembly after years as a guerrilla leader. The Irish Republican Army's political wing eventually participated in a peace process after decades of violence. History suggests that yesterday's extremists can become tomorrow's statesmen when circumstances demand pragmatism.</p>
+<p class="article-paragraph mb-4">Whether Al-Jawlani follows this trajectory depends on factors both within and beyond his control. The most immediate challenge will be securing his government against remnants of the Assad regime and rival jihadist factions. Beyond security concerns lie governance challenges that have humbled far more experienced administrators: restoring basic services, managing a devastated economy, and reestablishing Syria's place in the regional order.</p>
+<p class="article-paragraph mb-4">For neighboring countries, the calculations are equally complex. Jordan has absorbed hundreds of thousands of Syrian refugees and fears both continued instability and radical influence. Lebanon, already on the brink of state failure, cannot absorb further regional shocks. Iraq, still struggling with its own recovery, shares a border with unpredictable new leadership. And Israel must reconsider its northern defense posture in light of leadership historically hostile to its existence.</p>
+<p class="article-paragraph mb-4">Perhaps the most significant factor will be Al-Jawlani's relationship with Russia and Iran, the two powers most invested in Syria's previous government. Early signals suggest pragmatic accommodation rather than ideological confrontation. This speaks to Al-Jawlani's possible evolution from religious extremist to political realist, understanding that governance requires compromise that armed opposition does not.</p>
+<p class="article-paragraph mb-4">For the Syrian people, the immediate future holds both promise and peril. The cessation of large-scale combat operations offers respite from the most acute forms of suffering. But sustainable peace requires more than the absence of war—it demands rebuilding of physical infrastructure, social institutions, and the trust shattered by years of conflict. It requires accountability for atrocities committed by all sides, a process that new leadership may be reluctant to pursue given its own complicated past.</p>
+<p class="article-paragraph mb-4">The road to Damascus has always held symbolic meaning for transformative change. In religious tradition, it represented the place where a persecutor became a believer. In modern Syria, it may represent the difficult journey from extremism to governance, from international pariah to reluctant partner in regional stability. Whether this transformation proves genuine or illusory will determine not just Syria's future but the broader trajectory of a region desperately seeking stability after decades of turmoil.</p>
+<p class="article-paragraph mb-4">What remains clear is that Syria's future cannot be reduced to simple moral judgments or policy prescriptions. The complexity of human events rarely aligns with our desire for clarity. The Syrian people, having endured horrors beyond imagination, now face yet another uncertain chapter in their nation's history. Their response to this new leadership will be shaped not by ideology but by whether it can deliver the stability and security they have been denied for so long.</p>
+<p class="article-paragraph mb-4">As the sun sets over Damascus tonight, its ancient streets bear witness to yet another chapter in its five-thousand-year history. Empires have risen and fallen around these stones. Conquerors have come and gone. Through it all, the Syrian people have endured. Their capacity for resilience may yet prove more consequential than the ideological background of any single leader. For in the final accounting, Damascus belongs not to Assad or Al-Jawlani, but to the people who have sacrificed everything in hopes of one day rebuilding their shattered nation.</p></section>
+
+        <hr class="my-5" style="border-color: var(--blog-border)" />
+        <div class="text-center py-4">
+          <h4
+            class="font-display fst-italic mb-3"
+            style="color: var(--blog-heading)"
+          >
+            Enjoyed this read?
+          </h4>
+          <a
+            href="../blog.html#latest-analysis"
+            class="btn rounded-pill px-4"
+            style="
+              border: 1px solid var(--blog-heading);
+              color: var(--blog-heading);
+            "
+            >Read more essays</a
+          >
         </div>
-        <h3 class="fw-bolder mb-4 text-center">
-          Explore all the blogs <a href="../blog.html">here</a>
-        </h3>
-      </section>
+      </article>
     </main>
-    <!-- Footer-->
+
     <div id="footer"></div>
-    <!-- Your existing scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/scripts.js"></script>
     <script>
-      // Load navbar and footer
       $("#navbar3").load("../navbar.html");
       $("#footer").load("../footer.html");
     </script>
-
-    <!-- Other More Blogs -->
   </body>
 </html>

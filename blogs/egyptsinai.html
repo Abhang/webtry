@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="blog-title" content="Egypt and the Sinai Peninsula: The Desert Redeemed" />
+    <meta
+      name="blog-description"
+      property="og:description"
+      content="How Operation Badr and the October 1973 War transformed Egypt's relationship with the Sinai Peninsula from humiliation to redemption through strategic brilliance and national will."
+    />
+    <meta name="blog-feature2" content="Military History & Strategy" />
+    <meta name="blog-image" property="og:image" content="https://res.cloudinary.com/dzjcz0ckk/image/upload/v1766754820/Egyptian_Army_Leaders_in_6th_Oct_1973_War_uufefl.jpg" />
+    <meta name="blog-date" content="December 25, 2025" />
+
+    <title>Egypt and the Sinai Peninsula: The Desert Redeemed | Abhang Mehendale</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../css/styles.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- Editorial Design System with Dark Mode Support --- */
+      :root {
+        /* Typography */
+        --font-serif: "EB Garamond", serif;
+        --font-display: "Crimson Pro", serif;
+        --font-sans: "Inter", sans-serif;
+        --reading-width: 740px;
+
+        /* Light Theme (Default - Paper & Ink) */
+        --blog-bg: #fdfdfd; /* Soft off-white paper */
+        --blog-text: #2c2c2c; /* Soft black ink */
+        --blog-heading: #111111; /* Deep black headings */
+        --blog-accent: #0d6efd;
+        --blog-muted: #666666;
+        --blog-border: #eeeeee;
+        --blog-code-bg: #f8f9fa;
+        --hero-overlay: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+      }
+
+      /* Dark Theme (Aeon Style - Charcoal & Cream) */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --blog-bg: #1a1a1a; /* Deep elegant charcoal */
+          --blog-text: #d4d4d4; /* Creamy off-white for easier reading */
+          --blog-heading: #ffffff; /* Pure white for contrast headers */
+          --blog-accent: #4dabf7; /* Lighter blue for dark mode */
+          --blog-muted: #a3a3a3;
+          --blog-border: #333333;
+          --blog-code-bg: #262626;
+          /* Darker overlay for dark mode so text pops */
+          --hero-overlay: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.8) 100%
+          );
+        }
+        /* Fixes Bootstrap icons and navbar in dark mode */
+        body,
+        .text-dark,
+        .link-dark {
+          color: var(--blog-text) !important;
+        }
+      }
+
+      body {
+        font-family: var(--font-serif);
+        color: var(--blog-text);
+        background-color: var(
+          --blog-bg
+        ) !important; /* Override global Bootstrap */
+        line-height: 1.6;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Hero Section - Fixed Cropping Issues */
+      /* Find this class and update it */
+      .blog-hero-wrapper {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        min-height: 400px;
+        max-height: 600px;
+        overflow: hidden;
+
+        /* --- THE FIX START --- */
+        /* This pushes the image down so the navbar doesn't cover it */
+        margin-top: 70px;
+        /* --- THE FIX END --- */
+      }
+
+      /* Find this class and update it */
+      .blog-hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        /* --- THE FIX START --- */
+        /* This anchors the image to the TOP so heads aren't cut off */
+        object-position: center;
+        /* --- THE FIX END --- */
+      }
+
+      .blog-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--hero-overlay);
+        z-index: 1;
+      }
+
+      .blog-hero-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3rem 1.5rem;
+        z-index: 2;
+        text-align: center;
+        color: white; /* Always white text on hero image */
+      }
+
+      .blog-title-display {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 600;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        color: white !important; /* Force white even in light mode */
+      }
+
+      .blog-meta-display {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      /* Article Content Layout */
+      .article-container {
+        max-width: var(--reading-width);
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      /* Author Sidebar */
+      .author-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--blog-border);
+        font-family: var(--font-sans);
+      }
+
+      /* Typography for the Content */
+      .article-paragraph {
+        font-size: 1.25rem; /* The 'New Yorker' size (~20px) */
+        line-height: 1.8; /* Luxuriously loose leading */
+        margin-bottom: 1.8rem;
+        color: var(--blog-text);
+      }
+
+      /* Drop Cap */
+      .article-paragraph:first-of-type::first-letter {
+        float: left;
+        font-family: var(--font-display);
+        font-size: 4.5rem;
+        line-height: 0.85;
+        padding-right: 0.5rem;
+        padding-top: 4px;
+        color: var(--blog-heading);
+      }
+
+      /* Headings - Using !important to override the global CSS conflict */
+      .article-h1,
+      .article-h2,
+      .article-h3,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-display);
+        color: var(--blog-heading) !important;
+        margin-top: 3rem;
+      }
+
+      .article-list li {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-bottom: 0.5rem;
+        color: var(--blog-text);
+      }
+
+      .article-blockquote {
+        font-size: 1.35rem;
+        font-style: italic;
+        color: var(--blog-heading); /* Slightly darker for emphasis */
+        border-left: 4px solid var(--blog-accent);
+        background: transparent !important;
+        padding-left: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .article-code-block {
+        background-color: var(--blog-code-bg) !important;
+        border-color: var(--blog-border) !important;
+        color: var(--blog-text);
+      }
+
+      .figure-caption {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        color: var(--blog-muted);
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      /* Fix table colors in dark mode */
+      .table {
+        color: var(--blog-text);
+        border-color: var(--blog-border);
+      }
+      .table-hover tbody tr:hover {
+        color: var(--blog-heading);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Mobile Tweaks */
+      @media (max-width: 768px) {
+        .blog-hero-wrapper {
+          height: 40vh;
+          min-height: 300px;
+        }
+        .article-paragraph {
+          font-size: 1.15rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <div id="preloader">
+      <svg width="80" height="80" viewBox="0 0 100 100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="black"
+          stroke-width="5"
+          fill="none"
+          stroke-dasharray="200"
+          stroke-dashoffset="0"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="200"
+            to="0"
+            dur="1.5s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+    </div>
+
+    <main class="flex-shrink-0">
+      <div id="navbar3"></div>
+
+      <header class="blog-hero-wrapper">
+        <div class="blog-hero-overlay"></div>
+        <img
+          class="blog-hero-img"
+          src="https://res.cloudinary.com/dzjcz0ckk/image/upload/v1766754820/Egyptian_Army_Leaders_in_6th_Oct_1973_War_uufefl.jpg"
+          alt="Egypt and the Sinai Peninsula: The Desert Redeemed"
+        />
+
+        <div class="blog-hero-content">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="blog-meta-display mb-2">
+                  Military History & Strategy &middot; 14 min read
+                </div>
+                <h1 class="blog-title-display">Egypt and the Sinai Peninsula: The Desert Redeemed</h1>
+                <div class="blog-meta-display mt-3">December 25, 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container mt-2">
+        <figcaption class="figure-caption text-center">
+          Egyptian Army Leaders with Anwar Sadat, the then leader of Egypt, October 1973
+        </figcaption>
+      </div>
+
+      <article class="article-container">
+        <div class="author-block">
+          <img
+            class="rounded-circle me-3 shadow-sm"
+            src="../assets/images/abhang.jpg"
+            alt="Abhang Mehendale"
+            style="width: 56px; height: 56px; object-fit: cover"
+          />
+          <div>
+            <div
+              class="fw-bold text-uppercase small"
+              style="letter-spacing: 1px; color: var(--blog-heading)"
+            >
+              Abhang Mehendale
+            </div>
+            <div class="small" style="color: var(--blog-muted)">
+              Thinker & Writer
+            </div>
+          </div>
+        </div>
+
+        <section><p class="article-paragraph mb-4">On October 6, 1973, at precisely 2:05 PM, along a 160-kilometer front, Egyptian artillery shattered the silence of the Sinai Desert. For six years, this peninsula—Egypt's eastern shield, its bridge to Asia, its 60,000 square kilometers of strategic depth—had lain under Israeli occupation, a constant monument to national humiliation. What followed in the next eighteen days would not merely redraw maps but reconstitute Egyptian identity itself.</p>
+<p class="article-paragraph mb-4">The Sinai Peninsula exists as geography's great hinge, a triangular wedge where Africa meets Asia, where the Mediterranean confronts the Red Sea, where military strategy collides with national psychology. To understand Egypt's relationship with this harsh, contested land requires understanding October 1973—not just as military history but as the moment when a defeated nation engineered its own resurrection.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="the-wound-that-wouldnt-heal">The Wound That Wouldn't Heal</h2>
+<p class="article-paragraph mb-4">The catastrophe of June 1967 had been swift and total. In six days, Israel's preemptive strike destroyed Egypt's air force on the ground, routed its army in the Sinai, and seized territory stretching from the Suez Canal to the peninsula's eastern edge. Egyptian soldiers, abandoned by collapsing command structures, died of thirst in the desert or surrendered in thousands. The images—burned-out tanks, discarded boots, defeated columns—became seared into Egyptian consciousness.</p>
+<p class="article-paragraph mb-4">President Gamal Abdel Nasser, the charismatic architect of Arab nationalism, offered his resignation in a televised address. Millions poured into Cairo's streets begging him to stay, but the damage penetrated deeper than politics. Egypt had lost the Sinai, yes, but it had lost something more essential: the narrative of revolutionary competence, of Arab dignity restored, of a postcolonial nation that could defend itself.</p>
+<p class="article-paragraph mb-4">The Suez Canal became a militarized frontier, its cities evacuated, its waters a no-man's-land between entrenched armies. Hundreds of thousands of Egyptian refugees fled westward. The Sinai—for millennia Egypt's buffer, invasion route, and resource frontier—now served as Israel's strategic depth, a captured bulwark that made Tel Aviv nearly invulnerable to Egyptian attack.</p>
+<p class="article-paragraph mb-4">Nasser died in 1970, his dream of Arab unity shattered, his military humiliated. His successor, Anwar Sadat, inherited a nation trapped between impossible choices: accept the loss of Sinai or fight a war Egypt seemed certain to lose again.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="the-audacious-calculation">The Audacious Calculation</h2>
+<p class="article-paragraph mb-4">Sadat understood what many military planners did not: Egypt didn't need to win a war in any conventional sense. It needed to win back enough dignity to negotiate from strength rather than weakness. The Sinai had to be contested, bloodied, made expensive enough that Israel would prefer negotiation to permanent occupation.</p>
+<p class="article-paragraph mb-4">The plan that emerged was Operation Badr—named for the Prophet Muhammad's first military victory, a conscious invocation of religious legitimacy and historical redemption. The strategy was breathtaking in its ambition and meticulous in its preparation. Egypt would launch a simultaneous assault across the entire length of the Suez Canal, overwhelm the Israeli defensive line (the supposedly impregnable Bar-Lev Line), establish bridgeheads in the Sinai, and hold them against inevitable Israeli counterattack.</p>
+<p class="article-paragraph mb-4">Everything about the plan defied conventional wisdom. Crossing a major water obstacle against a fortified enemy represented one of warfare's most difficult operations. The Israeli military was considered among the world's finest, its intelligence services legendary, its doctrine of preemptive strikes proven. Egypt's army, by contrast, bore the stigma of 1967—poorly led, inadequately trained, psychologically defeated.</p>
+<p class="article-paragraph mb-4">But Sadat and his chief of staff, General Saad El Shazly, had spent six years preparing for this moment. They understood the Sinai's geography intimately: the sand ramparts the Israelis had constructed along the canal's eastern bank, the limited crossing points, the roads and supply routes needed to sustain an invasion. They studied Israeli doctrine, which emphasized rapid mobilization of reserves and deep armored thrusts to disrupt enemy formations.</p>
+<p class="article-paragraph mb-4">Most crucially, they grasped that modern warfare had evolved. Israeli armor, which had dominated the 1967 fighting, now faced Soviet-supplied anti-tank missiles that Egyptian infantry could operate with devastating effect. Israeli aircraft, which had achieved total air superiority in 1967, now confronted integrated air defense systems—SAM-6 missiles and anti-aircraft guns—that created protective umbrellas under which Egyptian forces could operate.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="the-crossing-engineering-the-impossible">The Crossing: Engineering the Impossible</h2>
+<p class="article-paragraph mb-4">The opening hours of October 6, 1973—Yom Kippur, the holiest day in the Jewish calendar, deliberately chosen to maximize surprise—demonstrated organizational genius. Following the artillery barrage, Egyptian commandos crossed the canal in rubber boats while combat engineers prepared for the main assault. The Israeli defenders, thinly spread along the Bar-Lev Line's fortifications, found themselves overwhelmed by sheer numbers and ferocity.</p>
+<p class="article-paragraph mb-4">Then came the problem that symbolized everything about the Sinai as battlefield: the sand ramparts. Israeli engineers had constructed these barriers, some reaching twenty meters high, along the canal's eastern bank specifically to prevent Egyptian armor from ascending into the Sinai proper. Egyptian tanks and armored vehicles needed to cross the canal, yes, but then they needed to climb these artificial mountains.</p>
+<p class="article-paragraph mb-4">The Egyptian solution was elegantly low-tech: high-pressure water cannons. Combat engineers used pumps to blast the sand ramparts with water from the canal, liquefying them, creating passages through which armor could advance. It was agricultural technology repurposed for warfare, and it worked. Within hours, Egyptian forces had established multiple bridgeheads in the Sinai, erected pontoon bridges across the canal, and begun pouring armor and troops into territory they hadn't controlled since 1967.</p>
+<p class="article-paragraph mb-4">The Bar-Lev Line—supposedly impregnable, garrisoned by Israeli forces confident in their defensive positions—collapsed along most of its length within twenty-four hours. Egyptian infantry, carrying the Soviet-supplied Sagger anti-tank missiles, demonstrated that determined foot soldiers could destroy Israeli tanks before the tanks could effectively respond. The psychological impact was immense: the vaunted Israeli military wasn't invincible; Egyptian soldiers could fight effectively; the Sinai could be contested.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="the-battles-cruel-geometry">The Battle's Cruel Geometry</h2>
+<p class="article-paragraph mb-4">For the first week, Operation Badr exceeded even optimistic Egyptian expectations. Forces advanced 10-15 kilometers into the Sinai, secured the canal's eastern bank, and withstood initial Israeli counterattacks. The protective umbrella of surface-to-air missiles prevented Israeli aircraft from dominating the battlefield as they had in 1967. Egyptian soldiers, fighting with discipline and courage that surprised observers on all sides, held their positions.</p>
+<p class="article-paragraph mb-4">But the Sinai's geography imposes constraints on all armies. The peninsula is vast, supply lines are long, and the side that advances beyond its logistical reach becomes vulnerable. Israeli forces, after recovering from initial shock, began the systematic, brutal work of armored counterattack. Their doctrine—mobility, concentration of force, deep penetration—remained sound even if the tactical environment had changed.</p>
+<p class="article-paragraph mb-4">The war's turning point came when Egyptian forces, under pressure from Damascus to relieve Syria's collapsing front, advanced beyond their air defense umbrella on October 14. Israeli armor mauled the exposed Egyptian columns. Worse, Israeli forces under General Ariel Sharon exploited a gap between Egyptian armies, crossed the canal in a daring counteroperation, and established their own bridgehead on the canal's western bank—on Egyptian soil proper.</p>
+<p class="article-paragraph mb-4">By October 24, when a UN-brokered ceasefire took effect, the military situation had become complex and ambiguous. Israel had recovered from initial shock and demonstrated superior operational flexibility. Israeli forces now occupied positions on both sides of the canal. By conventional military measures, Israel had survived and counter-punched effectively.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="victory-through-dignified-defeat">Victory Through Dignified Defeat</h2>
+<p class="article-paragraph mb-4">Yet something fundamental had shifted. Egypt had crossed the Suez Canal, shattered the Bar-Lev Line, and held Sinai territory for weeks against Israeli counterattacks. Egyptian soldiers had fought with competence and courage, destroying Israeli tanks, downing Israeli aircraft, and demonstrating that 1967 was an aberration, not destiny. The Arab world, traumatized by decades of defeats, had seen its largest military force challenge Israel and survive.</p>
+<p class="article-paragraph mb-4">Sadat understood immediately what many observers missed: Egypt had achieved its strategic objective. The crossing of October 6 wasn't merely a military operation; it was a national redemption ritual. Egyptians could hold their heads high again. The government could negotiate from a position of restored dignity rather than abject defeat.</p>
+<p class="article-paragraph mb-4">The Sinai, bloodied and contested, had been transformed from a monument to humiliation into evidence of Egyptian capability. Its deserts had witnessed Egyptian engineers solving tactical problems with ingenuity, Egyptian infantry mastering modern weapons, Egyptian commanders executing complex operations. The peninsula's geography—once the scene of Egypt's worst defeat—had become the landscape of its resurrection.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="the-long-road-home">The Long Road Home</h2>
+<p class="article-paragraph mb-4">What followed was nearly a decade of diplomacy, but diplomacy premised on October 1973's realities. U.S. Secretary of State Henry Kissinger engaged in shuttle diplomacy that produced disengagement agreements in 1974 and 1975, returning portions of the Sinai to Egyptian control. The 1978 Camp David Accords, negotiated by Sadat, Israeli Prime Minister Menachem Begin, and U.S. President Jimmy Carter, committed Israel to complete withdrawal from the Sinai in exchange for peace and normalized relations.</p>
+<p class="article-paragraph mb-4">The final Israeli evacuation occurred in April 1982. The Sinai Peninsula—all 60,000 square kilometers—returned to Egyptian sovereignty. The cost had been enormous: Sadat's peace with Israel earned him a Nobel Prize and, in October 1981, assassination by Islamist extremists who viewed the treaty as betrayal. But the peninsula was Egyptian again.</p>
+<p class="article-paragraph mb-4">The peace treaty imposed significant constraints. The Sinai would be largely demilitarized, with strict limits on Egyptian military presence enforced by international observers. Egypt couldn't use its recovered territory as a forward staging area for future conflicts. The peninsula, reclaimed through blood and diplomacy, would be controlled but not militarily exploited.</p>
+<h2 class="article-h2 fw-bold mt-5 mb-3" id="the-sinais-enduring-lessons">The Sinai's Enduring Lessons</h2>
+<p class="article-paragraph mb-4">Contemporary Egypt has struggled with its recovered Sinai. The peninsula remains economically underdeveloped, its Bedouin population often marginalized, its northern regions plagued by insurgency. The geography that made it a crucial buffer also makes it difficult to govern—vast, harsh, distant from the Nile Valley where Egyptian power and population concentrate.</p>
+<p class="article-paragraph mb-4">Yet October 1973 established principles that resonate beyond military history. Egypt demonstrated that supposedly inevitable situations can be challenged, that careful preparation and strategic clarity can overcome material disadvantages, that national will—properly organized and directed—matters in ways that pure firepower calculations miss.</p>
+<p class="article-paragraph mb-4">The Sinai's geography hasn't changed. It remains the hinge between Africa and Asia, the buffer between Egypt proper and potential threats from the northeast, the strategic depth that makes Egypt defensible. But Egypt's relationship to that geography transformed utterly through Operation Badr. The peninsula was no longer just lost territory to be mourned but contested ground that Egyptians had proven they could fight for and, eventually, reclaim.</p>
+<p class="article-paragraph mb-4">The water cannons blasting through sand ramparts, the rubber boats ferrying commandos across the canal, the infantrymen with their anti-tank missiles facing Israeli armor—these images replaced the burning wreckage of 1967. Egypt had rewritten its story, and the Sinai was both the setting and the prize of that rewriting.</p>
+<p class="article-paragraph mb-4">Stand today at the Suez Canal's eastern bank, where the waters that witnessed the October 6 crossing still flow, and you're standing on ground that matters to Egyptian identity in ways that transcend strategic calculations. This is where a defeated nation engineered its redemption, where careful planning met desperate courage, where the Sinai Peninsula—ancient, harsh, contested—witnessed Egypt reclaim not just territory but something more essential: the capacity to shape its own fate.</p>
+<p class="article-paragraph mb-4">The geography remains. The lessons endure. And the desert, bloodied and redeemed, remembers.</p>
+<hr /></section>
+
+        <hr class="my-5" style="border-color: var(--blog-border)" />
+        <div class="text-center py-4">
+          <h4
+            class="font-display fst-italic mb-3"
+            style="color: var(--blog-heading)"
+          >
+            Enjoyed this read?
+          </h4>
+          <a
+            href="../blog.html#latest-analysis"
+            class="btn rounded-pill px-4"
+            style="
+              border: 1px solid var(--blog-heading);
+              color: var(--blog-heading);
+            "
+            >Read more essays</a
+          >
+        </div>
+      </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script>
+      $("#navbar3").load("../navbar.html");
+      $("#footer").load("../footer.html");
+    </script>
+  </body>
+</html>

@@ -172,7 +172,7 @@
           <div class="row gx-5 justify-content-center">
             <div class="col-lg-8 col-xl-6">
               <div class="text-center">
-                <h2 class="fw-bolder">Latest Analysis</h2>
+                <h2 id="latest-analysis" class="fw-bolder" >Latest Analysis</h2>
                 </div>
             </div>
           </div>
@@ -300,6 +300,23 @@
 
       // 5) Run loader
       loadFeaturedBlogs();
+
+      $(window).on("load", function() {
+        // 1. Check if the URL has the special signal "?goto=analysis"
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        if (urlParams.get('goto') === 'analysis') {
+          // 2. Find the target section
+          const target = $("#latest-analysis");
+          
+          if (target.length) {
+            // 3. Force scroll with a 120px buffer for the navbar
+            $('html, body').animate({
+              scrollTop: target.offset().top + 150
+            }, 800); // 800ms smooth scroll
+          }
+        }
+      });
     </script>
   </body>
 </html>
